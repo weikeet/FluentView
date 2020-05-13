@@ -43,8 +43,10 @@ class MainActivity : AppCompatActivity() {
     })
     super.onCreate(savedInstanceState)
     // setContentView(R.layout.activity_main)
+    setContentView(R.layout.activity_traditional)
+    // setContentView(R.layout.activity_constraintlayout)
     // setContentView(R.layout.activity_static_layout)
-    setContentView(buildViewByDsl())
+    // setContentView(buildViewByDsl())
   }
 
   @SuppressLint("SetTextI18n")
