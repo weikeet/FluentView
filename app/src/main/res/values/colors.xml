@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="wifi_safe_item_error_subtitle">#FF0000</color>
+
+    <!-- Material Design -->
+    <color name="window_background">#FFF5F5F5</color>
+
+    <color name="black_primary">#DE000000</color>    <!-- 87% -->
+    <color name="black_secondary">#89000000</color>    <!-- 54% -->
+    <color name="black_secondary_no_alpha">#FF757575</color>
+    <color name="black_disable">#60000000</color>    <!-- 38% -->
+    <color name="white_disable">#bdc1c9</color>
+
+    <color name="white_primary">#FFFFFFFF</color>    <!-- 100 -->
+    <color name="white_secondary">#B3FFFFFF</color>    <!-- 70% -->
+
+    <color name="ripple_button">#42FFFFFF</color>    <!-- 水波纹的颜色 -->
+    <color name="ripple_button_light">#24000000</color>    <!-- 适合白色背景的水波纹的颜色 -->
+
+    <color name="primary_green">#FF56B34E</color>
+    <color name="primary_red">#FFF44336</color>
+    <color name="primary_yellow">#FFFFBE00</color>
+    <color name="primary_blue">#FF4285F4</color>
+    <color name="separator_light">#E5E5E5</color>
+
+    <color name="complete_trans">#00000000</color>
+
+    <color name="tab_icon_color">#FF999999</color>
+
+    <color name="transparent_alpha_44">#9000</color>
+
+    <color name="alert_blue_button">#4285f4</color>
+
+    <color name="blue_button_color">#2980ec</color>
+    <color name="blue_button_press">#1D5795</color>
+
+    <color name="short_cut_background_color">#B3000000</color>
+
+    <color name="color_gray">#DDDDDD</color>
+
+    <color name="ad_stars_color">#FFD200</color>
+
+    <color name="black_10_percent">#19000000</color>
+
+    <color name="black_08_transparent">#14000000</color>
+    <color name="black_10_transparent">#1A000000</color>
+    <color name="black_12_transparent">#1f000000</color>
+    <color name="black_20_transparent">#32000000</color>
+    <color name="black_24_transparent">#3D000000</color>
+    <color name="black_27_transparent">#45000000</color>
+    <color name="black_30_transparent">#4D000000</color>
+    <color name="black_40_transparent">#66000000</color>
+    <color name="black_50_transparent">#80000000</color>
+    <color name="black_54_transparent">#8A000000</color>
+    <color name="black_60_transparent">#99000000</color>
+    <color name="black_70_transparent">#B3000000</color>
+    <color name="black_80_transparent">#CC000000</color>
+    <color name="black_87_transparent">#DF000000</color>
+    <color name="black_90_transparent">#E6000000</color>
+    <color name="black_100_transparent">#FF000000</color>
+
+    <color name="white_10_transparent">#1AFFFFFF</color>
+    <color name="white_20_transparent">#32FFFFFF</color>
+    <color name="white_30_transparent">#4DFFFFFF</color>
+    <color name="white_40_transparent">#66FFFFFF</color>
+    <color name="white_50_transparent">#7FFFFFFF</color>
+    <color name="white_54_transparent">#8AFFFFFF</color>
+    <color name="white_60_transparent">#99FFFFFF</color>
+    <color name="white_70_transparent">#B3FFFFFF</color>
+    <color name="white_75_transparent">#BFFFFFFF</color>
+    <color name="white_80_transparent">#CEFFFFFF</color>
+    <color name="white_86_transparent">#DCFFFFFF</color>
+    <color name="white_87_transparent">#DFFFFFFF</color>
+    <color name="white_100_transparent">#FFFFFF</color>
+
+    <color name="blue_tab_unselected">#FFA1C2FA</color>
+
+    <color name="blue_button_pressed">#3871D0</color>
+
+    <color name="photo_manager_color_grey">#757575</color>
+
+    <color name="transparent_background">#00ffffff</color>
+
+    <color name="gray_text">#9e9e9e</color>
+
+    <color name="recycler_view_gray">#fddd</color>
+
+    <color name="statue_bar_color_light">#264789</color>
+
+    <color name="toolbar_color_deep">#db4437</color>
+    <color name="toolbar_color_shallow">#db4437</color>
+
+    <color name="point_level_blue_excellent">#ff4285f4</color>
+    <color name="point_level_yellow_normal">#ffffa000</color>
+    <color name="point_level_red_terrible">#fff44336</color>
+
+    <color name="accent_light">#FF4784DE</color>
+    <color name="white_background_clicked">#FFefefef</color>
+
+    <color name="red_point_name">#FFFA5843</color>
+
+    <!--promote-->
+    <color name="promote_screen_content_bg">#4285f4</color>
+
+    <color name="circle_color">#d2ffffff</color>
+
+    <color name="dialog_button_color">#ff03b0ff</color>
+    <color name="button_selected_color">#ff008fe1</color>
+
+    <color name="background_pressed">#eeeeee</color>
+    <color name="blue_button_normal">#FF4285F4</color>
+    <color name="notification_organizer_guide_button_normal">#1496F1</color>
+    <color name="notification_organizer_guide_button_pressed">#0287c3</color>
+
+    <color name="green_button_pressed">#00AB4B</color>
+</resources>
