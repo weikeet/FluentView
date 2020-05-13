@@ -39,6 +39,9 @@ inline fun ViewGroup.ImageView(init: AppCompatImageView.() -> Unit) =
 inline fun ViewGroup.Button(init: Button.() -> Unit) =
   AppCompatButton(context).apply(init).also { addView(it) }
 
+inline fun ViewGroup.EditText(init: EditText.() -> Unit) =
+  EditText(context).apply(init).also { addView(it) }
+
 inline fun ConstraintLayout.Guideline(init: Guideline.() -> Unit) =
   Guideline(context).apply(init).also { addView(it) }
 
@@ -279,6 +282,36 @@ inline var View.layout_gravity: Int
     }
   }
 
+inline var View.horizontal_bias: Float
+  get() {
+    return 0.5f
+  }
+  set(value) {
+    layoutParams = layoutParams.append {
+      horizontalBias = value
+    }
+  }
+
+inline var View.vertical_bias: Float
+  get() {
+    return 0.5f
+  }
+  set(value) {
+    layoutParams = layoutParams.append {
+      verticalBias = value
+    }
+  }
+
+inline var View.baseline_toBaselineOf: String
+  get() {
+    return ""
+  }
+  set(value) {
+    layoutParams = layoutParams.append {
+      baselineToBaseline = value.toLayoutId()
+    }
+  }
+
 inline var View.start_toStartOf: String
   get() {
     return ""
@@ -286,17 +319,6 @@ inline var View.start_toStartOf: String
   set(value) {
     layoutParams = layoutParams.append {
       startToStart = value.toLayoutId()
-      startToEnd = -1
-    }
-  }
-
-inline var View.start_toStartOfId: Int
-  get() {
-    return -1
-  }
-  set(value) {
-    layoutParams = layoutParams.append {
-      startToStart = value
       startToEnd = -1
     }
   }
@@ -312,17 +334,6 @@ inline var View.start_toEndOf: String
     }
   }
 
-inline var View.start_toEndOfId: Int
-  get() {
-    return -1
-  }
-  set(value) {
-    layoutParams = layoutParams.append {
-      startToEnd = value
-      startToStart = -1
-    }
-  }
-
 inline var View.top_toBottomOf: String
   get() {
     return ""
@@ -330,17 +341,6 @@ inline var View.top_toBottomOf: String
   set(value) {
     layoutParams = layoutParams.append {
       topToBottom = value.toLayoutId()
-      topToTop = -1
-    }
-  }
-
-inline var View.top_toBottomOfId: Int
-  get() {
-    return -1
-  }
-  set(value) {
-    layoutParams = layoutParams.append {
-      topToBottom = value
       topToTop = -1
     }
   }
@@ -356,17 +356,6 @@ inline var View.top_toTopOf: String
     }
   }
 
-inline var View.top_toTopOfId: Int
-  get() {
-    return -1
-  }
-  set(value) {
-    layoutParams = layoutParams.append {
-      topToTop = value
-      topToBottom = -1
-    }
-  }
-
 inline var View.end_toEndOf: String
   get() {
     return ""
@@ -374,17 +363,6 @@ inline var View.end_toEndOf: String
   set(value) {
     layoutParams = layoutParams.append {
       endToEnd = value.toLayoutId()
-      endToStart = -1
-    }
-  }
-
-inline var View.end_toEndOfId: Int
-  get() {
-    return -1
-  }
-  set(value) {
-    layoutParams = layoutParams.append {
-      endToEnd = value
       endToStart = -1
     }
   }
@@ -400,17 +378,6 @@ inline var View.end_toStartOf: String
     }
   }
 
-inline var View.end_toStartOfId: Int
-  get() {
-    return -1
-  }
-  set(value) {
-    layoutParams = layoutParams.append {
-      endToStart = value
-      endToEnd = -1
-    }
-  }
-
 inline var View.bottom_toBottomOf: String
   get() {
     return ""
@@ -422,17 +389,6 @@ inline var View.bottom_toBottomOf: String
     }
   }
 
-inline var View.bottom_toBottomOfId: Int
-  get() {
-    return -1
-  }
-  set(value) {
-    layoutParams = layoutParams.append {
-      bottomToBottom = value
-      bottomToTop = -1
-    }
-  }
-
 inline var View.bottom_toTopOf: String
   get() {
     return ""
@@ -440,17 +396,6 @@ inline var View.bottom_toTopOf: String
   set(value) {
     layoutParams = layoutParams.append {
       bottomToTop = value.toLayoutId()
-      bottomToBottom = -1
-    }
-  }
-
-inline var View.bottom_toTopOfId: Int
-  get() {
-    return -1
-  }
-  set(value) {
-    layoutParams = layoutParams.append {
-      bottomToTop = value
       bottomToBottom = -1
     }
   }
@@ -504,15 +449,6 @@ inline var View.align_vertical_to: String
     bottom_toBottomOf = value
   }
 
-inline var View.align_vertical_toId: Int
-  get() {
-    return -1
-  }
-  set(value) {
-    top_toTopOfId = value
-    bottom_toBottomOfId = value
-  }
-
 inline var View.align_horizontal_to: String
   get() {
     return ""
@@ -520,15 +456,6 @@ inline var View.align_horizontal_to: String
   set(value) {
     start_toStartOf = value
     end_toEndOf = value
-  }
-
-inline var View.align_horizontal_toId: Int
-  get() {
-    return -1
-  }
-  set(value) {
-    start_toStartOfId = value
-    end_toEndOfId = value
   }
 
 inline var View.background_color: String
@@ -593,6 +520,14 @@ inline var ImageView.src: Int
   }
   set(value) {
     setImageResource(value)
+  }
+
+inline var TextView.labelForId: String
+  get() {
+    return ""
+  }
+  set(value) {
+    labelFor = value.toLayoutId()
   }
 
 inline var TextView.textStyle: Int

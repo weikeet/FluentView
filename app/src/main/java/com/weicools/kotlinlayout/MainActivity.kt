@@ -3,6 +3,8 @@ package com.weicools.kotlinlayout
 import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
+import android.text.InputType
+import android.text.TextUtils
 import android.util.AttributeSet
 import android.util.Log
 import android.view.LayoutInflater
@@ -43,11 +45,148 @@ class MainActivity : AppCompatActivity() {
     })
     super.onCreate(savedInstanceState)
     // setContentView(R.layout.activity_main)
-    setContentView(R.layout.activity_traditional)
-    // setContentView(R.layout.activity_constraintlayout)
+
     // setContentView(R.layout.activity_static_layout)
     // setContentView(buildViewByDsl())
+
+    // setContentView(R.layout.activity_traditional)
+
+    // setContentView(R.layout.activity_constraintlayout)
+    setContentView(buildConstraintLayout())
   }
+
+  private fun buildConstraintLayout(): View =
+    ConstraintLayout {
+      layout_width = match_parent
+      layout_height = match_parent
+
+      ImageView {
+        layout_id = "header"
+        layout_width = 0
+        layout_height = 0
+        margin_bottom = 16
+        scaleType = scale_center_crop
+        src = R.drawable.singapore
+        bottom_toBottomOf = "favorite"
+        top_toTopOf = parent_id
+        align_horizontal_to = parent_id
+        horizontal_bias = 1.0f
+        vertical_bias = 0.0f
+      }
+
+      ImageView {
+        layout_id = "favorite"
+        layout_width = 36
+        layout_height = 36
+        margin_end = 16
+        margin_bottom = 16
+        background_res = R.drawable.info_background
+        padding = 5
+        src = R.drawable.ic_star
+        align_vertical_to = parent_id
+        end_toEndOf = parent_id
+        vertical_bias = 0.19f
+      }
+
+      TextView {
+        layout_id = "title"
+        layout_width = wrap_content
+        layout_height -= wrap_content
+        margin_start = 16
+        margin_top = 16
+        text = getString(R.string.singapore)
+        textSize = 24f
+        start_toStartOf = parent_id
+        top_toBottomOf = "header"
+      }
+
+      EditText {
+        layout_id = "cameraType"
+        layout_width = 0
+        layout_height = wrap_content
+        margin_top = 8
+        inputType = InputType.TYPE_TEXT_VARIATION_PERSON_NAME
+        setEms(10)
+        setText(getString(R.string.camera_value))
+        align_horizontal_to = "settings"
+        top_toBottomOf = "title"
+      }
+
+      TextView {
+        layout_id = "cameraLabel"
+        layout_width = wrap_content
+        layout_height = wrap_content
+        margin_start = 16
+        labelForId = "cameraType"
+        setText(R.string.camera)
+        baseline_toBaselineOf = "cameraType"
+        start_toStartOf = parent_id
+      }
+
+      TextView {
+        layout_id = "settingLabel"
+        layout_width = wrap_content
+        layout_height = wrap_content
+        margin_start = 16
+        labelForId = "settings"
+        setText(R.string.settings)
+        baseline_toBaselineOf = "settings"
+        start_toStartOf = parent_id
+      }
+
+      EditText {
+        layout_id = "settings"
+        layout_width = 0
+        layout_height = wrap_content
+        margin_start = 6
+        margin_top = 8
+        setEms(10)
+        inputType = InputType.TYPE_TEXT_VARIATION_PERSON_NAME
+        setText(R.string.camera_settings)
+        start_toEndOf = "settingsLabel"
+        end_toEndOf = "description"
+        top_toBottomOf = "cameraType"
+      }
+
+      Button {
+        layout_id = "upload"
+        layout_width = wrap_content
+        layout_height = wrap_content
+        margin_end = 16
+        margin_bottom = 16
+        setText(R.string.upload)
+        bottom_toBottomOf = parent_id
+        end_toEndOf = parent_id
+      }
+
+      Button {
+        layout_id = "discard"
+        layout_width = wrap_content
+        layout_height = wrap_content
+        margin_end = 8
+        elevation = 0f
+        setText(R.string.discard)
+        baseline_toBaselineOf = "upload"
+        end_toStartOf = "upload"
+      }
+
+      TextView {
+        layout_id = "description"
+        layout_width = 0
+        layout_height = 0
+        margin_start = 16
+        margin_top = 8
+        margin_end = 16
+        margin_bottom = 8
+        ellipsize = TextUtils.TruncateAt.END
+        isVerticalFadingEdgeEnabled = true
+        setText(R.string.singapore_description)
+        textSize = 15f
+        bottom_toTopOf = "discard"
+        top_toBottomOf = "settings"
+        align_horizontal_to = parent_id
+      }
+    }
 
   @SuppressLint("SetTextI18n")
   private fun buildViewByDsl(): View =

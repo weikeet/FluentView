@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/container"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -16,9 +16,9 @@
         android:src="@drawable/singapore"
         app:layout_constraintBottom_toBottomOf="@+id/favorite"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toLeftOf="@+id/container"
-        app:layout_constraintRight_toRightOf="@+id/container"
-        app:layout_constraintTop_toTopOf="@+id/container"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
@@ -31,9 +31,9 @@
         android:contentDescription="@string/dummy"
         android:padding="5dp"
         android:src="@drawable/ic_star"
-        app:layout_constraintBottom_toBottomOf="@+id/container"
-        app:layout_constraintRight_toRightOf="@+id/container"
-        app:layout_constraintTop_toTopOf="@+id/container"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.19" />
 
     <TextView
@@ -44,7 +44,7 @@
         android:layout_marginTop="16dp"
         android:text="@string/singapore"
         android:textSize="24sp"
-        app:layout_constraintLeft_toLeftOf="@+id/container"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/header" />
 
     <EditText
@@ -67,7 +67,7 @@
         android:labelFor="@+id/cameraType"
         android:text="@string/camera"
         app:layout_constraintBaseline_toBaselineOf="@+id/cameraType"
-        app:layout_constraintLeft_toLeftOf="@+id/container" />
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <TextView
         android:id="@+id/settingsLabel"
@@ -77,7 +77,7 @@
         android:labelFor="@+id/settings"
         android:text="@string/settings"
         app:layout_constraintBaseline_toBaselineOf="@+id/settings"
-        app:layout_constraintLeft_toLeftOf="@+id/container" />
+        app:layout_constraintLeft_toLeftOf="parent" />
 
     <EditText
         android:id="@+id/settings"
@@ -99,8 +99,8 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:text="@string/upload"
-        app:layout_constraintBottom_toBottomOf="@+id/container"
-        app:layout_constraintRight_toRightOf="@+id/container" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
     <Button
         android:id="@+id/discard"
@@ -125,7 +125,7 @@
         android:text="@string/singapore_description"
         android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/discard"
-        app:layout_constraintLeft_toLeftOf="@+id/container"
-        app:layout_constraintRight_toRightOf="@+id/container"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/settings" />
 </androidx.constraintlayout.widget.ConstraintLayout>
