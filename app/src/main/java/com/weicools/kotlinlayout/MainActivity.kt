@@ -2,11 +2,13 @@ package com.weicools.kotlinlayout
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.graphics.Typeface
 import android.os.Bundle
 import android.text.InputType
 import android.text.TextUtils
 import android.util.AttributeSet
 import android.util.Log
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -80,7 +82,7 @@ class MainActivity : AppCompatActivity() {
         ds_constraintHorizontal_alignOf = parent_id
         ds_constraintHorizontal_bias = 1.0f
         ds_constraintVertical_bias = 0.0f
-        scaleType = scale_center_crop
+        scaleType = scale_centerCrop
       }
 
       ImageView {
@@ -231,7 +233,7 @@ class MainActivity : AppCompatActivity() {
         ds_layout_width = wrap_content
         ds_layout_height = wrap_content
         ds_textSizeDp = 30f
-        ds_textStyle = bold
+        ds_textStyle = Typeface.BOLD
         ds_constraintVertical_alignOf = ivBackId
         ds_constraintHorizontal_alignOf = parent_id
         text = "commit"
@@ -286,10 +288,10 @@ class MainActivity : AppCompatActivity() {
         ds_padding = 10.dp()
         ds_textColor = "#389793"
         ds_textSizeDp = 20f
-        ds_textStyle = bold
+        ds_textStyle = Typeface.BOLD
         ds_constraintVertical_alignOf = ivDiamondId
         ds_constraintStart_toEndOf = ivDiamondId
-        gravity = gravity_center
+        gravity = Gravity.CENTER
         text = "gole"
       }
 
@@ -349,11 +351,11 @@ class MainActivity : AppCompatActivity() {
         ds_paddingBottom = 10.dp()
         ds_marginBottom = 20.dp()
         ds_textSizeDp = 20f
-        ds_textStyle = bold
+        ds_textStyle = Gravity.CENTER
         ds_constraintBottom_toBottomOf = parent_id
         ds_constraintEnd_toStartOf = tvOkId
         ds_constraintStart_toStartOf = parent_id
-        ds_constraintHorizontal_chainStyle = packed
+        ds_constraintHorizontal_chainStyle = chain_packed
         text = "cancel"
       }
 
@@ -368,10 +370,10 @@ class MainActivity : AppCompatActivity() {
         ds_paddingEnd = 30.dp()
         ds_paddingBottom = 10.dp()
         ds_textSizeDp = 20f
-        ds_textStyle = bold
+        ds_textStyle = Typeface.BOLD
         ds_constraintBottom_toBottomOf = parent_id
         ds_constraintEnd_toEndOf = parent_id
-        ds_constraintHorizontal_chainStyle = packed
+        ds_constraintHorizontal_chainStyle = chain_packed
         ds_constraintStart_toEndOf = tvCancelId
         text = "Ok"
       }

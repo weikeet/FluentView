@@ -5,9 +5,11 @@ package com.weicools.kotlinlayout.dsl
 import android.content.Context
 import android.content.res.Resources
 import android.graphics.Color
-import android.graphics.Typeface
 import android.util.TypedValue
-import android.view.*
+import android.view.GestureDetector
+import android.view.MotionEvent
+import android.view.View
+import android.view.ViewGroup
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
@@ -17,7 +19,6 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.constraintlayout.helper.widget.Flow
 import androidx.constraintlayout.helper.widget.Layer
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.constraintlayout.widget.ConstraintProperties
 import androidx.constraintlayout.widget.Guideline
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
@@ -647,48 +648,20 @@ var RecyclerView.onItemClick: (View, Int) -> Unit
 const val match_parent = ViewGroup.LayoutParams.MATCH_PARENT
 const val wrap_content = ViewGroup.LayoutParams.WRAP_CONTENT
 
-const val horizontal = LinearLayout.HORIZONTAL
-const val vertical = LinearLayout.VERTICAL
-
-const val bold = Typeface.BOLD
-const val normal = Typeface.NORMAL
-const val italic = Typeface.ITALIC
-const val bold_italic = Typeface.BOLD_ITALIC
-
-const val gravity_start = Gravity.START
-const val gravity_end = Gravity.END
-const val gravity_top = Gravity.TOP
-const val gravity_bottom = Gravity.BOTTOM
-const val gravity_center = Gravity.CENTER
-const val gravity_center_horizontal = Gravity.CENTER_HORIZONTAL
-const val gravity_center_vertical = Gravity.CENTER_VERTICAL
-
-val scale_fix_xy = ImageView.ScaleType.FIT_XY
-val scale_center_crop = ImageView.ScaleType.CENTER_CROP
-val scale_center = ImageView.ScaleType.CENTER
-val scale_center_inside = ImageView.ScaleType.CENTER_INSIDE
-val scale_fit_center = ImageView.ScaleType.FIT_CENTER
-val scale_fit_end = ImageView.ScaleType.FIT_END
-val scale_matrix = ImageView.ScaleType.MATRIX
-val scale_fit_start = ImageView.ScaleType.FIT_START
-
-const val constraint_start = ConstraintProperties.START
-const val constraint_end = ConstraintProperties.END
-const val constraint_top = ConstraintProperties.TOP
-const val constraint_bottom = ConstraintProperties.BOTTOM
-const val constraint_baseline = ConstraintProperties.BASELINE
-const val constraint_parent = ConstraintProperties.PARENT_ID
-
-const val spread = ConstraintLayout.LayoutParams.CHAIN_SPREAD
-const val packed = ConstraintLayout.LayoutParams.CHAIN_PACKED
-const val spread_inside = ConstraintLayout.LayoutParams.CHAIN_SPREAD_INSIDE
-
-const val wrap_none = Flow.WRAP_NONE
-const val wrap_chain = Flow.WRAP_CHAIN
-const val wrap_aligned = Flow.WRAP_ALIGNED
-
 const val parent_id = ConstraintLayout.LayoutParams.PARENT_ID
-const val parent_ids = "0"
+
+const val chain_spread = ConstraintLayout.LayoutParams.CHAIN_SPREAD
+const val chain_packed = ConstraintLayout.LayoutParams.CHAIN_PACKED
+const val chain_spreadInside = ConstraintLayout.LayoutParams.CHAIN_SPREAD_INSIDE
+
+val scale_fixXy = ImageView.ScaleType.FIT_XY
+val scale_centerCrop = ImageView.ScaleType.CENTER_CROP
+val scale_center = ImageView.ScaleType.CENTER
+val scale_centerInside = ImageView.ScaleType.CENTER_INSIDE
+val scale_fitCenter = ImageView.ScaleType.FIT_CENTER
+val scale_fitEnd = ImageView.ScaleType.FIT_END
+val scale_matrix = ImageView.ScaleType.MATRIX
+val scale_fitStart = ImageView.ScaleType.FIT_START
 //</editor-fold>
 
 //<editor-fold desc="layout helper function">
