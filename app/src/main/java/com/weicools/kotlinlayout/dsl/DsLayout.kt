@@ -82,7 +82,7 @@ inline var View.ds_padding: Int
 
 inline var View.ds_marginTop: Int
   get() {
-    return -1
+    return 0
   }
   set(value) {
     (layoutParams as? ViewGroup.MarginLayoutParams)?.apply {
@@ -92,7 +92,7 @@ inline var View.ds_marginTop: Int
 
 inline var View.ds_marginBottom: Int
   get() {
-    return -1
+    return 0
   }
   set(value) {
     (layoutParams as? ViewGroup.MarginLayoutParams)?.apply {
@@ -102,7 +102,7 @@ inline var View.ds_marginBottom: Int
 
 inline var View.ds_marginStart: Int
   get() {
-    return -1
+    return 0
   }
   set(value) {
     (layoutParams as? ViewGroup.MarginLayoutParams)?.apply {
@@ -112,7 +112,7 @@ inline var View.ds_marginStart: Int
 
 inline var View.ds_marginEnd: Int
   get() {
-    return -1
+    return 0
   }
   set(value) {
     (layoutParams as? ViewGroup.MarginLayoutParams)?.apply {
@@ -122,7 +122,7 @@ inline var View.ds_marginEnd: Int
 
 inline var View.ds_backgroundRes: Int
   get() {
-    return -1
+    return 0
   }
   set(value) {
     setBackgroundResource(value)
@@ -130,7 +130,7 @@ inline var View.ds_backgroundRes: Int
 
 inline var View.ds_backgroundColorRes: Int
   get() {
-    return -1
+    return 0
   }
   set(value) {
     setBackgroundColor(ContextCompat.getColor(context, value))
@@ -200,7 +200,7 @@ inline var TextView.ds_textEms: Int
 //<editor-fold desc="ImageView extend field">
 inline var ImageView.ds_imageSrc: Int
   get() {
-    return -1
+    return 0
   }
   set(value) {
     setImageDrawable(AppCompatResources.getDrawable(context, value))
