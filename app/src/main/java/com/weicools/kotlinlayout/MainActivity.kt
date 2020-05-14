@@ -48,9 +48,9 @@ class MainActivity : AppCompatActivity() {
     // setContentView(R.layout.activity_static_layout)
     // setContentView(buildViewByDsl())
 
-    // setContentView(R.layout.activity_traditional)
+    // setContentView(R.layout.activity_traditional_layout)
 
-    // setContentView(R.layout.activity_constraintlayout)
+    // setContentView(R.layout.activity_constraint_layout)
     setContentView(buildConstraintLayout())
 
     val testView = findView<View>(2)
@@ -109,7 +109,7 @@ class MainActivity : AppCompatActivity() {
         ds_layout_height = wrap_content
         ds_marginStart = 16.dp()
         ds_marginTop = 16.dp()
-        ds_textRes =R.string.singapore
+        ds_textRes = R.string.singapore
         ds_textSizeDp = 24f
         ds_constraintStart_toStartOf = parent_id
         ds_constraintTop_toBottomOf = header
