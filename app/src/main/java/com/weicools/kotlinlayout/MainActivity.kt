@@ -81,7 +81,7 @@ class MainActivity : AppCompatActivity() {
         margin_bottom = 16.dp()
         background_res = R.drawable.info_background
         padding = 5.dp()
-        src = R.drawable.ic_star
+        srcCompat = R.drawable.ic_star
         align_vertical_toIds = parent_ids
         end_toEndOfIds = parent_ids
         vertical_bias = 0.19f
@@ -211,7 +211,7 @@ class MainActivity : AppCompatActivity() {
         layout_height = 40.dp()
         margin_start = 20.dp()
         margin_top = 20.dp()
-        src = R.drawable.ic_back_black
+        srcCompat = R.drawable.ic_back_black
         start_toStartOfIds = parent_ids
         top_toTopOfIds = parent_ids
         onClick = { finish() }
@@ -230,7 +230,7 @@ class MainActivity : AppCompatActivity() {
       ImageView {
         layout_width = 40.dp()
         layout_height = 40.dp()
-        src = R.drawable.ic_member_more
+        srcCompat = R.drawable.ic_member_more
         align_vertical_toId = ivBackId
         end_toEndOfIds = parent_ids
         margin_end = 20.dp()
@@ -263,7 +263,7 @@ class MainActivity : AppCompatActivity() {
         layout_height = 40.dp()
         margin_start = 20.dp()
         margin_top = 40.dp()
-        src = R.drawable.diamond_tag
+        srcCompat = R.drawable.diamond_tag
         start_toStartOfId = ivBackId
         top_toBottomOfId = vDividerId
       }
@@ -300,7 +300,7 @@ class MainActivity : AppCompatActivity() {
         layout_width = 100.dp()
         layout_height = 100.dp()
         margin_end = 20.dp()
-        src = R.drawable.user_portrait_gender_female
+        srcCompat = R.drawable.user_portrait_gender_female
         end_toEndOfIds = parent_ids
         start_toEndOfId = tvContentId
         top_toTopOfId = tvContentId

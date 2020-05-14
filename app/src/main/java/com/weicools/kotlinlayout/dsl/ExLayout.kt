@@ -252,6 +252,14 @@ inline var View.background_res: Int
     setBackgroundResource(value)
   }
 
+inline var View.background_colorRes: Int
+  get() {
+    return -1
+  }
+  set(value) {
+    setBackgroundColor(ContextCompat.getColor(context, value))
+  }
+
 inline var View.background_color: String
   get() {
     return ""
@@ -268,20 +276,20 @@ inline var TextView.textRes: Int
   }
   set(value) = setText(value)
 
-inline var TextView.textColor: String
-  get() {
-    return ""
-  }
-  set(value) {
-    setTextColor(Color.parseColor(value))
-  }
-
 inline var TextView.textColorRes: Int
   get() {
     return -1
   }
   set(value) {
     setTextColor(ContextCompat.getColor(context, value))
+  }
+
+inline var TextView.textColor: String
+  get() {
+    return ""
+  }
+  set(value) {
+    setTextColor(Color.parseColor(value))
   }
 
 inline var TextView.textSizeDp: Float
@@ -322,14 +330,6 @@ inline var TextView.textEms: Int
 //</editor-fold>
 
 //<editor-fold desc="ImageView extend field">
-inline var ImageView.src: Int
-  get() {
-    return -1
-  }
-  set(value) {
-    setImageResource(value)
-  }
-
 inline var ImageView.srcCompat: Int
   get() {
     return -1
@@ -689,7 +689,7 @@ inline var View.weight: Float
     }
   }
 
-inline var View.layout_gravity: Int
+inline var View.linear_layout_gravity: Int
   get() {
     return -1
   }
