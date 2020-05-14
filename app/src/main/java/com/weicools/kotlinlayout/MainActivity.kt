@@ -15,12 +15,6 @@ import com.weicools.kotlinlayout.dsl.*
 import kotlin.time.ExperimentalTime
 import kotlin.time.measureTimedValue
 
-/**
- * 1s = 1000ms
- * 1ms = 1000us
- * 1us = 1000ns
- * 1ns = 1000ps
- */
 class MainActivity : AppCompatActivity() {
   companion object {
     private const val TEST_TAG = "TEST_TAG"
@@ -31,7 +25,7 @@ class MainActivity : AppCompatActivity() {
     LayoutInflaterCompat.setFactory2(LayoutInflater.from(this), object : LayoutInflater.Factory2 {
       private var sum: Double = 0.0
       override fun onCreateView(parent: View?, name: String, context: Context, attrs: AttributeSet): View? {
-        //测量构建单个View耗时
+        // 测量构建单个View耗时: 1s = 1000ms / 1ms = 1000us / 1us = 1000ns / 1ns = 1000ps
         val (view, duration) = measureTimedValue { delegate.createView(parent, name, context, attrs) }
         sum += duration.inMilliseconds
         Log.d(TEST_TAG, "view=${view?.let { it::class.simpleName }} duration=${duration}  sum=${sum}")
