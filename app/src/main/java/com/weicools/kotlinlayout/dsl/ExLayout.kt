@@ -11,6 +11,7 @@ import android.util.TypedValue
 import android.view.*
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
@@ -20,6 +21,7 @@ import androidx.constraintlayout.widget.ConstraintHelper
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintProperties
 import androidx.constraintlayout.widget.Guideline
+import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.MarginLayoutParamsCompat
 import androidx.core.widget.NestedScrollView
@@ -135,7 +137,7 @@ inline fun Fragment.RecyclerView(init: RecyclerView.() -> Unit) =
 //</editor-fold>
 
 //<editor-fold desc="View extend field">
-inline var View.layout_id: String
+inline var View.layout_ids: String
   get() {
     return ""
   }
@@ -149,9 +151,8 @@ inline var View.layout_width: Int
     return 0
   }
   set(value) {
-    val w = if (value > 0) value.dp() else value
     val h = layoutParams?.height ?: 0
-    layoutParams = ViewGroup.MarginLayoutParams(w, h)
+    layoutParams = ViewGroup.MarginLayoutParams(value, h)
   }
 
 inline var View.layout_height: Int
@@ -160,8 +161,7 @@ inline var View.layout_height: Int
   }
   set(value) {
     val w = layoutParams?.width ?: 0
-    val h = if (value > 0) value.dp() else value
-    layoutParams = ViewGroup.MarginLayoutParams(w, h)
+    layoutParams = ViewGroup.MarginLayoutParams(w, value)
   }
 
 inline var View.padding_top: Int
@@ -169,7 +169,7 @@ inline var View.padding_top: Int
     return 0
   }
   set(value) {
-    setPadding(paddingLeft, value.dp(), paddingRight, paddingBottom)
+    setPadding(paddingLeft, value, paddingRight, paddingBottom)
   }
 
 inline var View.padding_bottom: Int
@@ -177,7 +177,7 @@ inline var View.padding_bottom: Int
     return 0
   }
   set(value) {
-    setPadding(paddingLeft, paddingTop, paddingRight, value.dp())
+    setPadding(paddingLeft, paddingTop, paddingRight, value)
   }
 
 inline var View.padding_start: Int
@@ -185,7 +185,7 @@ inline var View.padding_start: Int
     return 0
   }
   set(value) {
-    setPadding(value.dp(), paddingTop, paddingRight, paddingBottom)
+    setPadding(value, paddingTop, paddingRight, paddingBottom)
   }
 
 inline var View.padding_end: Int
@@ -193,7 +193,7 @@ inline var View.padding_end: Int
     return 0
   }
   set(value) {
-    setPadding(paddingLeft, paddingTop, value.dp(), paddingBottom)
+    setPadding(paddingLeft, paddingTop, value, paddingBottom)
   }
 
 inline var View.padding: Int
@@ -201,7 +201,7 @@ inline var View.padding: Int
     return 0
   }
   set(value) {
-    setPadding(value.dp(), value.dp(), value.dp(), value.dp())
+    setPadding(value, value, value, value)
   }
 
 inline var View.margin_top: Int
@@ -210,7 +210,7 @@ inline var View.margin_top: Int
   }
   set(value) {
     (layoutParams as? ViewGroup.MarginLayoutParams)?.apply {
-      topMargin = value.dp()
+      topMargin = value
     }
   }
 
@@ -220,7 +220,7 @@ inline var View.margin_bottom: Int
   }
   set(value) {
     (layoutParams as? ViewGroup.MarginLayoutParams)?.apply {
-      bottomMargin = value.dp()
+      bottomMargin = value
     }
   }
 
@@ -230,7 +230,7 @@ inline var View.margin_start: Int
   }
   set(value) {
     (layoutParams as? ViewGroup.MarginLayoutParams)?.apply {
-      MarginLayoutParamsCompat.setMarginStart(this, value.dp())
+      MarginLayoutParamsCompat.setMarginStart(this, value)
     }
   }
 
@@ -240,7 +240,7 @@ inline var View.margin_end: Int
   }
   set(value) {
     (layoutParams as? ViewGroup.MarginLayoutParams)?.apply {
-      MarginLayoutParamsCompat.setMarginEnd(this, value.dp())
+      MarginLayoutParamsCompat.setMarginEnd(this, value)
     }
   }
 
@@ -262,19 +262,11 @@ inline var View.background_color: String
 //</editor-fold>
 
 //<editor-fold desc="TextView extend field">
-inline var TextView.labelForId: String
-  get() {
-    return ""
-  }
-  set(value) {
-    labelFor = value.toLayoutId()
-  }
-
-inline var TextView.textStyle: Int
+inline var TextView.textRes: Int
   get() {
     return -1
   }
-  set(value) = setTypeface(typeface, value)
+  set(value) = setText(value)
 
 inline var TextView.textColor: String
   get() {
@@ -284,13 +276,27 @@ inline var TextView.textColor: String
     setTextColor(Color.parseColor(value))
   }
 
-inline var TextView.exGravity: Int
+inline var TextView.textColorRes: Int
   get() {
-    return 0
+    return -1
   }
   set(value) {
-    gravity = value
+    setTextColor(ContextCompat.getColor(context, value))
   }
+
+inline var TextView.textSizeDp: Float
+  get() {
+    return 0f
+  }
+  set(value) {
+    setTextSize(TypedValue.COMPLEX_UNIT_DIP, value)
+  }
+
+inline var TextView.textStyle: Int
+  get() {
+    return -1
+  }
+  set(value) = setTypeface(typeface, value)
 
 inline var TextView.fontFamily: Int
   get() {
@@ -299,6 +305,20 @@ inline var TextView.fontFamily: Int
   set(value) {
     typeface = ResourcesCompat.getFont(context, value)
   }
+
+inline var TextView.labelForIds: String
+  get() {
+    return ""
+  }
+  set(value) {
+    labelFor = value.toLayoutId()
+  }
+
+inline var TextView.textEms: Int
+  get() {
+    return -1
+  }
+  set(value) = setEms(value)
 //</editor-fold>
 
 //<editor-fold desc="ImageView extend field">
@@ -309,73 +329,29 @@ inline var ImageView.src: Int
   set(value) {
     setImageResource(value)
   }
+
+inline var ImageView.srcCompat: Int
+  get() {
+    return -1
+  }
+  set(value) {
+    setImageDrawable(AppCompatResources.getDrawable(context, value))
+  }
 //</editor-fold>
 
 //<editor-fold desc="ConstrainLayout extend field">
-inline var View.horizontal_bias: Float
+inline var View.top_toTopOfId: Int
   get() {
-    return 0.5f
+    return -1
   }
   set(value) {
     layoutParams = layoutParams.append {
-      horizontalBias = value
+      topToTop = value
+      topToBottom = -1
     }
   }
 
-inline var View.vertical_bias: Float
-  get() {
-    return 0.5f
-  }
-  set(value) {
-    layoutParams = layoutParams.append {
-      verticalBias = value
-    }
-  }
-
-inline var View.baseline_toBaselineOf: String
-  get() {
-    return ""
-  }
-  set(value) {
-    layoutParams = layoutParams.append {
-      baselineToBaseline = value.toLayoutId()
-    }
-  }
-
-inline var View.start_toStartOf: String
-  get() {
-    return ""
-  }
-  set(value) {
-    layoutParams = layoutParams.append {
-      startToStart = value.toLayoutId()
-      startToEnd = -1
-    }
-  }
-
-inline var View.start_toEndOf: String
-  get() {
-    return ""
-  }
-  set(value) {
-    layoutParams = layoutParams.append {
-      startToEnd = value.toLayoutId()
-      startToStart = -1
-    }
-  }
-
-inline var View.top_toBottomOf: String
-  get() {
-    return ""
-  }
-  set(value) {
-    layoutParams = layoutParams.append {
-      topToBottom = value.toLayoutId()
-      topToTop = -1
-    }
-  }
-
-inline var View.top_toTopOf: String
+inline var View.top_toTopOfIds: String
   get() {
     return ""
   }
@@ -386,29 +362,40 @@ inline var View.top_toTopOf: String
     }
   }
 
-inline var View.end_toEndOf: String
+inline var View.top_toBottomOfId: Int
+  get() {
+    return -1
+  }
+  set(value) {
+    layoutParams = layoutParams.append {
+      topToBottom = value
+      topToTop = -1
+    }
+  }
+
+inline var View.top_toBottomOfIds: String
   get() {
     return ""
   }
   set(value) {
     layoutParams = layoutParams.append {
-      endToEnd = value.toLayoutId()
-      endToStart = -1
+      topToBottom = value.toLayoutId()
+      topToTop = -1
     }
   }
 
-inline var View.end_toStartOf: String
+inline var View.bottom_toBottomOfId: Int
   get() {
-    return ""
+    return -1
   }
   set(value) {
     layoutParams = layoutParams.append {
-      endToStart = value.toLayoutId()
-      endToEnd = -1
+      bottomToBottom = value
+      bottomToTop = -1
     }
   }
 
-inline var View.bottom_toBottomOf: String
+inline var View.bottom_toBottomOfIds: String
   get() {
     return ""
   }
@@ -419,7 +406,18 @@ inline var View.bottom_toBottomOf: String
     }
   }
 
-inline var View.bottom_toTopOf: String
+inline var View.bottom_toTopOfId: Int
+  get() {
+    return -1
+  }
+  set(value) {
+    layoutParams = layoutParams.append {
+      bottomToTop = value
+      bottomToBottom = -1
+    }
+  }
+
+inline var View.bottom_toTopOfIds: String
   get() {
     return ""
   }
@@ -430,9 +428,205 @@ inline var View.bottom_toTopOf: String
     }
   }
 
-inline var View.horizontal_chain_style: Int
+inline var View.start_toStartOfId: Int
   get() {
     return -1
+  }
+  set(value) {
+    layoutParams = layoutParams.append {
+      startToStart = value
+      startToEnd = -1
+    }
+  }
+
+inline var View.start_toStartOfIds: String
+  get() {
+    return ""
+  }
+  set(value) {
+    layoutParams = layoutParams.append {
+      startToStart = value.toLayoutId()
+      startToEnd = -1
+    }
+  }
+
+inline var View.start_toEndOfId: Int
+  get() {
+    return -1
+  }
+  set(value) {
+    layoutParams = layoutParams.append {
+      startToEnd = value
+      startToStart = -1
+    }
+  }
+
+inline var View.start_toEndOfIds: String
+  get() {
+    return ""
+  }
+  set(value) {
+    layoutParams = layoutParams.append {
+      startToEnd = value.toLayoutId()
+      startToStart = -1
+    }
+  }
+
+inline var View.end_toEndOfId: Int
+  get() {
+    return -1
+  }
+  set(value) {
+    layoutParams = layoutParams.append {
+      endToEnd = value
+      endToStart = -1
+    }
+  }
+
+inline var View.end_toEndOfIds: String
+  get() {
+    return ""
+  }
+  set(value) {
+    layoutParams = layoutParams.append {
+      endToEnd = value.toLayoutId()
+      endToStart = -1
+    }
+  }
+
+inline var View.end_toStartOfId: Int
+  get() {
+    return -1
+  }
+  set(value) {
+    layoutParams = layoutParams.append {
+      endToStart = value
+      endToEnd = -1
+    }
+  }
+
+inline var View.end_toStartOfIds: String
+  get() {
+    return ""
+  }
+  set(value) {
+    layoutParams = layoutParams.append {
+      endToStart = value.toLayoutId()
+      endToEnd = -1
+    }
+  }
+
+inline var View.baseline_toBaselineOfId: Int
+  get() {
+    return -1
+  }
+  set(value) {
+    layoutParams = layoutParams.append {
+      baselineToBaseline = value
+    }
+  }
+
+inline var View.baseline_toBaselineOfIds: String
+  get() {
+    return ""
+  }
+  set(value) {
+    layoutParams = layoutParams.append {
+      baselineToBaseline = value.toLayoutId()
+    }
+  }
+
+inline var View.align_horizontal_toId: Int
+  get() {
+    return -1
+  }
+  set(value) {
+    start_toStartOfId = value
+    end_toEndOfId = value
+  }
+
+inline var View.align_horizontal_toIds: String
+  get() {
+    return ""
+  }
+  set(value) {
+    start_toStartOfIds = value
+    end_toEndOfIds = value
+  }
+
+inline var View.align_vertical_toId: Int
+  get() {
+    return -1
+  }
+  set(value) {
+    top_toTopOfId = value
+    bottom_toBottomOfId = value
+  }
+
+inline var View.align_vertical_toIds: String
+  get() {
+    return ""
+  }
+  set(value) {
+    top_toTopOfIds = value
+    bottom_toBottomOfIds = value
+  }
+
+inline var View.constraint_centerInParent: Boolean
+  get() {
+    return false
+  }
+  set(value) {
+    if (!value) return
+    start_toStartOfIds = parent_ids
+    end_toEndOfIds = parent_ids
+    top_toTopOfIds = parent_ids
+    bottom_toBottomOfIds = parent_ids
+  }
+
+inline var View.constraint_centerHorizontal: Boolean
+  get() {
+    return false
+  }
+  set(value) {
+    if (!value) return
+    start_toStartOfIds = parent_ids
+    end_toEndOfIds = parent_ids
+  }
+
+inline var View.constraint_centerVertical: Boolean
+  get() {
+    return false
+  }
+  set(value) {
+    if (!value) return
+    top_toTopOfIds = parent_ids
+    bottom_toBottomOfIds = parent_ids
+  }
+
+inline var View.horizontal_bias: Float
+  get() {
+    return 0f
+  }
+  set(value) {
+    layoutParams = layoutParams.append {
+      horizontalBias = value
+    }
+  }
+
+inline var View.vertical_bias: Float
+  get() {
+    return 0f
+  }
+  set(value) {
+    layoutParams = layoutParams.append {
+      verticalBias = value
+    }
+  }
+
+inline var View.horizontal_chain_style: Int
+  get() {
+    return 0
   }
   set(value) {
     layoutParams = layoutParams.append {
@@ -442,7 +636,7 @@ inline var View.horizontal_chain_style: Int
 
 inline var View.vertical_chain_style: Int
   get() {
-    return -1
+    return 0
   }
   set(value) {
     layoutParams = layoutParams.append {
@@ -450,45 +644,7 @@ inline var View.vertical_chain_style: Int
     }
   }
 
-inline var View.center_horizontal: Boolean
-  get() {
-    return false
-  }
-  set(value) {
-    if (!value) return
-    start_toStartOf = parent_id
-    end_toEndOf = parent_id
-  }
-
-inline var View.center_vertical: Boolean
-  get() {
-    return false
-  }
-  set(value) {
-    if (!value) return
-    top_toTopOf = parent_id
-    bottom_toBottomOf = parent_id
-  }
-
-inline var View.align_vertical_to: String
-  get() {
-    return ""
-  }
-  set(value) {
-    top_toTopOf = value
-    bottom_toBottomOf = value
-  }
-
-inline var View.align_horizontal_to: String
-  get() {
-    return ""
-  }
-  set(value) {
-    start_toStartOf = value
-    end_toEndOf = value
-  }
-
-inline var ConstraintHelper.referenceIds: String
+inline var ConstraintHelper.referencedIdStr: String
   get() {
     return ""
   }
@@ -501,7 +657,7 @@ inline var Flow.flow_horizontalGap: Int
     return 0
   }
   set(value) {
-    setHorizontalGap(value.dp())
+    setHorizontalGap(value)
   }
 
 inline var Flow.flow_verticalGap: Int
@@ -509,7 +665,7 @@ inline var Flow.flow_verticalGap: Int
     return 0
   }
   set(value) {
-    setVerticalGap(value.dp())
+    setVerticalGap(value)
   }
 
 inline var Flow.flow_wrapMode: Int
@@ -574,21 +730,7 @@ inline var View.alignParentEnd: Boolean
     }
   }
 
-inline var View.centerVertical: Boolean
-  get() {
-    return false
-  }
-  set(value) {
-    if (!value) return
-    layoutParams = RelativeLayout.LayoutParams(layoutParams.width, layoutParams.height).apply {
-      (layoutParams as? RelativeLayout.LayoutParams)?.rules?.forEachIndexed { index, i ->
-        addRule(index, i)
-      }
-      addRule(RelativeLayout.CENTER_VERTICAL, RelativeLayout.TRUE)
-    }
-  }
-
-inline var View.centerInParent: Boolean
+inline var View.relative_centerInParent: Boolean
   get() {
     return false
   }
@@ -599,6 +741,34 @@ inline var View.centerInParent: Boolean
         addRule(index, i)
       }
       addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE)
+    }
+  }
+
+inline var View.relative_centerHorizontal: Boolean
+  get() {
+    return false
+  }
+  set(value) {
+    if (!value) return
+    layoutParams = RelativeLayout.LayoutParams(layoutParams.width, layoutParams.height).apply {
+      (layoutParams as? RelativeLayout.LayoutParams)?.rules?.forEachIndexed { index, i ->
+        addRule(index, i)
+      }
+      addRule(RelativeLayout.CENTER_HORIZONTAL, RelativeLayout.TRUE)
+    }
+  }
+
+inline var View.relative_centerVertical: Boolean
+  get() {
+    return false
+  }
+  set(value) {
+    if (!value) return
+    layoutParams = RelativeLayout.LayoutParams(layoutParams.width, layoutParams.height).apply {
+      (layoutParams as? RelativeLayout.LayoutParams)?.rules?.forEachIndexed { index, i ->
+        addRule(index, i)
+      }
+      addRule(RelativeLayout.CENTER_VERTICAL, RelativeLayout.TRUE)
     }
   }
 //</editor-fold>
@@ -676,7 +846,8 @@ const val wrap_none = Flow.WRAP_NONE
 const val wrap_chain = Flow.WRAP_CHAIN
 const val wrap_aligned = Flow.WRAP_ALIGNED
 
-const val parent_id = "0"
+const val parent_id = ConstraintLayout.LayoutParams.PARENT_ID
+const val parent_ids = "0"
 //</editor-fold>
 
 //<editor-fold desc="layout helper function">
@@ -685,6 +856,12 @@ fun Int.dp(): Int =
     TypedValue.COMPLEX_UNIT_DIP, this.toFloat(),
     Resources.getSystem().displayMetrics
   ).toInt()
+
+fun Float.dp(): Float =
+  TypedValue.applyDimension(
+    TypedValue.COMPLEX_UNIT_DIP, this,
+    Resources.getSystem().displayMetrics
+  )
 
 fun ViewGroup.MarginLayoutParams.toConstraintLayoutParam() =
   ConstraintLayout.LayoutParams(width, height).also {
