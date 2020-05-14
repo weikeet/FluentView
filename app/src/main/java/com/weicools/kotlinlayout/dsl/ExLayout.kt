@@ -144,6 +144,26 @@ inline var View.layout_id: String
     Log.d("View.layout_id", "toLayoutId value=${value}, id=${id}")
   }
 
+inline var View.layout_width: Int
+  get() {
+    return 0
+  }
+  set(value) {
+    val w = if (value > 0) value.dp() else value
+    val h = layoutParams?.height ?: 0
+    layoutParams = ViewGroup.MarginLayoutParams(w, h)
+  }
+
+inline var View.layout_height: Int
+  get() {
+    return 0
+  }
+  set(value) {
+    val w = layoutParams?.width ?: 0
+    val h = if (value > 0) value.dp() else value
+    layoutParams = ViewGroup.MarginLayoutParams(w, h)
+  }
+
 inline var View.padding_top: Int
   get() {
     return 0
@@ -184,104 +204,114 @@ inline var View.padding: Int
     setPadding(value.dp(), value.dp(), value.dp(), value.dp())
   }
 
-inline var View.layout_width: Int
-  get() {
-    return 0
-  }
-  set(value) {
-    val w = if (value > 0) value.dp() else value
-    val h = layoutParams?.height ?: 0
-    layoutParams = ViewGroup.MarginLayoutParams(w, h)
-  }
-
-inline var View.layout_height: Int
-  get() {
-    return 0
-  }
-  set(value) {
-    val w = layoutParams?.width ?: 0
-    val h = if (value > 0) value.dp() else value
-    layoutParams = ViewGroup.MarginLayoutParams(w, h)
-  }
-
-inline var View.alignParentStart: Boolean
-  get() {
-    return false
-  }
-  set(value) {
-    if (!value) return
-    layoutParams = RelativeLayout.LayoutParams(layoutParams.width, layoutParams.height).apply {
-      (layoutParams as? RelativeLayout.LayoutParams)?.rules?.forEachIndexed { index, i ->
-        addRule(index, i)
-      }
-      addRule(RelativeLayout.ALIGN_PARENT_START, RelativeLayout.TRUE)
-    }
-  }
-
-inline var View.alignParentEnd: Boolean
-  get() {
-    return false
-  }
-  set(value) {
-    if (!value) return
-    layoutParams = RelativeLayout.LayoutParams(layoutParams.width, layoutParams.height).apply {
-      (layoutParams as? RelativeLayout.LayoutParams)?.rules?.forEachIndexed { index, i ->
-        addRule(index, i)
-      }
-      addRule(RelativeLayout.ALIGN_PARENT_END, RelativeLayout.TRUE)
-    }
-  }
-
-inline var View.centerVertical: Boolean
-  get() {
-    return false
-  }
-  set(value) {
-    if (!value) return
-    layoutParams = RelativeLayout.LayoutParams(layoutParams.width, layoutParams.height).apply {
-      (layoutParams as? RelativeLayout.LayoutParams)?.rules?.forEachIndexed { index, i ->
-        addRule(index, i)
-      }
-      addRule(RelativeLayout.CENTER_VERTICAL, RelativeLayout.TRUE)
-    }
-  }
-
-inline var View.centerInParent: Boolean
-  get() {
-    return false
-  }
-  set(value) {
-    if (!value) return
-    layoutParams = RelativeLayout.LayoutParams(layoutParams.width, layoutParams.height).apply {
-      (layoutParams as? RelativeLayout.LayoutParams)?.rules?.forEachIndexed { index, i ->
-        addRule(index, i)
-      }
-      addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE)
-    }
-  }
-
-inline var View.weight: Float
-  get() {
-    return 0f
-  }
-  set(value) {
-    layoutParams = LinearLayout.LayoutParams(layoutParams.width, layoutParams.height).also {
-      it.gravity = (layoutParams as? LinearLayout.LayoutParams)?.gravity ?: -1
-      it.weight = value
-    }
-  }
-
-inline var View.layout_gravity: Int
+inline var View.margin_top: Int
   get() {
     return -1
   }
   set(value) {
-    layoutParams = LinearLayout.LayoutParams(layoutParams.width, layoutParams.height).also {
-      it.weight = (layoutParams as? LinearLayout.LayoutParams)?.weight ?: 0f
-      it.gravity = value
+    (layoutParams as? ViewGroup.MarginLayoutParams)?.apply {
+      topMargin = value.dp()
     }
   }
 
+inline var View.margin_bottom: Int
+  get() {
+    return -1
+  }
+  set(value) {
+    (layoutParams as? ViewGroup.MarginLayoutParams)?.apply {
+      bottomMargin = value.dp()
+    }
+  }
+
+inline var View.margin_start: Int
+  get() {
+    return -1
+  }
+  set(value) {
+    (layoutParams as? ViewGroup.MarginLayoutParams)?.apply {
+      MarginLayoutParamsCompat.setMarginStart(this, value.dp())
+    }
+  }
+
+inline var View.margin_end: Int
+  get() {
+    return -1
+  }
+  set(value) {
+    (layoutParams as? ViewGroup.MarginLayoutParams)?.apply {
+      MarginLayoutParamsCompat.setMarginEnd(this, value.dp())
+    }
+  }
+
+inline var View.background_res: Int
+  get() {
+    return -1
+  }
+  set(value) {
+    setBackgroundResource(value)
+  }
+
+inline var View.background_color: String
+  get() {
+    return ""
+  }
+  set(value) {
+    setBackgroundColor(Color.parseColor(value))
+  }
+//</editor-fold>
+
+//<editor-fold desc="TextView extend field">
+inline var TextView.labelForId: String
+  get() {
+    return ""
+  }
+  set(value) {
+    labelFor = value.toLayoutId()
+  }
+
+inline var TextView.textStyle: Int
+  get() {
+    return -1
+  }
+  set(value) = setTypeface(typeface, value)
+
+inline var TextView.textColor: String
+  get() {
+    return ""
+  }
+  set(value) {
+    setTextColor(Color.parseColor(value))
+  }
+
+inline var TextView.exGravity: Int
+  get() {
+    return 0
+  }
+  set(value) {
+    gravity = value
+  }
+
+inline var TextView.fontFamily: Int
+  get() {
+    return 0
+  }
+  set(value) {
+    typeface = ResourcesCompat.getFont(context, value)
+  }
+//</editor-fold>
+
+//<editor-fold desc="ImageView extend field">
+inline var ImageView.src: Int
+  get() {
+    return -1
+  }
+  set(value) {
+    setImageResource(value)
+  }
+//</editor-fold>
+
+//<editor-fold desc="ConstrainLayout extend field">
 inline var View.horizontal_bias: Float
   get() {
     return 0.5f
@@ -458,117 +488,6 @@ inline var View.align_horizontal_to: String
     end_toEndOf = value
   }
 
-inline var View.background_color: String
-  get() {
-    return ""
-  }
-  set(value) {
-    setBackgroundColor(Color.parseColor(value))
-  }
-
-inline var View.background_res: Int
-  get() {
-    return -1
-  }
-  set(value) {
-    setBackgroundResource(value)
-  }
-
-inline var View.margin_top: Int
-  get() {
-    return -1
-  }
-  set(value) {
-    (layoutParams as? ViewGroup.MarginLayoutParams)?.apply {
-      topMargin = value.dp()
-    }
-  }
-
-inline var View.margin_bottom: Int
-  get() {
-    return -1
-  }
-  set(value) {
-    (layoutParams as? ViewGroup.MarginLayoutParams)?.apply {
-      bottomMargin = value.dp()
-    }
-  }
-
-inline var View.margin_start: Int
-  get() {
-    return -1
-  }
-  set(value) {
-    (layoutParams as? ViewGroup.MarginLayoutParams)?.apply {
-      MarginLayoutParamsCompat.setMarginStart(this, value.dp())
-    }
-  }
-
-inline var View.margin_end: Int
-  get() {
-    return -1
-  }
-  set(value) {
-    (layoutParams as? ViewGroup.MarginLayoutParams)?.apply {
-      MarginLayoutParamsCompat.setMarginEnd(this, value.dp())
-    }
-  }
-
-inline var ImageView.src: Int
-  get() {
-    return -1
-  }
-  set(value) {
-    setImageResource(value)
-  }
-
-inline var TextView.labelForId: String
-  get() {
-    return ""
-  }
-  set(value) {
-    labelFor = value.toLayoutId()
-  }
-
-inline var TextView.textStyle: Int
-  get() {
-    return -1
-  }
-  set(value) = setTypeface(typeface, value)
-
-inline var TextView.textColor: String
-  get() {
-    return ""
-  }
-  set(value) {
-    setTextColor(Color.parseColor(value))
-  }
-
-inline var TextView.exGravity: Int
-  get() {
-    return 0
-  }
-  set(value) {
-    gravity = value
-  }
-
-inline var TextView.fontFamily: Int
-  get() {
-    return 0
-  }
-  set(value) {
-    typeface = ResourcesCompat.getFont(context, value)
-  }
-
-@Suppress("UNUSED_PARAMETER")
-inline var NestedScrollView.fadeScrollBar: Boolean
-  get() {
-    return false
-  }
-  set(value) {
-    isScrollbarFadingEnabled = true
-  }
-
 inline var ConstraintHelper.referenceIds: String
   get() {
     return ""
@@ -600,7 +519,102 @@ inline var Flow.flow_wrapMode: Int
   set(value) {
     setWrapMode(value)
   }
+//</editor-fold>
 
+//<editor-fold desc="LinearLayout extend field">
+inline var View.weight: Float
+  get() {
+    return 0f
+  }
+  set(value) {
+    layoutParams = LinearLayout.LayoutParams(layoutParams.width, layoutParams.height).also {
+      it.gravity = (layoutParams as? LinearLayout.LayoutParams)?.gravity ?: -1
+      it.weight = value
+    }
+  }
+
+inline var View.layout_gravity: Int
+  get() {
+    return -1
+  }
+  set(value) {
+    layoutParams = LinearLayout.LayoutParams(layoutParams.width, layoutParams.height).also {
+      it.weight = (layoutParams as? LinearLayout.LayoutParams)?.weight ?: 0f
+      it.gravity = value
+    }
+  }
+//</editor-fold>
+
+//<editor-fold desc="RelativeLayout extend field">
+inline var View.alignParentStart: Boolean
+  get() {
+    return false
+  }
+  set(value) {
+    if (!value) return
+    layoutParams = RelativeLayout.LayoutParams(layoutParams.width, layoutParams.height).apply {
+      (layoutParams as? RelativeLayout.LayoutParams)?.rules?.forEachIndexed { index, i ->
+        addRule(index, i)
+      }
+      addRule(RelativeLayout.ALIGN_PARENT_START, RelativeLayout.TRUE)
+    }
+  }
+
+inline var View.alignParentEnd: Boolean
+  get() {
+    return false
+  }
+  set(value) {
+    if (!value) return
+    layoutParams = RelativeLayout.LayoutParams(layoutParams.width, layoutParams.height).apply {
+      (layoutParams as? RelativeLayout.LayoutParams)?.rules?.forEachIndexed { index, i ->
+        addRule(index, i)
+      }
+      addRule(RelativeLayout.ALIGN_PARENT_END, RelativeLayout.TRUE)
+    }
+  }
+
+inline var View.centerVertical: Boolean
+  get() {
+    return false
+  }
+  set(value) {
+    if (!value) return
+    layoutParams = RelativeLayout.LayoutParams(layoutParams.width, layoutParams.height).apply {
+      (layoutParams as? RelativeLayout.LayoutParams)?.rules?.forEachIndexed { index, i ->
+        addRule(index, i)
+      }
+      addRule(RelativeLayout.CENTER_VERTICAL, RelativeLayout.TRUE)
+    }
+  }
+
+inline var View.centerInParent: Boolean
+  get() {
+    return false
+  }
+  set(value) {
+    if (!value) return
+    layoutParams = RelativeLayout.LayoutParams(layoutParams.width, layoutParams.height).apply {
+      (layoutParams as? RelativeLayout.LayoutParams)?.rules?.forEachIndexed { index, i ->
+        addRule(index, i)
+      }
+      addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE)
+    }
+  }
+//</editor-fold>
+
+//<editor-fold desc="NestedScrollView extend field">
+@Suppress("UNUSED_PARAMETER")
+inline var NestedScrollView.fadeScrollBar: Boolean
+  get() {
+    return false
+  }
+  set(value) {
+    isScrollbarFadingEnabled = true
+  }
+//</editor-fold>
+
+//<editor-fold desc="Click extend field">
 var View.onClick: (View) -> Unit
   get() {
     return {}
