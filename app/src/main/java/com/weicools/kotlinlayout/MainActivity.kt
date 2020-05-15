@@ -25,14 +25,24 @@ class MainActivity : AppCompatActivity() {
   @ExperimentalTime
   override fun onCreate(savedInstanceState: Bundle?) {
     LayoutInflaterCompat.setFactory2(LayoutInflater.from(this), object : LayoutInflater.Factory2 {
-      private var sum: Double = 0.0
+      private var sumMs: Double = 0.0
       override fun onCreateView(parent: View?, name: String, context: Context, attrs: AttributeSet): View? {
-        // 测量构建单个View耗时: 1s = 1000ms / 1ms = 1000us / 1us = 1000ns / 1ns = 1000ps
-        val (view, duration) = measureTimedValue { delegate.createView(parent, name, context, attrs) }
-        sum += duration.inMilliseconds
-        Log.d(TEST_TAG, "view=${view?.let { it::class.simpleName }} duration=${duration}  sum=${sum}")
+        val (view, cost) = measureTimedValue { delegate.createView(parent, name, context, attrs) }
+        sumMs += cost.inMilliseconds
+        Log.d(TEST_TAG, "view=${view?.let { it::class.simpleName }} cost=${cost}  sumMs=${sumMs}")
         return view
       }
+
+      // private var sumUs: Float = 0f
+      // override fun onCreateView(parent: View?, name: String, context: Context, attrs: AttributeSet): View? {
+      //   val startNs = System.nanoTime()
+      //   val view = delegate.createView(parent, name, context, attrs)
+      //   val costUs = (System.nanoTime() - startNs) / 1000f
+      //   sumUs += costUs
+      //
+      //   Log.d(TEST_TAG, "view=${view?.let { it::class.simpleName }} costUs=${costUs}  sumMs=${sumUs / 1000f}")
+      //   return view
+      // }
 
       override fun onCreateView(name: String, context: Context, attrs: AttributeSet): View? {
         return null
