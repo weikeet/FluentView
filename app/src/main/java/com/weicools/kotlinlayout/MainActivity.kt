@@ -85,7 +85,7 @@ class MainActivity : AppCompatActivity() {
         id = header
         ds_layout_width = 0
         ds_layout_height = 0
-        ds_marginBottom = 16.dp()
+        ds_marginBottom = 16.dp
         ds_imageSrc = R.drawable.singapore
         ds_constraintBottom_toBottomOf = favoriteId
         ds_constraintTop_toTopOf = parent_id
@@ -97,12 +97,12 @@ class MainActivity : AppCompatActivity() {
 
       ImageView {
         id = favoriteId
-        ds_layout_width = 36.dp()
-        ds_layout_height = 36.dp()
-        ds_marginEnd = 16.dp()
-        ds_marginBottom = 16.dp()
+        ds_layout_width = 36.dp
+        ds_layout_height = 36.dp
+        ds_marginEnd = 16.dp
+        ds_marginBottom = 16.dp
         ds_backgroundRes = R.drawable.info_background
-        ds_padding = 5.dp()
+        ds_padding = 5.dp
         ds_imageSrc = R.drawable.ic_star
         ds_constraintVertical_alignOf = parent_id
         ds_constraintEnd_toEndOf = parent_id
@@ -113,8 +113,8 @@ class MainActivity : AppCompatActivity() {
         id = titleId
         ds_layout_width = wrap_content
         ds_layout_height = wrap_content
-        ds_marginStart = 16.dp()
-        ds_marginTop = 16.dp()
+        ds_marginStart = 16.dp
+        ds_marginTop = 16.dp
         ds_textRes = R.string.singapore
         ds_textSizeDp = 24f
         ds_constraintStart_toStartOf = parent_id
@@ -125,7 +125,7 @@ class MainActivity : AppCompatActivity() {
         id = cameraType
         ds_layout_width = 0
         ds_layout_height = wrap_content
-        ds_marginTop = 8.dp()
+        ds_marginTop = 8.dp
         ds_textEms = 10
         ds_textRes = R.string.camera_value
         ds_constraintHorizontal_alignOf = settingsId
@@ -137,7 +137,7 @@ class MainActivity : AppCompatActivity() {
         id = cameraLabelId
         ds_layout_width = wrap_content
         ds_layout_height = wrap_content
-        ds_marginStart = 16.dp()
+        ds_marginStart = 16.dp
         ds_textRes = R.string.camera
         ds_constraintBaseline_toBaselineOf = cameraType
         ds_constraintStart_toStartOf = parent_id
@@ -148,7 +148,7 @@ class MainActivity : AppCompatActivity() {
         id = settingLabelId
         ds_layout_width = wrap_content
         ds_layout_height = wrap_content
-        ds_marginStart = 16.dp()
+        ds_marginStart = 16.dp
         ds_textRes = R.string.settings
         ds_constraintBaseline_toBaselineOf = settingsId
         ds_constraintStart_toStartOf = parent_id
@@ -159,8 +159,8 @@ class MainActivity : AppCompatActivity() {
         id = settingsId
         ds_layout_width = 0
         ds_layout_height = wrap_content
-        ds_marginStart = 6.dp()
-        ds_marginTop = 8.dp()
+        ds_marginStart = 6.dp
+        ds_marginTop = 8.dp
         ds_textEms = 10
         ds_textRes = R.string.camera_settings
         ds_constraintStart_toEndOf = settingLabelId
@@ -173,8 +173,8 @@ class MainActivity : AppCompatActivity() {
         id = uploadId
         ds_layout_width = wrap_content
         ds_layout_height = wrap_content
-        ds_marginEnd = 16.dp()
-        ds_marginBottom = 16.dp()
+        ds_marginEnd = 16.dp
+        ds_marginBottom = 16.dp
         ds_textRes = R.string.upload
         ds_constraintBottom_toBottomOf = parent_id
         ds_constraintEnd_toEndOf = parent_id
@@ -184,7 +184,7 @@ class MainActivity : AppCompatActivity() {
         id = discardId
         ds_layout_width = wrap_content
         ds_layout_height = wrap_content
-        ds_marginEnd = 8.dp()
+        ds_marginEnd = 8.dp
         ds_textRes = R.string.discard
         ds_constraintBaseline_toBaselineOf = uploadId
         ds_constraintEnd_toStartOf = uploadId
@@ -195,10 +195,10 @@ class MainActivity : AppCompatActivity() {
         id = descriptionId
         ds_layout_width = 0
         ds_layout_height = 0
-        ds_marginStart = 16.dp()
-        ds_marginTop = 8.dp()
-        ds_marginEnd = 16.dp()
-        ds_marginBottom = 8.dp()
+        ds_marginStart = 16.dp
+        ds_marginTop = 8.dp
+        ds_marginEnd = 16.dp
+        ds_marginBottom = 8.dp
         ds_textRes = R.string.singapore_description
         ds_textSizeDp = 15f
         ds_constraintBottom_toTopOf = discardId
@@ -229,10 +229,10 @@ class MainActivity : AppCompatActivity() {
 
       ImageView {
         id = ivBackId
-        ds_layout_width = 40.dp()
-        ds_layout_height = 40.dp()
-        ds_marginStart = 20.dp()
-        ds_marginTop = 20.dp()
+        ds_layout_width = 40.dp
+        ds_layout_height = 40.dp
+        ds_marginStart = 20.dp
+        ds_marginTop = 20.dp
         ds_imageSrc = R.drawable.ic_back_black
         ds_constraintStart_toStartOf = parent_id
         ds_constraintTop_toTopOf = parent_id
@@ -250,19 +250,19 @@ class MainActivity : AppCompatActivity() {
       }
 
       ImageView {
-        ds_layout_width = 40.dp()
-        ds_layout_height = 40.dp()
+        ds_layout_width = 40.dp
+        ds_layout_height = 40.dp
         ds_imageSrc = R.drawable.ic_member_more
         ds_constraintVertical_alignOf = ivBackId
         ds_constraintEnd_toEndOf = parent_id
-        ds_marginEnd = 20.dp()
+        ds_marginEnd = 20.dp
       }
 
       View {
         id = vDividerId
         ds_layout_width = match_parent
         ds_layout_height = 1
-        ds_marginTop = 10.dp()
+        ds_marginTop = 10.dp
         ds_backgroundColor = "#eeeeee"
         ds_constraintTop_toBottomOf = ivBackId
       }
@@ -281,10 +281,10 @@ class MainActivity : AppCompatActivity() {
 
       ImageView {
         id = ivDiamondId
-        ds_layout_width = 40.dp()
-        ds_layout_height = 40.dp()
-        ds_marginStart = 20.dp()
-        ds_marginTop = 40.dp()
+        ds_layout_width = 40.dp
+        ds_layout_height = 40.dp
+        ds_marginStart = 20.dp
+        ds_marginTop = 40.dp
         ds_imageSrc = R.drawable.diamond_tag
         ds_constraintStart_toStartOf = ivBackId
         ds_constraintTop_toBottomOf = vDividerId
@@ -294,8 +294,8 @@ class MainActivity : AppCompatActivity() {
         id = tvTitleId
         ds_layout_width = wrap_content
         ds_layout_height = wrap_content
-        ds_marginStart = 5.dp()
-        ds_padding = 10.dp()
+        ds_marginStart = 5.dp
+        ds_padding = 10.dp
         ds_textColor = "#389793"
         ds_textSizeDp = 20f
         ds_textStyle = Typeface.BOLD
@@ -309,7 +309,7 @@ class MainActivity : AppCompatActivity() {
         id = tvContentId
         ds_layout_width = 0
         ds_layout_height = wrap_content
-        ds_marginTop = 5.dp()
+        ds_marginTop = 5.dp
         ds_textSizeDp = 23f
         ds_constraintStart_toStartOf = ivDiamondId
         ds_constraintTop_toBottomOf = ivDiamondId
@@ -319,9 +319,9 @@ class MainActivity : AppCompatActivity() {
 
       ImageView {
         id = ivAvatarId
-        ds_layout_width = 100.dp()
-        ds_layout_height = 100.dp()
-        ds_marginEnd = 20.dp()
+        ds_layout_width = 100.dp
+        ds_layout_height = 100.dp
+        ds_marginEnd = 20.dp
         ds_imageSrc = R.drawable.user_portrait_gender_female
         ds_constraintEnd_toEndOf = parent_id
         ds_constraintStart_toEndOf = tvContentId
@@ -343,7 +343,7 @@ class MainActivity : AppCompatActivity() {
         id = tvTimeId
         ds_layout_width = wrap_content
         ds_layout_height = wrap_content
-        ds_marginTop = 20.dp()
+        ds_marginTop = 20.dp
         ds_constraintEnd_toEndOf = ivAvatarId
         ds_constraintTop_toBottomOf = ivAvatarId
         text = "2020.04.30"
@@ -353,13 +353,13 @@ class MainActivity : AppCompatActivity() {
         id = tvCancelId
         ds_layout_width = wrap_content
         ds_layout_height = wrap_content
-        ds_marginEnd = 30.dp()
+        ds_marginEnd = 30.dp
         ds_backgroundRes = R.drawable.bg_orange_btn
-        ds_paddingStart = 30.dp()
-        ds_paddingTop = 10.dp()
-        ds_paddingEnd = 30.dp()
-        ds_paddingBottom = 10.dp()
-        ds_marginBottom = 20.dp()
+        ds_paddingStart = 30.dp
+        ds_paddingTop = 10.dp
+        ds_paddingEnd = 30.dp
+        ds_paddingBottom = 10.dp
+        ds_marginBottom = 20.dp
         ds_textSizeDp = 20f
         ds_textStyle = Gravity.CENTER
         ds_constraintBottom_toBottomOf = parent_id
@@ -374,11 +374,11 @@ class MainActivity : AppCompatActivity() {
         ds_layout_width = wrap_content
         ds_layout_height = wrap_content
         ds_backgroundRes = R.drawable.bg_orange_btn
-        ds_paddingStart = 30.dp()
-        ds_paddingTop = 10.dp()
-        ds_marginBottom = 20.dp()
-        ds_paddingEnd = 30.dp()
-        ds_paddingBottom = 10.dp()
+        ds_paddingStart = 30.dp
+        ds_paddingTop = 10.dp
+        ds_marginBottom = 20.dp
+        ds_paddingEnd = 30.dp
+        ds_paddingBottom = 10.dp
         ds_textSizeDp = 20f
         ds_textStyle = Typeface.BOLD
         ds_constraintBottom_toBottomOf = parent_id

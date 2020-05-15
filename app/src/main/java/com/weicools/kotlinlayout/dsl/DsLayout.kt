@@ -664,19 +664,21 @@ val scale_matrix = ImageView.ScaleType.MATRIX
 val scale_fitStart = ImageView.ScaleType.FIT_START
 //</editor-fold>
 
-//<editor-fold desc="layout helper function">
-fun Int.dp(): Int =
-  TypedValue.applyDimension(
+//<editor-fold desc="layout helper attribute">
+val Int.dp
+  get() = TypedValue.applyDimension(
     TypedValue.COMPLEX_UNIT_DIP, this.toFloat(),
     Resources.getSystem().displayMetrics
   ).toInt()
 
-fun Float.dp(): Float =
-  TypedValue.applyDimension(
+val Float.dp
+  get() = TypedValue.applyDimension(
     TypedValue.COMPLEX_UNIT_DIP, this,
     Resources.getSystem().displayMetrics
   )
+//</editor-fold>
 
+//<editor-fold desc="layout helper function">
 fun ViewGroup.MarginLayoutParams.toConstraintLayoutParam() =
   ConstraintLayout.LayoutParams(width, height).also {
     it.topMargin = this.topMargin
