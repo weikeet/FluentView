@@ -22,6 +22,13 @@ class MainActivity : AppCompatActivity() {
     private const val TEST_TAG = "TEST_TAG"
   }
 
+  override fun onWindowFocusChanged(hasFocus: Boolean) {
+    super.onWindowFocusChanged(hasFocus)
+    if (hasFocus) {
+      TimeRecorder.recordStopTime()
+    }
+  }
+
   @ExperimentalTime
   override fun onCreate(savedInstanceState: Bundle?) {
     LayoutInflaterCompat.setFactory2(LayoutInflater.from(this), object : LayoutInflater.Factory2 {
@@ -52,12 +59,12 @@ class MainActivity : AppCompatActivity() {
     // setContentView(R.layout.activity_main)
 
     // setContentView(R.layout.activity_static_traditional_layout)
-    setContentView(R.layout.activity_static_constraint_layout)
+    // setContentView(R.layout.activity_static_constraint_layout)
     // setContentView(buildViewByDsl())
 
     // setContentView(R.layout.activity_traditional_layout)
 
-    // setContentView(R.layout.activity_constraint_layout)
+    setContentView(R.layout.activity_constraint_layout)
     // setContentView(buildConstraintLayout())
 
     val testView = findView<View>(2)
