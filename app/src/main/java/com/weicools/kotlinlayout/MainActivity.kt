@@ -51,13 +51,14 @@ class MainActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     // setContentView(R.layout.activity_main)
 
-    // setContentView(R.layout.activity_static_layout)
+    // setContentView(R.layout.activity_static_traditional_layout)
+    setContentView(R.layout.activity_static_constraint_layout)
     // setContentView(buildViewByDsl())
 
     // setContentView(R.layout.activity_traditional_layout)
 
     // setContentView(R.layout.activity_constraint_layout)
-    setContentView(buildConstraintLayout())
+    // setContentView(buildConstraintLayout())
 
     val testView = findView<View>(2)
     Log.d("findViewById", "View = $testView, View = ${testView?.let { it::class.simpleName }}")
@@ -229,10 +230,10 @@ class MainActivity : AppCompatActivity() {
       ImageView {
         ds_layout_width = 40.dp
         ds_layout_height = 40.dp
+        ds_marginEnd = 20.dp
         ds_imageSrc = R.drawable.ic_member_more
         ds_constraintVertical_alignOf = R.id.ivBack
         ds_constraintEnd_toEndOf = parent_id
-        ds_marginEnd = 20.dp
       }
 
       View {
@@ -244,16 +245,15 @@ class MainActivity : AppCompatActivity() {
         ds_constraintTop_toBottomOf = R.id.ivBack
       }
 
-      Layer {
+      View {
         id = R.id.layer
-        ds_layout_width = wrap_content
-        ds_layout_height = wrap_content
+        ds_layout_width = 0
+        ds_layout_height = 0
         ds_backgroundRes = R.drawable.tag_checked_shape
+        ds_constraintBottom_toBottomOf = R.id.tvTime
+        ds_constraintEnd_toEndOf = R.id.ivAvatar
         ds_constraintStart_toStartOf = R.id.ivDiamond
         ds_constraintTop_toTopOf = R.id.ivDiamond
-        ds_constraintBottom_toBottomOf = R.id.tvTime
-        ds_constraintEnd_toEndOf = R.id.tvTime
-        referencedIds = intArrayOf(R.id.ivDiamond, R.id.tvTitle, R.id.tvContent, R.id.ivAvatar, R.id.tvTime, R.id.tvSub)
       }
 
       ImageView {
@@ -279,7 +279,7 @@ class MainActivity : AppCompatActivity() {
         ds_constraintVertical_alignOf = R.id.ivDiamond
         ds_constraintStart_toEndOf = R.id.ivDiamond
         gravity = Gravity.CENTER
-        text = "gole"
+        text = "gold"
       }
 
       TextView {
@@ -288,9 +288,9 @@ class MainActivity : AppCompatActivity() {
         ds_layout_height = wrap_content
         ds_marginTop = 5.dp
         ds_textSizeDp = 23f
+        ds_constraintEnd_toStartOf = R.id.ivAvatar
         ds_constraintStart_toStartOf = R.id.ivDiamond
         ds_constraintTop_toBottomOf = R.id.ivDiamond
-        ds_constraintEnd_toStartOf = R.id.ivAvatar
         text = "The changes were merged into release with so many bugs"
       }
 
