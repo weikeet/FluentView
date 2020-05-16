@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="ivHeader" type="id" />
+    <item name="ivFavorite" type="id" />
+    <item name="tvTitle" type="id" />
+    <item name="etCameraType" type="id" />
+    <item name="tvCameraLabel" type="id" />
+    <item name="tvSettingLabel" type="id" />
+    <item name="etSettings" type="id" />
+    <item name="btnUpload" type="id" />
+    <item name="btnDiscard" type="id" />
+    <item name="tvDescription" type="id" />
+    <item name="ivBack" type="id" />
+    <item name="vDivider" type="id" />
+    <item name="layer" type="id" />
+    <item name="ivDiamond" type="id" />
+    <item name="tvTime" type="id" />
+    <item name="tvContent" type="id" />
+    <item name="ivAvatar" type="id" />
+    <item name="tvSub" type="id" />
+    <item name="tvCancel" type="id" />
+    <item name="tvOk" type="id" />
+</resources>

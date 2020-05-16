@@ -70,24 +70,13 @@ class MainActivity : AppCompatActivity() {
       ds_layout_width = match_parent
       ds_layout_height = match_parent
 
-      val header = 1
-      val cameraType = 2
-      val favoriteId = 3
-      val cameraLabelId = 4
-      val titleId = 5
-      val settingLabelId = 6
-      val settingsId = 7
-      val discardId = 8
-      val descriptionId = 9
-      val uploadId = 10
-
       ImageView {
-        id = header
+        id = R.id.ivHeader
         ds_layout_width = 0
         ds_layout_height = 0
         ds_marginBottom = 16.dp
         ds_imageSrc = R.drawable.singapore
-        ds_constraintBottom_toBottomOf = favoriteId
+        ds_constraintBottom_toBottomOf = R.id.ivFavorite
         ds_constraintTop_toTopOf = parent_id
         ds_constraintHorizontal_alignOf = parent_id
         ds_constraintHorizontal_bias = 1.0f
@@ -96,7 +85,7 @@ class MainActivity : AppCompatActivity() {
       }
 
       ImageView {
-        id = favoriteId
+        id = R.id.ivFavorite
         ds_layout_width = 36.dp
         ds_layout_height = 36.dp
         ds_marginEnd = 16.dp
@@ -110,7 +99,7 @@ class MainActivity : AppCompatActivity() {
       }
 
       TextView {
-        id = titleId
+        id = R.id.tvTitle
         ds_layout_width = wrap_content
         ds_layout_height = wrap_content
         ds_marginStart = 16.dp
@@ -118,59 +107,59 @@ class MainActivity : AppCompatActivity() {
         ds_textRes = R.string.singapore
         ds_textSizeDp = 24f
         ds_constraintStart_toStartOf = parent_id
-        ds_constraintTop_toBottomOf = header
+        ds_constraintTop_toBottomOf = R.id.ivHeader
       }
 
       EditText {
-        id = cameraType
+        id = R.id.etCameraType
         ds_layout_width = 0
         ds_layout_height = wrap_content
         ds_marginTop = 8.dp
         ds_textEms = 10
         ds_textRes = R.string.camera_value
-        ds_constraintHorizontal_alignOf = settingsId
-        ds_constraintTop_toBottomOf = titleId
+        ds_constraintHorizontal_alignOf = R.id.etSettings
+        ds_constraintTop_toBottomOf = R.id.tvTitle
         inputType = InputType.TYPE_TEXT_VARIATION_PERSON_NAME
       }
 
       TextView {
-        id = cameraLabelId
+        id = R.id.tvCameraLabel
         ds_layout_width = wrap_content
         ds_layout_height = wrap_content
         ds_marginStart = 16.dp
         ds_textRes = R.string.camera
-        ds_constraintBaseline_toBaselineOf = cameraType
+        ds_constraintBaseline_toBaselineOf = R.id.etCameraType
         ds_constraintStart_toStartOf = parent_id
-        labelFor = cameraType
+        labelFor = R.id.etCameraType
       }
 
       TextView {
-        id = settingLabelId
+        id = R.id.tvSettingLabel
         ds_layout_width = wrap_content
         ds_layout_height = wrap_content
         ds_marginStart = 16.dp
         ds_textRes = R.string.settings
-        ds_constraintBaseline_toBaselineOf = settingsId
+        ds_constraintBaseline_toBaselineOf = R.id.etSettings
         ds_constraintStart_toStartOf = parent_id
-        labelFor = settingsId
+        labelFor = R.id.etSettings
       }
 
       EditText {
-        id = settingsId
+        id = R.id.etSettings
         ds_layout_width = 0
         ds_layout_height = wrap_content
         ds_marginStart = 6.dp
         ds_marginTop = 8.dp
         ds_textEms = 10
         ds_textRes = R.string.camera_settings
-        ds_constraintStart_toEndOf = settingLabelId
-        ds_constraintEnd_toEndOf = descriptionId
-        ds_constraintTop_toBottomOf = cameraType
+        ds_constraintStart_toEndOf = R.id.tvSettingLabel
+        ds_constraintEnd_toEndOf = R.id.tvDescription
+        ds_constraintTop_toBottomOf = R.id.etCameraType
         inputType = InputType.TYPE_TEXT_VARIATION_PERSON_NAME
       }
 
       Button {
-        id = uploadId
+        id = R.id.btnUpload
         ds_layout_width = wrap_content
         ds_layout_height = wrap_content
         ds_marginEnd = 16.dp
@@ -181,18 +170,18 @@ class MainActivity : AppCompatActivity() {
       }
 
       Button {
-        id = discardId
+        id = R.id.btnDiscard
         ds_layout_width = wrap_content
         ds_layout_height = wrap_content
         ds_marginEnd = 8.dp
         ds_textRes = R.string.discard
-        ds_constraintBaseline_toBaselineOf = uploadId
-        ds_constraintEnd_toStartOf = uploadId
+        ds_constraintBaseline_toBaselineOf = R.id.btnUpload
+        ds_constraintEnd_toStartOf = R.id.btnUpload
         elevation = 0f
       }
 
       TextView {
-        id = descriptionId
+        id = R.id.tvDescription
         ds_layout_width = 0
         ds_layout_height = 0
         ds_marginStart = 16.dp
@@ -201,8 +190,8 @@ class MainActivity : AppCompatActivity() {
         ds_marginBottom = 8.dp
         ds_textRes = R.string.singapore_description
         ds_textSizeDp = 15f
-        ds_constraintBottom_toTopOf = discardId
-        ds_constraintTop_toBottomOf = settingsId
+        ds_constraintBottom_toTopOf = R.id.btnDiscard
+        ds_constraintTop_toBottomOf = R.id.etSettings
         ds_constraintHorizontal_alignOf = parent_id
         ellipsize = TextUtils.TruncateAt.END
         isVerticalFadingEdgeEnabled = true
@@ -215,20 +204,8 @@ class MainActivity : AppCompatActivity() {
       ds_layout_width = match_parent
       ds_layout_height = match_parent
 
-      val ivBackId = 1
-      val vDividerId = 2
-      val ivDiamondId = 3
-      val tvTimeId = 4
-      val tvCancelId = 5
-      val tvOkId = 6
-      val tvContentId = 7
-      val ivAvatarId = 8
-      val tvSubId = 9
-      val tvTitleId = 10
-      val layerId = 11
-
       ImageView {
-        id = ivBackId
+        id = R.id.ivBack
         ds_layout_width = 40.dp
         ds_layout_height = 40.dp
         ds_marginStart = 20.dp
@@ -244,7 +221,7 @@ class MainActivity : AppCompatActivity() {
         ds_layout_height = wrap_content
         ds_textSizeDp = 30f
         ds_textStyle = Typeface.BOLD
-        ds_constraintVertical_alignOf = ivBackId
+        ds_constraintVertical_alignOf = R.id.ivBack
         ds_constraintHorizontal_alignOf = parent_id
         text = "commit"
       }
@@ -253,45 +230,45 @@ class MainActivity : AppCompatActivity() {
         ds_layout_width = 40.dp
         ds_layout_height = 40.dp
         ds_imageSrc = R.drawable.ic_member_more
-        ds_constraintVertical_alignOf = ivBackId
+        ds_constraintVertical_alignOf = R.id.ivBack
         ds_constraintEnd_toEndOf = parent_id
         ds_marginEnd = 20.dp
       }
 
       View {
-        id = vDividerId
+        id = R.id.vDivider
         ds_layout_width = match_parent
         ds_layout_height = 1
         ds_marginTop = 10.dp
         ds_backgroundColor = "#eeeeee"
-        ds_constraintTop_toBottomOf = ivBackId
+        ds_constraintTop_toBottomOf = R.id.ivBack
       }
 
       Layer {
-        id = layerId
+        id = R.id.layer
         ds_layout_width = wrap_content
         ds_layout_height = wrap_content
         ds_backgroundRes = R.drawable.tag_checked_shape
-        ds_constraintStart_toStartOf = ivDiamondId
-        ds_constraintTop_toTopOf = ivDiamondId
-        ds_constraintBottom_toBottomOf = tvTimeId
-        ds_constraintEnd_toEndOf = tvTimeId
-        referencedIds = intArrayOf(ivDiamondId, tvTitleId, tvContentId, ivAvatarId, tvTimeId, tvSubId)
+        ds_constraintStart_toStartOf = R.id.ivDiamond
+        ds_constraintTop_toTopOf = R.id.ivDiamond
+        ds_constraintBottom_toBottomOf = R.id.tvTime
+        ds_constraintEnd_toEndOf = R.id.tvTime
+        referencedIds = intArrayOf(R.id.ivDiamond, R.id.tvTitle, R.id.tvContent, R.id.ivAvatar, R.id.tvTime, R.id.tvSub)
       }
 
       ImageView {
-        id = ivDiamondId
+        id = R.id.ivDiamond
         ds_layout_width = 40.dp
         ds_layout_height = 40.dp
         ds_marginStart = 20.dp
         ds_marginTop = 40.dp
         ds_imageSrc = R.drawable.diamond_tag
-        ds_constraintStart_toStartOf = ivBackId
-        ds_constraintTop_toBottomOf = vDividerId
+        ds_constraintStart_toStartOf = R.id.ivBack
+        ds_constraintTop_toBottomOf = R.id.vDivider
       }
 
       TextView {
-        id = tvTitleId
+        id = R.id.tvTitle
         ds_layout_width = wrap_content
         ds_layout_height = wrap_content
         ds_marginStart = 5.dp
@@ -299,58 +276,58 @@ class MainActivity : AppCompatActivity() {
         ds_textColor = "#389793"
         ds_textSizeDp = 20f
         ds_textStyle = Typeface.BOLD
-        ds_constraintVertical_alignOf = ivDiamondId
-        ds_constraintStart_toEndOf = ivDiamondId
+        ds_constraintVertical_alignOf = R.id.ivDiamond
+        ds_constraintStart_toEndOf = R.id.ivDiamond
         gravity = Gravity.CENTER
         text = "gole"
       }
 
       TextView {
-        id = tvContentId
+        id = R.id.tvContent
         ds_layout_width = 0
         ds_layout_height = wrap_content
         ds_marginTop = 5.dp
         ds_textSizeDp = 23f
-        ds_constraintStart_toStartOf = ivDiamondId
-        ds_constraintTop_toBottomOf = ivDiamondId
-        ds_constraintEnd_toStartOf = ivAvatarId
+        ds_constraintStart_toStartOf = R.id.ivDiamond
+        ds_constraintTop_toBottomOf = R.id.ivDiamond
+        ds_constraintEnd_toStartOf = R.id.ivAvatar
         text = "The changes were merged into release with so many bugs"
       }
 
       ImageView {
-        id = ivAvatarId
+        id = R.id.ivAvatar
         ds_layout_width = 100.dp
         ds_layout_height = 100.dp
         ds_marginEnd = 20.dp
         ds_imageSrc = R.drawable.user_portrait_gender_female
         ds_constraintEnd_toEndOf = parent_id
-        ds_constraintStart_toEndOf = tvContentId
-        ds_constraintTop_toTopOf = tvContentId
+        ds_constraintStart_toEndOf = R.id.tvContent
+        ds_constraintTop_toTopOf = R.id.tvContent
       }
 
       TextView {
-        id = tvSubId
+        id = R.id.tvSub
         ds_layout_width = wrap_content
         ds_layout_height = wrap_content
         ds_textColor = "#c4747E8B"
         ds_textSizeDp = 18f
-        ds_constraintStart_toStartOf = ivDiamondId
-        ds_constraintTop_toBottomOf = tvContentId
+        ds_constraintStart_toStartOf = R.id.ivDiamond
+        ds_constraintTop_toBottomOf = R.id.tvContent
         text = "merge it with mercy"
       }
 
       TextView {
-        id = tvTimeId
+        id = R.id.tvTime
         ds_layout_width = wrap_content
         ds_layout_height = wrap_content
         ds_marginTop = 20.dp
-        ds_constraintEnd_toEndOf = ivAvatarId
-        ds_constraintTop_toBottomOf = ivAvatarId
+        ds_constraintEnd_toEndOf = R.id.ivAvatar
+        ds_constraintTop_toBottomOf = R.id.ivAvatar
         text = "2020.04.30"
       }
 
       TextView {
-        id = tvCancelId
+        id = R.id.tvCancel
         ds_layout_width = wrap_content
         ds_layout_height = wrap_content
         ds_marginEnd = 30.dp
@@ -363,14 +340,14 @@ class MainActivity : AppCompatActivity() {
         ds_textSizeDp = 20f
         ds_textStyle = Gravity.CENTER
         ds_constraintBottom_toBottomOf = parent_id
-        ds_constraintEnd_toStartOf = tvOkId
+        ds_constraintEnd_toStartOf = R.id.tvOk
         ds_constraintStart_toStartOf = parent_id
         ds_constraintHorizontal_chainStyle = chain_packed
         text = "cancel"
       }
 
       TextView {
-        id = tvOkId
+        id = R.id.tvOk
         ds_layout_width = wrap_content
         ds_layout_height = wrap_content
         ds_backgroundRes = R.drawable.bg_orange_btn
@@ -384,7 +361,7 @@ class MainActivity : AppCompatActivity() {
         ds_constraintBottom_toBottomOf = parent_id
         ds_constraintEnd_toEndOf = parent_id
         ds_constraintHorizontal_chainStyle = chain_packed
-        ds_constraintStart_toEndOf = tvCancelId
+        ds_constraintStart_toEndOf = R.id.tvCancel
         text = "Ok"
       }
     }
