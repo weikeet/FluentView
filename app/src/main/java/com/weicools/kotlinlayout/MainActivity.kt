@@ -1,15 +1,14 @@
 package com.weicools.kotlinlayout
 
-import android.annotation.SuppressLint
 import android.content.Context
-import android.graphics.Typeface
 import android.os.Bundle
 import android.text.InputType
 import android.text.TextUtils
 import android.util.AttributeSet
 import android.util.Log
-import android.view.Gravity
+import android.view.GestureDetector
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.LayoutInflaterCompat
@@ -59,7 +58,26 @@ class MainActivity : AppCompatActivity() {
 
     // setContentView(R.layout.activity_traditional_layout)
     // setContentView(R.layout.activity_constraint_layout)
-    setContentView(MainConstraintLayout(this))
+    val v = MainConstraintLayout(this)
+    setContentView(v)
+
+    val l = object : GestureDetector.SimpleOnGestureListener() {
+      override fun onScroll(e1: MotionEvent?, e2: MotionEvent?, distanceX: Float, distanceY: Float): Boolean {
+        Log.d("TAGTAG", "onScroll: ")
+        return super.onScroll(e1, e2, distanceX, distanceY)
+      }
+
+      override fun onFling(e1: MotionEvent?, e2: MotionEvent?, velocityX: Float, velocityY: Float): Boolean {
+        Log.d("TAGTAG", "onFling: ")
+        return super.onFling(e1, e2, velocityX, velocityY)
+      }
+    }
+    val g = GestureDetector(this, l)
+    v.setOnTouchListener(object : View.OnTouchListener {
+      override fun onTouch(v: View?, event: MotionEvent?): Boolean {
+        return g.onTouchEvent(event)
+      }
+    })
 
     val testView = findView<View>(2)
     Log.d("findViewById", "View = $testView, View = ${testView?.let { it::class.simpleName }}")
