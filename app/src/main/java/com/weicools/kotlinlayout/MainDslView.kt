@@ -20,8 +20,7 @@ class MainDslView : ConstraintLayout {
       ivAvatar, tvSub, tvTime, tvCancel, tvOk
     ) = createRefs()
 
-    imageView {
-      id = ivBack
+    imageView(ivBack) {
       layout_width = 40.dp
       layout_height = 40.dp
       margin_Start = 20.dp
@@ -53,8 +52,7 @@ class MainDslView : ConstraintLayout {
       src_compat = R.drawable.ic_member_more
     }
 
-    view {
-      id = vDivider
+    view(vDivider) {
       layout_width = matchParent
       layout_height = 1
       margin_Top = 10.dp
@@ -62,8 +60,7 @@ class MainDslView : ConstraintLayout {
       background_colorString = "#eeeeee"
     }
 
-    view {
-      id = layer
+    view(layer) {
       layout_width = 0
       layout_height = 0
       margin_Start = 16.dp
@@ -75,8 +72,7 @@ class MainDslView : ConstraintLayout {
       background_res = R.drawable.tag_checked_shape
     }
 
-    imageView {
-      id = ivDiamond
+    imageView(ivDiamond) {
       layout_width = 40.dp
       layout_height = 40.dp
       margin_Start = 20.dp
@@ -86,8 +82,7 @@ class MainDslView : ConstraintLayout {
       src_compat = R.drawable.diamond_tag
     }
 
-    textView {
-      id = tvTitle
+    textView(tvTitle) {
       layout_width = wrapContent
       layout_height = wrapContent
       margin_Start = 5.dp
@@ -101,8 +96,7 @@ class MainDslView : ConstraintLayout {
       text = "gold"
     }
 
-    textView {
-      id = tvContent
+    textView(tvContent) {
       layout_width = 0
       layout_height = wrapContent
       end_toStartOf = ivAvatar
@@ -113,8 +107,7 @@ class MainDslView : ConstraintLayout {
       text = "The changes were merged into release with so many bugs"
     }
 
-    imageView {
-      id = ivAvatar
+    imageView(ivAvatar) {
       layout_width = 100.dp
       layout_height = 100.dp
       margin_End = 20.dp
@@ -124,8 +117,7 @@ class MainDslView : ConstraintLayout {
       src_compat = R.drawable.user_portrait_gender_female
     }
 
-    textView {
-      id = tvSub
+    textView(tvSub) {
       layout_width = wrapContent
       layout_height = wrapContent
       start_toStartOf = ivDiamond
@@ -135,18 +127,17 @@ class MainDslView : ConstraintLayout {
       text = "merge it with mercy"
     }
 
-    textView {
-      id = tvTime
+    textView(tvTime) {
       layout_width = wrapContent
       layout_height = wrapContent
       margin_Top = 20.dp
+      margin_End = 16.dp
       end_toEndOf = ivAvatar
       top_toBottomOf = ivAvatar
       text = "2020.04.30"
     }
 
-    textView {
-      id = tvCancel
+    textView(tvCancel) {
       layout_width = wrapContent
       layout_height = wrapContent
       margin_End = 30.dp
@@ -165,8 +156,7 @@ class MainDslView : ConstraintLayout {
       text = "cancel"
     }
 
-    textView {
-      id = tvOk
+    textView(tvOk) {
       layout_width = wrapContent
       layout_height = wrapContent
       margin_Bottom = 20.dp

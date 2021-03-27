@@ -17,8 +17,7 @@ class MainConstraintLayout : ConstraintLayout {
       tvSettingLabel, etSettings, btnUpload, btnDiscard, tvDescription
     ) = createRefs()
 
-    imageView {
-      id = ivHeader
+    imageView(ivHeader) {
       layout_width = 0
       layout_height = 0
       margin_Bottom = 16.dp
@@ -31,8 +30,7 @@ class MainConstraintLayout : ConstraintLayout {
       scaleType = scaleCenterCrop
     }
 
-    imageView {
-      id = ivFavorite
+    imageView(ivFavorite) {
       layout_width = 36.dp
       layout_height = 36.dp
       margin_End = 16.dp
@@ -45,8 +43,7 @@ class MainConstraintLayout : ConstraintLayout {
       background_res = R.drawable.info_background
     }
 
-    textView {
-      id = tvTitle
+    textView(tvTitle) {
       layout_width = wrapContent
       layout_height = wrapContent
       margin_Start = 16.dp
@@ -57,8 +54,7 @@ class MainConstraintLayout : ConstraintLayout {
       start_toStartOf = parentId
     }
 
-    editText {
-      id = etCameraType
+    editText(etCameraType) {
       layout_width = 0
       layout_height = wrapContent
       margin_Top = 8.dp
@@ -69,8 +65,7 @@ class MainConstraintLayout : ConstraintLayout {
       inputType = InputType.TYPE_TEXT_VARIATION_PERSON_NAME
     }
 
-    textView {
-      id = tvCameraLabel
+    textView(tvCameraLabel) {
       layout_width = wrapContent
       layout_height = wrapContent
       margin_Start = 16.dp
@@ -80,8 +75,7 @@ class MainConstraintLayout : ConstraintLayout {
       text_res = R.string.camera
     }
 
-    textView {
-      id = tvSettingLabel
+    textView(tvSettingLabel) {
       layout_width = wrapContent
       layout_height = wrapContent
       margin_Start = 16.dp
@@ -91,8 +85,7 @@ class MainConstraintLayout : ConstraintLayout {
       text_res = R.string.settings
     }
 
-    editText {
-      id = etSettings
+    editText(etSettings) {
       layout_width = 0
       layout_height = wrapContent
       margin_Start = 6.dp
@@ -105,8 +98,7 @@ class MainConstraintLayout : ConstraintLayout {
       inputType = InputType.TYPE_TEXT_VARIATION_PERSON_NAME
     }
 
-    button {
-      id = btnUpload
+    button(btnUpload) {
       layout_width = wrapContent
       layout_height = wrapContent
       margin_End = 16.dp
@@ -116,8 +108,7 @@ class MainConstraintLayout : ConstraintLayout {
       text_res = R.string.upload
     }
 
-    button {
-      id = btnDiscard
+    button(btnDiscard) {
       layout_width = wrapContent
       layout_height = wrapContent
       margin_End = 8.dp
@@ -127,8 +118,7 @@ class MainConstraintLayout : ConstraintLayout {
       elevation = 0f
     }
 
-    textView {
-      id = tvDescription
+    textView(tvDescription) {
       layout_width = 0
       layout_height = 0
       margin_Start = 16.dp
