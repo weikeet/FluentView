@@ -20,7 +20,7 @@ class MainDslView @JvmOverloads constructor(
       ds_imageSrc = R.drawable.ic_back_black
       ds_constraintStart_toStartOf = parent_id
       ds_constraintTop_toTopOf = parent_id
-      onClick = {
+      setOnClickListener {
         //finish()
       }
     }

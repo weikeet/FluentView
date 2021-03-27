@@ -4,21 +4,24 @@ import android.content.Context
 import android.text.InputType
 import android.text.TextUtils
 import android.util.AttributeSet
+import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.weicools.kotlinlayout.dsl.*
 
 class MainConstraintLayout @JvmOverloads constructor(
   context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : ConstraintLayout(context, attrs, defStyleAttr) {
+  private val map = ViewIdMap()
+  private fun toId(id: String) = map.getViewId(id)
 
   init {
     ImageView {
-      id = R.id.ivHeader
+      id = toId("ivHeader")
       ds_layout_width = 0
       ds_layout_height = 0
       ds_marginBottom = 16.dp
       ds_imageSrc = R.drawable.singapore
-      ds_constraintBottom_toBottomOf = R.id.ivFavorite
+      ds_constraintBottom_toBottomOf = toId("ivFavorite")
       ds_constraintTop_toTopOf = parent_id
       ds_constraintHorizontal_alignOf = parent_id
       ds_constraintHorizontal_bias = 1.0f
@@ -27,7 +30,7 @@ class MainConstraintLayout @JvmOverloads constructor(
     }
 
     ImageView {
-      id = R.id.ivFavorite
+      id = toId("ivFavorite")
       ds_layout_width = 36.dp
       ds_layout_height = 36.dp
       ds_marginEnd = 16.dp
@@ -41,7 +44,7 @@ class MainConstraintLayout @JvmOverloads constructor(
     }
 
     TextView {
-      id = R.id.tvTitle
+      id = toId("tvTitle")
       ds_layout_width = wrap_content
       ds_layout_height = wrap_content
       ds_marginStart = 16.dp
@@ -49,34 +52,34 @@ class MainConstraintLayout @JvmOverloads constructor(
       ds_textRes = R.string.singapore
       ds_textSizeDp = 24f
       ds_constraintStart_toStartOf = parent_id
-      ds_constraintTop_toBottomOf = R.id.ivHeader
+      ds_constraintTop_toBottomOf = toId("ivHeader")
     }
 
     EditText {
-      id = R.id.etCameraType
+      id = toId("etCameraType")
       ds_layout_width = 0
       ds_layout_height = wrap_content
       ds_marginTop = 8.dp
       ds_textEms = 10
       ds_textRes = R.string.camera_value
       ds_constraintHorizontal_alignOf = R.id.etSettings
-      ds_constraintTop_toBottomOf = R.id.tvTitle
+      ds_constraintTop_toBottomOf = toId("tvTitle")
       inputType = InputType.TYPE_TEXT_VARIATION_PERSON_NAME
     }
 
     TextView {
-      id = R.id.tvCameraLabel
+      id = toId("tvCameraLabel")
       ds_layout_width = wrap_content
       ds_layout_height = wrap_content
       ds_marginStart = 16.dp
       ds_textRes = R.string.camera
-      ds_constraintBaseline_toBaselineOf = R.id.etCameraType
+      ds_constraintBaseline_toBaselineOf = toId("etCameraType")
       ds_constraintStart_toStartOf = parent_id
-      labelFor = R.id.etCameraType
+      labelFor = toId("etCameraType")
     }
 
     TextView {
-      id = R.id.tvSettingLabel
+      id = toId("tvSettingLabel")
       ds_layout_width = wrap_content
       ds_layout_height = wrap_content
       ds_marginStart = 16.dp
@@ -94,9 +97,9 @@ class MainConstraintLayout @JvmOverloads constructor(
       ds_marginTop = 8.dp
       ds_textEms = 10
       ds_textRes = R.string.camera_settings
-      ds_constraintStart_toEndOf = R.id.tvSettingLabel
-      ds_constraintEnd_toEndOf = R.id.tvDescription
-      ds_constraintTop_toBottomOf = R.id.etCameraType
+      ds_constraintStart_toEndOf = toId("tvSettingLabel")
+      ds_constraintEnd_toEndOf = toId("tvDescription")
+      ds_constraintTop_toBottomOf = toId("etCameraType")
       inputType = InputType.TYPE_TEXT_VARIATION_PERSON_NAME
     }
 
@@ -123,7 +126,7 @@ class MainConstraintLayout @JvmOverloads constructor(
     }
 
     TextView {
-      id = R.id.tvDescription
+      id = toId("tvDescription")
       ds_layout_width = 0
       ds_layout_height = 0
       ds_marginStart = 16.dp
