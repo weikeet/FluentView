@@ -12,134 +12,134 @@ class MainConstraintLayout : ConstraintLayout {
   constructor(context: Context, attrs: AttributeSet?) : super(context, attrs)
   constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr)
 
-  private val map = ViewIdMap()
-
-  private fun toId(id: String) = map.getViewId(id)
-
   init {
-    ImageView {
-      id = R.id.ivHeader
-      Layout_width = 0
-      Layout_height = 0
-      MarginBottom = 16.dp
-      Src = R.drawable.singapore
-      BottomToBottom = R.id.ivFavorite
-      TopToTop = parentId
-      AlignHorizontalOf = parentId
-      HorizontalBias = 1.0f
-      VerticalBias = 0.0f
+    val (ivHeader, ivFavorite, tvTitle, etCameraType, tvCameraLabel,
+      tvSettingLabel, etSettings, btnUpload, btnDiscard, tvDescription
+    ) = createRefs()
+
+    imageView {
+      id = ivHeader
+      layout_width = 0
+      layout_height = 0
+      margin_Bottom = 16.dp
+      bottom_toBottomOf = ivFavorite
+      top_toTopOf = parentId
+      center_horizontalOf = parentId
+      horizontal_bias = 1.0f
+      vertical_bias = 0.0f
+      src_compat = R.drawable.singapore
       scaleType = scaleCenterCrop
     }
 
-    ImageView {
-      id = R.id.ivFavorite
-      Layout_width = 36.dp
-      Layout_height = 36.dp
-      MarginEnd = 16.dp
-      MarginBottom = 16.dp
-      Background = R.drawable.info_background
-      Padding = 5.dp
-      Src = R.drawable.ic_star
-      AlignVerticalOf = parentId
-      EndToEnd = parentId
-      VerticalBias = 0.19f
+    imageView {
+      id = ivFavorite
+      layout_width = 36.dp
+      layout_height = 36.dp
+      margin_End = 16.dp
+      margin_Bottom = 16.dp
+      center_verticalOf = parentId
+      end_toEndOf = parentId
+      vertical_bias = 0.19f
+      paddings = 5.dp
+      src_compat = R.drawable.ic_star
+      background_res = R.drawable.info_background
     }
 
-    TextView {
-      id = R.id.tvTitle
-      Layout_width = wrapContent
-      Layout_height = wrapContent
-      MarginStart = 16.dp
-      MarginTop = 16.dp
-      textRes = R.string.singapore
-      textSizeDp = 24f
-      StartToStart = parentId
-      TopToBottom = R.id.ivHeader
+    textView {
+      id = tvTitle
+      layout_width = wrapContent
+      layout_height = wrapContent
+      margin_Start = 16.dp
+      margin_Top = 16.dp
+      top_toBottomOf = ivHeader
+      text_res = R.string.singapore
+      text_sizeDp = 24f
+      start_toStartOf = parentId
     }
 
-    EditText {
-      id = R.id.etCameraType
-      Layout_width = 0
-      Layout_height = wrapContent
-      MarginTop = 8.dp
-      textEms = 10
-      textRes = R.string.camera_value
-      AlignHorizontalOf = R.id.etSettings
-      TopToBottom = R.id.tvTitle
+    editText {
+      id = etCameraType
+      layout_width = 0
+      layout_height = wrapContent
+      margin_Top = 8.dp
+      center_horizontalOf = etSettings
+      top_toBottomOf = tvTitle
+      text_ems = 10
+      text_res = R.string.camera_value
       inputType = InputType.TYPE_TEXT_VARIATION_PERSON_NAME
     }
 
-    TextView {
-      id = R.id.tvCameraLabel
-      Layout_width = wrapContent
-      Layout_height = wrapContent
-      MarginStart = 16.dp
-      textRes = R.string.camera
-      BaselineToBaseline = R.id.etCameraType
-      StartToStart = parentId
-      labelFor = R.id.etCameraType
+    textView {
+      id = tvCameraLabel
+      layout_width = wrapContent
+      layout_height = wrapContent
+      margin_Start = 16.dp
+      start_toStartOf = parentId
+      baseline_toBaselineOf = etCameraType
+      labelFor = etCameraType
+      text_res = R.string.camera
     }
 
-    TextView {
-      id = R.id.tvSettingLabel
-      Layout_width = wrapContent
-      Layout_height = wrapContent
-      MarginStart = 16.dp
-      textRes = R.string.settings
-      BaselineToBaseline = R.id.etSettings
-      StartToStart = parentId
-      labelFor = R.id.etSettings
+    textView {
+      id = tvSettingLabel
+      layout_width = wrapContent
+      layout_height = wrapContent
+      margin_Start = 16.dp
+      baseline_toBaselineOf = etSettings
+      start_toStartOf = parentId
+      labelFor = etSettings
+      text_res = R.string.settings
     }
 
-    EditText {
-      id = R.id.etSettings
-      Layout_width = 0
-      Layout_height = wrapContent
-      MarginStart = 6.dp
-      MarginTop = 8.dp
-      textEms = 10
-      textRes = R.string.camera_settings
-      StartToEnd = R.id.tvSettingLabel
-      EndToEnd = R.id.tvDescription
-      TopToBottom = R.id.etCameraType
+    editText {
+      id = etSettings
+      layout_width = 0
+      layout_height = wrapContent
+      margin_Start = 6.dp
+      margin_Top = 8.dp
+      start_toEndOf = tvSettingLabel
+      end_toEndOf = tvDescription
+      top_toBottomOf = etCameraType
+      text_ems = 10
+      text_res = R.string.camera_settings
       inputType = InputType.TYPE_TEXT_VARIATION_PERSON_NAME
     }
 
-    Button {
-      id = R.id.btnUpload
-      Layout_width = wrapContent
-      Layout_height = wrapContent
-      MarginEnd = 16.dp
-      MarginBottom = 16.dp
-      textRes = R.string.upload
-      BottomToBottom = parentId
-      EndToEnd = parentId
+    button {
+      id = btnUpload
+      layout_width = wrapContent
+      layout_height = wrapContent
+      margin_End = 16.dp
+      margin_Bottom = 16.dp
+      bottom_toBottomOf = parentId
+      end_toEndOf = parentId
+      text_res = R.string.upload
     }
 
-    Button {
-      id = R.id.btnDiscard
-      Layout_width = wrapContent
-      Layout_height = wrapContent
-      MarginEnd = 8.dp
-      textRes = R.string.discard
-      BaselineToBaseline = R.id.btnUpload
-      EndToStart = R.id.btnUpload
+    button {
+      id = btnDiscard
+      layout_width = wrapContent
+      layout_height = wrapContent
+      margin_End = 8.dp
+      baseline_toBaselineOf = btnUpload
+      end_toStartOf = btnUpload
+      text_res = R.string.discard
       elevation = 0f
     }
 
-    TextView {
-      id = R.id.tvDescription
-      Layout_width = 0
-      Layout_height = 0
-      MarginStart = 16.dp
-      MarginTop = 8.dp
-      MarginEnd = 16.dp
-      MarginBottom = 8.dp
-      textRes = R.string.singapore_description
+    textView {
+      id = tvDescription
+      layout_width = 0
+      layout_height = 0
+      margin_Start = 16.dp
+      margin_Top = 8.dp
+      margin_End = 16.dp
+      margin_Bottom = 8.dp
+      bottom_toTopOf = btnDiscard
+      top_toBottomOf = etSettings
+      center_horizontalOf = parentId
+      text_res = R.string.singapore_description
       textSize = 15f
-      BottomToTop = R.id.btnDiscard
-      TopToBottom = R.id.etSettings
-      AlignHorizontalOf = parentId
       ellipsize = TextUtils.TruncateAt.END
       isVerticalFadingEdgeEnabled = true
     }

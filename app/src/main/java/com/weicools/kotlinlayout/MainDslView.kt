@@ -5,6 +5,7 @@ import android.content.Context
 import android.graphics.Typeface
 import android.util.AttributeSet
 import android.view.Gravity
+import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.weicools.kotlinlayout.dsl.*
 
@@ -15,165 +16,171 @@ class MainDslView : ConstraintLayout {
   constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr)
 
   init {
-    ImageView {
-      id = R.id.ivBack
-      Layout_width = 40.dp
-      Layout_height = 40.dp
-      MarginStart = 20.dp
-      MarginTop = 20.dp
-      Src = R.drawable.ic_back_black
-      StartToStart = parentId
-      TopToTop = parentId
+    val (ivBack, vDivider, layer, ivDiamond, tvTitle, tvContent,
+      ivAvatar, tvSub, tvTime, tvCancel, tvOk
+    ) = createRefs()
+
+    imageView {
+      id = ivBack
+      layout_width = 40.dp
+      layout_height = 40.dp
+      margin_Start = 20.dp
+      margin_Top = 20.dp
+      start_toStartOf = parentId
+      top_toTopOf = parentId
+      src_compat = R.drawable.ic_back_black
       setOnClickListener {
-        //finish()
+        Toast.makeText(context, "Click back!", Toast.LENGTH_SHORT).show()
       }
     }
 
-    TextView {
-      Layout_width = wrapContent
-      Layout_height = wrapContent
-      textSizeDp = 30f
-      textStyle = Typeface.BOLD
-      AlignVerticalOf = R.id.ivBack
-      AlignHorizontalOf = parentId
+    textView {
+      layout_width = wrapContent
+      layout_height = wrapContent
+      center_verticalOf = ivBack
+      center_horizontalOf = parentId
+      text_sizeDp = 30f
+      text_style = Typeface.BOLD
       text = "commit"
     }
 
-    ImageView {
-      Layout_width = 40.dp
-      Layout_height = 40.dp
-      MarginEnd = 20.dp
-      Src = R.drawable.ic_member_more
-      AlignVerticalOf = R.id.ivBack
-      EndToEnd = parentId
+    imageView {
+      layout_width = 40.dp
+      layout_height = 40.dp
+      margin_End = 20.dp
+      center_verticalOf = ivBack
+      end_toEndOf = parentId
+      src_compat = R.drawable.ic_member_more
     }
 
-    View {
-      id = R.id.vDivider
-      Layout_width = matchParent
-      Layout_height = 1
-      MarginTop = 10.dp
-      BackgroundColorString = "#eeeeee"
-      TopToBottom = R.id.ivBack
+    view {
+      id = vDivider
+      layout_width = matchParent
+      layout_height = 1
+      margin_Top = 10.dp
+      top_toBottomOf = ivBack
+      background_colorString = "#eeeeee"
     }
 
-    View {
-      id = R.id.layer
-      Layout_width = 0
-      Layout_height = 0
-      Background = R.drawable.tag_checked_shape
-      BottomToBottom = R.id.tvTime
-      EndToEnd = R.id.ivAvatar
-      StartToStart = R.id.ivDiamond
-      TopToTop = R.id.ivDiamond
+    view {
+      id = layer
+      layout_width = 0
+      layout_height = 0
+      margin_Start = 16.dp
+      margin_End = 16.dp
+      bottom_toBottomOf = tvTime
+      end_toEndOf = parentId
+      start_toStartOf = parentId
+      top_toTopOf = ivDiamond
+      background_res = R.drawable.tag_checked_shape
     }
 
-    ImageView {
-      id = R.id.ivDiamond
-      Layout_width = 40.dp
-      Layout_height = 40.dp
-      MarginStart = 20.dp
-      MarginTop = 40.dp
-      Src = R.drawable.diamond_tag
-      StartToStart = R.id.ivBack
-      TopToBottom = R.id.vDivider
+    imageView {
+      id = ivDiamond
+      layout_width = 40.dp
+      layout_height = 40.dp
+      margin_Start = 20.dp
+      margin_Top = 40.dp
+      start_toStartOf = ivBack
+      top_toBottomOf = vDivider
+      src_compat = R.drawable.diamond_tag
     }
 
-    TextView {
-      id = R.id.tvTitle
-      Layout_width = wrapContent
-      Layout_height = wrapContent
-      MarginStart = 5.dp
-      Padding = 10.dp
-      textColorString = "#389793"
-      textSizeDp = 20f
-      textStyle = Typeface.BOLD
-      AlignVerticalOf = R.id.ivDiamond
-      StartToEnd = R.id.ivDiamond
+    textView {
+      id = tvTitle
+      layout_width = wrapContent
+      layout_height = wrapContent
+      margin_Start = 5.dp
+      center_verticalOf = ivDiamond
+      start_toEndOf = ivDiamond
       gravity = Gravity.CENTER
+      paddings = 10.dp
+      text_colorString = "#389793"
+      text_sizeDp = 20f
+      text_style = Typeface.BOLD
       text = "gold"
     }
 
-    TextView {
-      id = R.id.tvContent
-      Layout_width = 0
-      Layout_height = wrapContent
-      MarginTop = 5.dp
-      textSizeDp = 23f
-      EndToStart = R.id.ivAvatar
-      StartToStart = R.id.ivDiamond
-      TopToBottom = R.id.ivDiamond
+    textView {
+      id = tvContent
+      layout_width = 0
+      layout_height = wrapContent
+      end_toStartOf = ivAvatar
+      start_toStartOf = ivDiamond
+      top_toBottomOf = ivDiamond
+      margin_Top = 5.dp
+      text_sizeDp = 23f
       text = "The changes were merged into release with so many bugs"
     }
 
-    ImageView {
-      id = R.id.ivAvatar
-      Layout_width = 100.dp
-      Layout_height = 100.dp
-      MarginEnd = 20.dp
-      Src = R.drawable.user_portrait_gender_female
-      EndToEnd = parentId
-      StartToEnd = R.id.tvContent
-      TopToTop = R.id.tvContent
+    imageView {
+      id = ivAvatar
+      layout_width = 100.dp
+      layout_height = 100.dp
+      margin_End = 20.dp
+      end_toEndOf = parentId
+      start_toEndOf = tvContent
+      top_toTopOf = tvContent
+      src_compat = R.drawable.user_portrait_gender_female
     }
 
-    TextView {
-      id = R.id.tvSub
-      Layout_width = wrapContent
-      Layout_height = wrapContent
-      textColorString = "#c4747E8B"
-      textSizeDp = 18f
-      StartToStart = R.id.ivDiamond
-      TopToBottom = R.id.tvContent
+    textView {
+      id = tvSub
+      layout_width = wrapContent
+      layout_height = wrapContent
+      start_toStartOf = ivDiamond
+      top_toBottomOf = tvContent
+      text_colorString = "#c4747E8B"
+      text_sizeDp = 18f
       text = "merge it with mercy"
     }
 
-    TextView {
-      id = R.id.tvTime
-      Layout_width = wrapContent
-      Layout_height = wrapContent
-      MarginTop = 20.dp
-      EndToEnd = R.id.ivAvatar
-      TopToBottom = R.id.ivAvatar
+    textView {
+      id = tvTime
+      layout_width = wrapContent
+      layout_height = wrapContent
+      margin_Top = 20.dp
+      end_toEndOf = ivAvatar
+      top_toBottomOf = ivAvatar
       text = "2020.04.30"
     }
 
-    TextView {
-      id = R.id.tvCancel
-      Layout_width = wrapContent
-      Layout_height = wrapContent
-      MarginEnd = 30.dp
-      Background = R.drawable.bg_orange_btn
-      PaddingLeft = 30.dp
-      PaddingTop = 10.dp
-      PaddingRight = 30.dp
-      PaddingBottom = 10.dp
-      MarginBottom = 20.dp
-      textSizeDp = 20f
-      textStyle = Gravity.CENTER
-      BottomToBottom = parentId
-      EndToStart = R.id.tvOk
-      StartToStart = parentId
-      HorizontalChainStyle = chainPacked
+    textView {
+      id = tvCancel
+      layout_width = wrapContent
+      layout_height = wrapContent
+      margin_End = 30.dp
+      margin_Bottom = 20.dp
+      end_toStartOf = tvOk
+      start_toStartOf = parentId
+      bottom_toBottomOf = parentId
+      horizontal_chainStyle = chainPacked
+      background_res = R.drawable.bg_orange_btn
+      padding_Left = 30.dp
+      padding_Top = 10.dp
+      padding_Right = 30.dp
+      padding_Bottom = 10.dp
+      text_sizeDp = 20f
+      text_style = Gravity.CENTER
       text = "cancel"
     }
 
-    TextView {
-      id = R.id.tvOk
-      Layout_width = wrapContent
-      Layout_height = wrapContent
-      Background = R.drawable.bg_orange_btn
-      PaddingLeft = 30.dp
-      PaddingTop = 10.dp
-      MarginBottom = 20.dp
-      PaddingRight = 30.dp
-      PaddingBottom = 10.dp
-      textSizeDp = 20f
-      textStyle = Typeface.BOLD
-      BottomToBottom = parentId
-      EndToEnd = parentId
-      HorizontalChainStyle = chainPacked
-      StartToEnd = R.id.tvCancel
+    textView {
+      id = tvOk
+      layout_width = wrapContent
+      layout_height = wrapContent
+      margin_Bottom = 20.dp
+      end_toEndOf = parentId
+      bottom_toBottomOf = parentId
+      horizontal_chainStyle = chainPacked
+      background_res = R.drawable.bg_orange_btn
+      padding_Left = 30.dp
+      padding_Top = 10.dp
+      padding_Right = 30.dp
+      padding_Bottom = 10.dp
+      textSize = 20f
+      text_style = Typeface.BOLD
+      start_toEndOf = tvCancel
       text = "Ok"
     }
   }

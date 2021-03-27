@@ -8,12 +8,13 @@ import android.view.LayoutInflater
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.LayoutInflaterCompat
+import com.weicools.kotlinlayout.dsl.createRefs
 import kotlin.time.ExperimentalTime
 import kotlin.time.measureTimedValue
 
 class MainActivity : AppCompatActivity() {
   companion object {
-    private const val TEST_TAG = "TEST_TAG"
+    private const val TAG = "TEST_TAG"
   }
 
   override fun onWindowFocusChanged(hasFocus: Boolean) {
@@ -30,7 +31,7 @@ class MainActivity : AppCompatActivity() {
       override fun onCreateView(parent: View?, name: String, context: Context, attrs: AttributeSet): View? {
         val (view, cost) = measureTimedValue { delegate.createView(parent, name, context, attrs) }
         sumMs += cost.inMilliseconds
-        Log.d(TEST_TAG, "view=${view?.let { it::class.simpleName }} cost=${cost}  sumMs=${sumMs}")
+        Log.d(TAG, "view=${view?.let { it::class.simpleName }} cost=${cost}  sumMs=${sumMs}")
         return view
       }
 
@@ -53,7 +54,13 @@ class MainActivity : AppCompatActivity() {
 
     // setContentView(R.layout.activity_traditional_layout)
     // setContentView(R.layout.activity_constraint_layout)
-    val v = MainConstraintLayout(this)
+    // val v = MainConstraintLayout(this)
+    val v = MainConstraintLayout2(this)
     setContentView(v)
+
+    v.setOnClickListener {
+      val (a, b) = createRefs()
+      Log.d(TAG, "onCreate: a=$a, b=$b")
+    }
   }
 }
