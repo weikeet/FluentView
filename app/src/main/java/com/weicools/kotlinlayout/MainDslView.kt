@@ -1,5 +1,6 @@
 package com.weicools.kotlinlayout
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Typeface
 import android.util.AttributeSet
@@ -7,169 +8,172 @@ import android.view.Gravity
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.weicools.kotlinlayout.dsl.*
 
-class MainDslView @JvmOverloads constructor(
-  context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
-) : ConstraintLayout(context, attrs, defStyleAttr) {
+@SuppressLint("SetTextI18n")
+class MainDslView : ConstraintLayout {
+  constructor(context: Context) : super(context)
+  constructor(context: Context, attrs: AttributeSet?) : super(context, attrs)
+  constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr)
+
   init {
     ImageView {
       id = R.id.ivBack
-      ds_layout_width = 40.dp
-      ds_layout_height = 40.dp
-      ds_marginStart = 20.dp
-      ds_marginTop = 20.dp
-      ds_imageSrc = R.drawable.ic_back_black
-      ds_constraintStart_toStartOf = parent_id
-      ds_constraintTop_toTopOf = parent_id
+      Layout_width = 40.dp
+      Layout_height = 40.dp
+      MarginStart = 20.dp
+      MarginTop = 20.dp
+      Src = R.drawable.ic_back_black
+      StartToStart = parentId
+      TopToTop = parentId
       setOnClickListener {
         //finish()
       }
     }
 
     TextView {
-      ds_layout_width = wrap_content
-      ds_layout_height = wrap_content
-      ds_textSizeDp = 30f
-      ds_textStyle = Typeface.BOLD
-      ds_constraintVertical_alignOf = R.id.ivBack
-      ds_constraintHorizontal_alignOf = parent_id
+      Layout_width = wrapContent
+      Layout_height = wrapContent
+      textSizeDp = 30f
+      textStyle = Typeface.BOLD
+      AlignVerticalOf = R.id.ivBack
+      AlignHorizontalOf = parentId
       text = "commit"
     }
 
     ImageView {
-      ds_layout_width = 40.dp
-      ds_layout_height = 40.dp
-      ds_marginEnd = 20.dp
-      ds_imageSrc = R.drawable.ic_member_more
-      ds_constraintVertical_alignOf = R.id.ivBack
-      ds_constraintEnd_toEndOf = parent_id
+      Layout_width = 40.dp
+      Layout_height = 40.dp
+      MarginEnd = 20.dp
+      Src = R.drawable.ic_member_more
+      AlignVerticalOf = R.id.ivBack
+      EndToEnd = parentId
     }
 
     View {
       id = R.id.vDivider
-      ds_layout_width = match_parent
-      ds_layout_height = 1
-      ds_marginTop = 10.dp
-      ds_backgroundColor = "#eeeeee"
-      ds_constraintTop_toBottomOf = R.id.ivBack
+      Layout_width = matchParent
+      Layout_height = 1
+      MarginTop = 10.dp
+      BackgroundColorString = "#eeeeee"
+      TopToBottom = R.id.ivBack
     }
 
     View {
       id = R.id.layer
-      ds_layout_width = 0
-      ds_layout_height = 0
-      ds_backgroundRes = R.drawable.tag_checked_shape
-      ds_constraintBottom_toBottomOf = R.id.tvTime
-      ds_constraintEnd_toEndOf = R.id.ivAvatar
-      ds_constraintStart_toStartOf = R.id.ivDiamond
-      ds_constraintTop_toTopOf = R.id.ivDiamond
+      Layout_width = 0
+      Layout_height = 0
+      Background = R.drawable.tag_checked_shape
+      BottomToBottom = R.id.tvTime
+      EndToEnd = R.id.ivAvatar
+      StartToStart = R.id.ivDiamond
+      TopToTop = R.id.ivDiamond
     }
 
     ImageView {
       id = R.id.ivDiamond
-      ds_layout_width = 40.dp
-      ds_layout_height = 40.dp
-      ds_marginStart = 20.dp
-      ds_marginTop = 40.dp
-      ds_imageSrc = R.drawable.diamond_tag
-      ds_constraintStart_toStartOf = R.id.ivBack
-      ds_constraintTop_toBottomOf = R.id.vDivider
+      Layout_width = 40.dp
+      Layout_height = 40.dp
+      MarginStart = 20.dp
+      MarginTop = 40.dp
+      Src = R.drawable.diamond_tag
+      StartToStart = R.id.ivBack
+      TopToBottom = R.id.vDivider
     }
 
     TextView {
       id = R.id.tvTitle
-      ds_layout_width = wrap_content
-      ds_layout_height = wrap_content
-      ds_marginStart = 5.dp
-      ds_padding = 10.dp
-      ds_textColor = "#389793"
-      ds_textSizeDp = 20f
-      ds_textStyle = Typeface.BOLD
-      ds_constraintVertical_alignOf = R.id.ivDiamond
-      ds_constraintStart_toEndOf = R.id.ivDiamond
+      Layout_width = wrapContent
+      Layout_height = wrapContent
+      MarginStart = 5.dp
+      Padding = 10.dp
+      textColorString = "#389793"
+      textSizeDp = 20f
+      textStyle = Typeface.BOLD
+      AlignVerticalOf = R.id.ivDiamond
+      StartToEnd = R.id.ivDiamond
       gravity = Gravity.CENTER
       text = "gold"
     }
 
     TextView {
       id = R.id.tvContent
-      ds_layout_width = 0
-      ds_layout_height = wrap_content
-      ds_marginTop = 5.dp
-      ds_textSizeDp = 23f
-      ds_constraintEnd_toStartOf = R.id.ivAvatar
-      ds_constraintStart_toStartOf = R.id.ivDiamond
-      ds_constraintTop_toBottomOf = R.id.ivDiamond
+      Layout_width = 0
+      Layout_height = wrapContent
+      MarginTop = 5.dp
+      textSizeDp = 23f
+      EndToStart = R.id.ivAvatar
+      StartToStart = R.id.ivDiamond
+      TopToBottom = R.id.ivDiamond
       text = "The changes were merged into release with so many bugs"
     }
 
     ImageView {
       id = R.id.ivAvatar
-      ds_layout_width = 100.dp
-      ds_layout_height = 100.dp
-      ds_marginEnd = 20.dp
-      ds_imageSrc = R.drawable.user_portrait_gender_female
-      ds_constraintEnd_toEndOf = parent_id
-      ds_constraintStart_toEndOf = R.id.tvContent
-      ds_constraintTop_toTopOf = R.id.tvContent
+      Layout_width = 100.dp
+      Layout_height = 100.dp
+      MarginEnd = 20.dp
+      Src = R.drawable.user_portrait_gender_female
+      EndToEnd = parentId
+      StartToEnd = R.id.tvContent
+      TopToTop = R.id.tvContent
     }
 
     TextView {
       id = R.id.tvSub
-      ds_layout_width = wrap_content
-      ds_layout_height = wrap_content
-      ds_textColor = "#c4747E8B"
-      ds_textSizeDp = 18f
-      ds_constraintStart_toStartOf = R.id.ivDiamond
-      ds_constraintTop_toBottomOf = R.id.tvContent
+      Layout_width = wrapContent
+      Layout_height = wrapContent
+      textColorString = "#c4747E8B"
+      textSizeDp = 18f
+      StartToStart = R.id.ivDiamond
+      TopToBottom = R.id.tvContent
       text = "merge it with mercy"
     }
 
     TextView {
       id = R.id.tvTime
-      ds_layout_width = wrap_content
-      ds_layout_height = wrap_content
-      ds_marginTop = 20.dp
-      ds_constraintEnd_toEndOf = R.id.ivAvatar
-      ds_constraintTop_toBottomOf = R.id.ivAvatar
+      Layout_width = wrapContent
+      Layout_height = wrapContent
+      MarginTop = 20.dp
+      EndToEnd = R.id.ivAvatar
+      TopToBottom = R.id.ivAvatar
       text = "2020.04.30"
     }
 
     TextView {
       id = R.id.tvCancel
-      ds_layout_width = wrap_content
-      ds_layout_height = wrap_content
-      ds_marginEnd = 30.dp
-      ds_backgroundRes = R.drawable.bg_orange_btn
-      ds_paddingStart = 30.dp
-      ds_paddingTop = 10.dp
-      ds_paddingEnd = 30.dp
-      ds_paddingBottom = 10.dp
-      ds_marginBottom = 20.dp
-      ds_textSizeDp = 20f
-      ds_textStyle = Gravity.CENTER
-      ds_constraintBottom_toBottomOf = parent_id
-      ds_constraintEnd_toStartOf = R.id.tvOk
-      ds_constraintStart_toStartOf = parent_id
-      ds_constraintHorizontal_chainStyle = chain_packed
+      Layout_width = wrapContent
+      Layout_height = wrapContent
+      MarginEnd = 30.dp
+      Background = R.drawable.bg_orange_btn
+      PaddingLeft = 30.dp
+      PaddingTop = 10.dp
+      PaddingRight = 30.dp
+      PaddingBottom = 10.dp
+      MarginBottom = 20.dp
+      textSizeDp = 20f
+      textStyle = Gravity.CENTER
+      BottomToBottom = parentId
+      EndToStart = R.id.tvOk
+      StartToStart = parentId
+      HorizontalChainStyle = chainPacked
       text = "cancel"
     }
 
     TextView {
       id = R.id.tvOk
-      ds_layout_width = wrap_content
-      ds_layout_height = wrap_content
-      ds_backgroundRes = R.drawable.bg_orange_btn
-      ds_paddingStart = 30.dp
-      ds_paddingTop = 10.dp
-      ds_marginBottom = 20.dp
-      ds_paddingEnd = 30.dp
-      ds_paddingBottom = 10.dp
-      ds_textSizeDp = 20f
-      ds_textStyle = Typeface.BOLD
-      ds_constraintBottom_toBottomOf = parent_id
-      ds_constraintEnd_toEndOf = parent_id
-      ds_constraintHorizontal_chainStyle = chain_packed
-      ds_constraintStart_toEndOf = R.id.tvCancel
+      Layout_width = wrapContent
+      Layout_height = wrapContent
+      Background = R.drawable.bg_orange_btn
+      PaddingLeft = 30.dp
+      PaddingTop = 10.dp
+      MarginBottom = 20.dp
+      PaddingRight = 30.dp
+      PaddingBottom = 10.dp
+      textSizeDp = 20f
+      textStyle = Typeface.BOLD
+      BottomToBottom = parentId
+      EndToEnd = parentId
+      HorizontalChainStyle = chainPacked
+      StartToEnd = R.id.tvCancel
       text = "Ok"
     }
   }

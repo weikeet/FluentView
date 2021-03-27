@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<!--<View-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+
+<!--    app:barrierAllowsGoneWidgets="@android:"-->
+<!--    app:barrierDirection="bottom"-->
+<!--    app:barrierMargin="@android:dimen/app_icon_size"-->
+
+<!--    app:chainUseRtl="@android:"-->
+
+<!--    app:constraintSet="@android:integer/config_longAnimTime"-->
+<!--    app:constraint_referenced_ids=""-->
+<!--    app:constraint_referenced_tags="@android:string/autofill"-->
+
+<!--    app:flow_firstHorizontalBias="@android:integer/config_longAnimTime"-->
+<!--    app:flow_firstHorizontalStyle="packed"-->
+<!--    app:flow_firstVerticalBias="@android:integer/config_longAnimTime"-->
+<!--    app:flow_firstVerticalStyle="packed"-->
+<!--    app:flow_horizontalAlign="center"-->
+<!--    app:flow_horizontalBias="@android:integer/config_longAnimTime"-->
+<!--    app:flow_horizontalGap="@android:dimen/app_icon_size"-->
+<!--    app:flow_horizontalStyle="packed"-->
+<!--    app:flow_lastHorizontalBias="@android:integer/config_longAnimTime"-->
+<!--    app:flow_lastHorizontalStyle="packed"-->
+<!--    app:flow_lastVerticalBias="@android:integer/config_longAnimTime"-->
+<!--    app:flow_lastVerticalStyle="packed"-->
+<!--    app:flow_maxElementsWrap="@android:integer/config_longAnimTime"-->
+<!--    app:flow_verticalAlign="bottom"-->
+<!--    app:flow_verticalBias="@android:integer/config_longAnimTime"-->
+<!--    app:flow_verticalGap="@android:dimen/app_icon_size"-->
+<!--    app:flow_verticalStyle="packed"-->
+<!--    app:flow_wrapMode="aligned"-->
+
+<!--    app:layoutDescription="@android:dimen/app_icon_size"-->
+
+<!--    app:layout_constrainedHeight="@android:"-->
+<!--    app:layout_constrainedWidth="@android:"-->
+
+<!--    app:layout_constraintBaseline_creator="@android:integer/config_longAnimTime"-->
+<!--    app:layout_constraintBaseline_toBaselineOf="@+id/"-->
+<!--    app:layout_constraintBottom_creator="@android:integer/config_longAnimTime"-->
+
+<!--    app:layout_constraintBottom_toBottomOf="@+id/"-->
+<!--    app:layout_constraintBottom_toTopOf="@+id/"-->
+
+<!--    app:layout_constraintCircle="@android:integer/config_longAnimTime"-->
+<!--    app:layout_constraintCircleAngle="@android:integer/config_longAnimTime"-->
+<!--    app:layout_constraintCircleRadius="@android:dimen/app_icon_size"-->
+
+<!--    app:layout_constraintDimensionRatio="@android:string/autofill"-->
+
+<!--    app:layout_constraintEnd_toEndOf="@+id/"-->
+<!--    app:layout_constraintEnd_toStartOf="@+id/"-->
+
+<!--    app:layout_constraintGuide_begin="@android:dimen/app_icon_size"-->
+<!--    app:layout_constraintGuide_end="@android:dimen/app_icon_size"-->
+<!--    app:layout_constraintGuide_percent="@android:integer/config_longAnimTime"-->
+
+<!--    app:layout_constraintHeight_default="percent"-->
+<!--    app:layout_constraintHeight_max="@android:dimen/app_icon_size"-->
+<!--    app:layout_constraintHeight_min="@android:dimen/app_icon_size"-->
+<!--    app:layout_constraintHeight_percent="@android:integer/config_longAnimTime"-->
+
+<!--    app:layout_constraintHorizontal_bias="@android:integer/config_longAnimTime"-->
+<!--    app:layout_constraintHorizontal_chainStyle="packed"-->
+<!--    app:layout_constraintHorizontal_weight="@android:integer/config_longAnimTime"-->
+
+<!--    app:layout_constraintLeft_creator="@android:integer/config_longAnimTime"-->
+<!--    app:layout_constraintLeft_toLeftOf="@+id/"-->
+<!--    app:layout_constraintLeft_toRightOf="@+id/"-->
+
+<!--    app:layout_constraintRight_creator="@android:integer/config_longAnimTime"-->
+<!--    app:layout_constraintRight_toLeftOf="@+id/"-->
+<!--    app:layout_constraintRight_toRightOf="@+id/"-->
+
+<!--    app:layout_constraintStart_toEndOf="@+id/"-->
+<!--    app:layout_constraintStart_toStartOf="@+id/"-->
+
+<!--    app:layout_constraintTag="@android:string/autofill"-->
+
+<!--    app:layout_constraintTop_creator="@android:integer/config_longAnimTime"-->
+<!--    app:layout_constraintTop_toBottomOf="@+id/"-->
+<!--    app:layout_constraintTop_toTopOf="@+id/"-->
+
+<!--    app:layout_constraintVertical_bias="@android:integer/config_longAnimTime"-->
+<!--    app:layout_constraintVertical_chainStyle="packed"-->
+<!--    app:layout_constraintVertical_weight="@android:integer/config_longAnimTime"-->
+
+<!--    app:layout_constraintWidth_default="percent"-->
+<!--    app:layout_constraintWidth_max="@android:dimen/app_icon_size"-->
+<!--    app:layout_constraintWidth_min="@android:dimen/app_icon_size"-->
+<!--    app:layout_constraintWidth_percent="@android:integer/config_longAnimTime"-->
+
+<!--    app:layout_editor_absoluteX="@android:dimen/app_icon_size"-->
+<!--    app:layout_editor_absoluteY="@android:dimen/app_icon_size"-->
+
+<!--    app:layout_goneMarginBottom="@android:dimen/app_icon_size"-->
+<!--    app:layout_goneMarginEnd="@android:dimen/app_icon_size"-->
+<!--    app:layout_goneMarginLeft="@android:dimen/app_icon_size"-->
+<!--    app:layout_goneMarginRight="@android:dimen/app_icon_size"-->
+<!--    app:layout_goneMarginStart="@android:dimen/app_icon_size"-->
+<!--    app:layout_goneMarginTop="@android:dimen/app_icon_size"-->
+
+<!--    app:layout_optimizationLevel="barrier" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
