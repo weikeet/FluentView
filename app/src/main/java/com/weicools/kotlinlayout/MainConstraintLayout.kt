@@ -18,12 +18,12 @@ class MainConstraintLayout : ConstraintLayout {
 
   init {
     ImageView {
-      id = toId("ivHeader")
+      id = R.id.ivHeader
       Layout_width = 0
       Layout_height = 0
       MarginBottom = 16.dp
       Src = R.drawable.singapore
-      BottomToBottom = toId("ivFavorite")
+      BottomToBottom = R.id.ivFavorite
       TopToTop = parentId
       AlignHorizontalOf = parentId
       HorizontalBias = 1.0f
@@ -32,7 +32,7 @@ class MainConstraintLayout : ConstraintLayout {
     }
 
     ImageView {
-      id = toId("ivFavorite")
+      id = R.id.ivFavorite
       Layout_width = 36.dp
       Layout_height = 36.dp
       MarginEnd = 16.dp
@@ -46,7 +46,7 @@ class MainConstraintLayout : ConstraintLayout {
     }
 
     TextView {
-      id = toId("tvTitle")
+      id = R.id.tvTitle
       Layout_width = wrapContent
       Layout_height = wrapContent
       MarginStart = 16.dp
@@ -54,34 +54,34 @@ class MainConstraintLayout : ConstraintLayout {
       textRes = R.string.singapore
       textSizeDp = 24f
       StartToStart = parentId
-      TopToBottom = toId("ivHeader")
+      TopToBottom = R.id.ivHeader
     }
 
     EditText {
-      id = toId("etCameraType")
+      id = R.id.etCameraType
       Layout_width = 0
       Layout_height = wrapContent
       MarginTop = 8.dp
       textEms = 10
       textRes = R.string.camera_value
       AlignHorizontalOf = R.id.etSettings
-      TopToBottom = toId("tvTitle")
+      TopToBottom = R.id.tvTitle
       inputType = InputType.TYPE_TEXT_VARIATION_PERSON_NAME
     }
 
     TextView {
-      id = toId("tvCameraLabel")
+      id = R.id.tvCameraLabel
       Layout_width = wrapContent
       Layout_height = wrapContent
       MarginStart = 16.dp
       textRes = R.string.camera
-      BaselineToBaseline = toId("etCameraType")
+      BaselineToBaseline = R.id.etCameraType
       StartToStart = parentId
-      labelFor = toId("etCameraType")
+      labelFor = R.id.etCameraType
     }
 
     TextView {
-      id = toId("tvSettingLabel")
+      id = R.id.tvSettingLabel
       Layout_width = wrapContent
       Layout_height = wrapContent
       MarginStart = 16.dp
@@ -99,9 +99,9 @@ class MainConstraintLayout : ConstraintLayout {
       MarginTop = 8.dp
       textEms = 10
       textRes = R.string.camera_settings
-      StartToEnd = toId("tvSettingLabel")
-      EndToEnd = toId("tvDescription")
-      TopToBottom = toId("etCameraType")
+      StartToEnd = R.id.tvSettingLabel
+      EndToEnd = R.id.tvDescription
+      TopToBottom = R.id.etCameraType
       inputType = InputType.TYPE_TEXT_VARIATION_PERSON_NAME
     }
 
@@ -128,7 +128,7 @@ class MainConstraintLayout : ConstraintLayout {
     }
 
     TextView {
-      id = toId("tvDescription")
+      id = R.id.tvDescription
       Layout_width = 0
       Layout_height = 0
       MarginStart = 16.dp
