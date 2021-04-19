@@ -43,10 +43,12 @@ class MainActivity : AppCompatActivity() {
 
     // setContentView(R.layout.activity_traditional_layout)
     // setContentView(R.layout.activity_constraint_layout)
-    // val contentLayout: ViewGroup = findViewById(R.id.contentLayout)
+    // setContentView(R.layout.activity_constraint_multi_layout)
+    // val contentLayout: View = findViewById(R.id.contentLayout)
 
     // val contentLayout = MainConstraintLayout(this)
-    val contentLayout = MainConstraintLayout2(this)
+    // val contentLayout = MainConstraintLayout2(this)
+    val contentLayout = MainConstraintMultiLayout2(this)
     setContentView(contentLayout)
 
     contentLayout.doOnPreDraw {
