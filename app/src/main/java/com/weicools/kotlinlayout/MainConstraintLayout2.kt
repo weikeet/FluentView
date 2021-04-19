@@ -18,7 +18,7 @@ class MainConstraintLayout2 : ConstraintLayout {
     ) = createRefs()
 
     imageView(ivHeader) {
-      layoutParams = constraintLayoutParams {
+      layoutParams = constraintLayoutParams(0, 0) {
         bottomMargin = 16.dp
         topToTop = parentId
         bottomToBottom = ivFavorite
@@ -44,7 +44,7 @@ class MainConstraintLayout2 : ConstraintLayout {
     }
 
     textView(tvTitle) {
-      layoutParams = constraintLayoutParams(wrapContent, wrapContent) {
+      layoutParams = constraintLayoutParams {
         leftMargin = 16.dp
         rightMargin = 16.dp
         leftToLeft = parentId
@@ -67,7 +67,7 @@ class MainConstraintLayout2 : ConstraintLayout {
     }
 
     textView(tvCameraLabel) {
-      layoutParams = constraintLayoutParams(wrapContent, wrapContent) {
+      layoutParams = constraintLayoutParams {
         leftMargin = 16.dp
         leftToLeft = parentId
         baselineToBaseline = etCameraType
@@ -77,7 +77,7 @@ class MainConstraintLayout2 : ConstraintLayout {
     }
 
     textView(tvSettingLabel) {
-      layoutParams = constraintLayoutParams(wrapContent, wrapContent) {
+      layoutParams = constraintLayoutParams {
         leftMargin = 16.dp
         baselineToBaseline = etSettings
         leftToLeft = parentId
@@ -100,7 +100,7 @@ class MainConstraintLayout2 : ConstraintLayout {
     }
 
     button(btnUpload) {
-      layoutParams = constraintLayoutParams(wrapContent, wrapContent) {
+      layoutParams = constraintLayoutParams {
         rightMargin = 16.dp
         bottomMargin = 16.dp
         bottomToBottom = parentId
@@ -110,7 +110,7 @@ class MainConstraintLayout2 : ConstraintLayout {
     }
 
     button(btnDiscard) {
-      layoutParams = constraintLayoutParams(wrapContent, wrapContent) {
+      layoutParams = constraintLayoutParams {
         rightMargin = 8.dp
         baselineToBaseline = btnUpload
         rightToLeft = btnUpload
@@ -120,7 +120,7 @@ class MainConstraintLayout2 : ConstraintLayout {
     }
 
     textView(tvDescription) {
-      layoutParams = constraintLayoutParams {
+      layoutParams = constraintLayoutParams(0, 0) {
         leftMargin = 16.dp
         topMargin = 8.dp
         rightMargin = 16.dp

@@ -4,6 +4,7 @@ package com.weicools.kotlinlayout.dsl
 
 import android.content.res.Resources
 import android.graphics.Color
+import android.os.Build
 import android.text.InputFilter
 import android.util.TypedValue
 import android.view.View
@@ -34,6 +35,8 @@ const val parentId = ConstraintLayout.LayoutParams.PARENT_ID
 const val chainSpread = ConstraintLayout.LayoutParams.CHAIN_SPREAD
 const val chainPacked = ConstraintLayout.LayoutParams.CHAIN_PACKED
 const val chainSpreadInside = ConstraintLayout.LayoutParams.CHAIN_SPREAD_INSIDE
+const val constraintHorizontal = ConstraintLayout.LayoutParams.HORIZONTAL
+const val constraintVertical = ConstraintLayout.LayoutParams.VERTICAL
 
 val scaleCenter = ImageView.ScaleType.CENTER
 val scaleCenterCrop = ImageView.ScaleType.CENTER_CROP
@@ -51,7 +54,19 @@ val Int.dp
 
 val Float.dp
   get() = (this * Resources.getSystem().displayMetrics.density)
+
+val widthPixels
+  get() = Resources.getSystem().displayMetrics.widthPixels
+
+val heightPixels
+  get() = Resources.getSystem().displayMetrics.heightPixels
 //endregion
+
+@Suppress("NOTHING_TO_INLINE")
+inline fun View.color_Of(colorId: Int) = ContextCompat.getColor(context, colorId)
+
+@Suppress("NOTHING_TO_INLINE")
+inline fun View.colors_Of(colorId: Int) = ContextCompat.getColorStateList(context, colorId)
 
 @Suppress("NOTHING_TO_INLINE")
 inline fun createRefs() = LayoutReferenceIds()
@@ -95,6 +110,12 @@ inline var View.background_colorString: String
   get() = ""
   set(value) {
     setBackgroundColor(Color.parseColor(value))
+  }
+
+inline var View.elevation_compat: Float
+  get() = 0f
+  set(value) {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) elevation = value
   }
 //endregion
 

@@ -9,17 +9,21 @@ import android.widget.EditText
 import android.widget.FrameLayout
 import android.widget.LinearLayout
 import android.widget.RelativeLayout
+import android.widget.Space
 import androidx.appcompat.view.ContextThemeWrapper
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
+import androidx.appcompat.widget.Toolbar
 import androidx.constraintlayout.helper.widget.Flow
 import androidx.constraintlayout.helper.widget.Layer
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.Guideline
 import androidx.core.widget.NestedScrollView
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager.widget.ViewPager
 import com.google.android.material.button.MaterialButton
+import com.google.android.material.tabs.TabLayout
 
 /**
  * @author weicools
@@ -35,6 +39,13 @@ import com.google.android.material.button.MaterialButton
 
 inline fun ViewGroup.view(id: Int? = null, style: Int? = null, init: View.() -> Unit): View {
   val widget = if (style == null) View(context) else View(ContextThemeWrapper(context, style))
+  if (id != null) widget.id = id
+  return widget.apply(init).also { addView(it) }
+}
+
+
+inline fun ViewGroup.space(id: Int? = null, init: Space.() -> Unit): Space {
+  val widget = Space(context)
   if (id != null) widget.id = id
   return widget.apply(init).also { addView(it) }
 }
@@ -61,6 +72,13 @@ inline fun ViewGroup.button(id: Int? = null, style: Int? = null, init: AppCompat
 }
 
 
+inline fun ViewGroup.materialButton(id: Int? = null, style: Int? = null, init: MaterialButton.() -> Unit): MaterialButton {
+  val widget = if (style == null) MaterialButton(context) else MaterialButton(ContextThemeWrapper(context, style))
+  if (id != null) widget.id = id
+  return widget.apply(init).also { addView(it) }
+}
+
+
 inline fun ViewGroup.editText(id: Int? = null, style: Int? = null, init: EditText.() -> Unit): EditText {
   val widget = if (style == null) EditText(context) else EditText(ContextThemeWrapper(context, style))
   if (id != null) widget.id = id
@@ -77,6 +95,27 @@ inline fun ViewGroup.recyclerView(id: Int? = null, style: Int? = null, init: Rec
 
 inline fun ViewGroup.nestedScrollView(id: Int? = null, style: Int? = null, init: NestedScrollView.() -> Unit): NestedScrollView {
   val widget = if (style == null) NestedScrollView(context) else NestedScrollView(ContextThemeWrapper(context, style))
+  if (id != null) widget.id = id
+  return widget.apply(init).also { addView(it) }
+}
+
+
+inline fun ViewGroup.toolbar(id: Int? = null, style: Int? = null, init: Toolbar.() -> Unit): Toolbar {
+  val widget = if (style == null) Toolbar(context) else Toolbar(ContextThemeWrapper(context, style))
+  if (id != null) widget.id = id
+  return widget.apply(init).also { addView(it) }
+}
+
+
+inline fun ViewGroup.tabLayout(id: Int? = null, style: Int? = null, init: TabLayout.() -> Unit): TabLayout {
+  val widget = if (style == null) TabLayout(context) else TabLayout(ContextThemeWrapper(context, style))
+  if (id != null) widget.id = id
+  return widget.apply(init).also { addView(it) }
+}
+
+
+inline fun ViewGroup.viewPager(id: Int? = null, style: Int? = null, init: ViewPager.() -> Unit): ViewPager {
+  val widget = if (style == null) ViewPager(context) else ViewPager(ContextThemeWrapper(context, style))
   if (id != null) widget.id = id
   return widget.apply(init).also { addView(it) }
 }
@@ -110,10 +149,11 @@ inline fun ViewGroup.constraintLayout(id: Int? = null, style: Int? = null, init:
 }
 
 
-inline fun ConstraintLayout.guideline(id: Int? = null, init: Guideline.() -> Unit): Guideline {
-  val widget = Guideline(context)
-  if (id != null) widget.id = id
-  return widget.apply(init).also { addView(it) }
+inline fun ConstraintLayout.guideline(id: Int, orientationValue: Int, init: Guideline.() -> Unit): Guideline {
+  val guideline = Guideline(context)
+  guideline.id = id
+  guideline.layoutParams = constraintLayoutParams { orientation = orientationValue }
+  return guideline.apply(init).also { addView(it) }
 }
 
 inline fun ConstraintLayout.flow(id: Int? = null, init: Flow.() -> Unit): Flow {
