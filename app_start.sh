@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-for i in `seq 1 8`
+for i in `seq 1 12`
 do 
   adb shell am force-stop com.weicools.kotlinlayout
   sleep 2
