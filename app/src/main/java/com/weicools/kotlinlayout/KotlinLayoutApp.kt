@@ -2,6 +2,7 @@ package com.weicools.kotlinlayout
 
 import android.app.Application
 import android.content.Context
+import com.weicools.kotlinlayout.performance.AppStartMonitor
 
 /**
  * @author weicools
@@ -9,25 +10,17 @@ import android.content.Context
  * @implNote
  */
 class KotlinLayoutApp : Application() {
-  // private val appProcessName: String = ""
-  //   get() {
-  //     if (!TextUtils.isEmpty(field)) {
-  //       return field
-  //     }
-  //     val pid = Process.myPid()
-  //     val manager = getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
-  //     manager.runningAppProcesses?.let {
-  //       for (processInfo in it) {
-  //         if (processInfo.pid == pid) {
-  //           return processInfo.processName
-  //         }
-  //       }
-  //     }
-  //     return ""
-  //   }
 
-  override fun attachBaseContext(base: Context?) {
+  override fun attachBaseContext(base: Context) {
     super.attachBaseContext(base)
-    // TimeRecorder.recordStartTime(appProcessName)
+    AppGlobal.appContext = base
+
+    AppStartMonitor.startMonitor()
+    AppStartMonitor.recordTime("AppAttach")
+  }
+
+  override fun onCreate() {
+    super.onCreate()
+    AppStartMonitor.recordTime("AppCreate")
   }
 }
