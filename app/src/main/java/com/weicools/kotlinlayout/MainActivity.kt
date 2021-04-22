@@ -57,10 +57,13 @@ class MainActivity : AppCompatActivity() {
 
     AppStartMonitor.recordTime("MainCreate")
 
+    val st = System.currentTimeMillis()
+    Log.d(TAG, "MainCreate: st=$st")
+
     // setContentView(R.layout.activity_traditional_layout)
     // val contentLayout: View = findViewById(R.id.contentLayout)
-    setContentView(R.layout.activity_constraint_layout)
-    val contentLayout: View = findViewById(R.id.contentLayout)
+    // setContentView(R.layout.activity_constraint_layout)
+    // val contentLayout: View = findViewById(R.id.contentLayout)
     // setContentView(R.layout.activity_constraint_multi_layout)
     // val contentLayout: View = findViewById(R.id.contentLayout)
 
@@ -68,8 +71,11 @@ class MainActivity : AppCompatActivity() {
     // setContentView(contentLayout)
     // val contentLayout = MainConstraintLayout2(this)
     // setContentView(contentLayout)
-    // val contentLayout = MainConstraintMultiLayout2(this)
-    // setContentView(contentLayout)
+    val contentLayout = MainConstraintMultiLayout2(this)
+    setContentView(contentLayout)
+
+    val et = System.currentTimeMillis()
+    Log.d(TAG, "MainViewCreated: et=$et, du=${et - st}")
 
     AppStartMonitor.recordTime("MainCreate", "MainViewCreated")
 
@@ -92,7 +98,7 @@ class MainActivity : AppCompatActivity() {
     super.onWindowFocusChanged(hasFocus)
     if (hasFocus) {
       AppStartMonitor.recordTime("MainCreate", "MainWindowFocus")
-      AppStartMonitor.recordDuration("MainViewInflate", inflateTimeUs)
+      AppStartMonitor.recordDuration("MainViewInflateUs", inflateTimeUs)
       AppStartMonitor.end(true)
     }
   }
