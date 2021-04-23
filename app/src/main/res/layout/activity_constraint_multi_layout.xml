@@ -131,140 +131,20 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/settings" />
 
-
-    <!--region frame-->
-    <com.weicools.kotlinlayout.widget.Draw01LinearGradientView
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-
+    <com.weicools.kotlinlayout.widget.MoreToolView
+        android:id="@+id/tool1"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="64dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
-    <com.weicools.kotlinlayout.widget.Draw02RadialGradientView
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginLeft="24dp"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
-
-    <com.weicools.kotlinlayout.widget.Draw03SweepGradientView
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginLeft="48dp"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
-
-    <com.weicools.kotlinlayout.widget.Draw04BitmapShaderView
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginLeft="72dp"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
-
-    <com.weicools.kotlinlayout.widget.Draw01LinearGradientView
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginLeft="96dp"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
-
-    <com.weicools.kotlinlayout.widget.DrawArcView
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginLeft="120dp"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
-
-    <com.weicools.kotlinlayout.widget.DrawCircleView
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginLeft="144dp"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
-
-    <com.weicools.kotlinlayout.widget.DrawColorView
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginLeft="168dp"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
-
-    <com.weicools.kotlinlayout.widget.DrawLineView
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginLeft="192dp"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
-
-    <com.weicools.kotlinlayout.widget.DrawOvalView
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginLeft="216dp"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
-
-    <com.weicools.kotlinlayout.widget.DrawPathView
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginLeft="240dp"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
-
-    <com.weicools.kotlinlayout.widget.DrawPointView
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginLeft="264dp"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
-
-    <com.weicools.kotlinlayout.widget.DrawRectView
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginLeft="288dp"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
-
-    <com.weicools.kotlinlayout.widget.DrawRoundRectView
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginLeft="312dp"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
-
-    <com.weicools.kotlinlayout.widget.OutRippleView
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginLeft="336dp"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
-
-    <com.weicools.kotlinlayout.widget.RippleView
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginBottom="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
-
-    <com.weicools.kotlinlayout.widget.WaveRippleView
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginBottom="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
-    <!--endregion-->
+    <com.weicools.kotlinlayout.widget.MoreToolView
+        android:id="@+id/tool2"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        app:layout_constraintBottom_toTopOf="@id/tool1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

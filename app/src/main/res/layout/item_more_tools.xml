@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="72dp"
+    tools:ignore="RtlHardcoded,HardcodedText"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iconView"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginLeft="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_android_24dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/actionButton"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginRight="32dp"
+        android:text="@string/tool_action_button"
+        android:textColor="@color/white_primary"
+        android:textSize="14sp"
+        android:theme="@style/MaterialTheme.MaterialButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.2444" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/titleView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp"
+        android:text="@string/tool_title"
+        android:textColor="@color/black_87_transparent"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/subtitleView"
+        app:layout_constraintEnd_toStartOf="@id/actionButton"
+        app:layout_constraintStart_toEndOf="@id/iconView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/subtitleView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="14dp"
+        android:text="@string/tool_subtitle"
+        android:textColor="@color/black_54_transparent"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/actionButton"
+        app:layout_constraintStart_toEndOf="@id/iconView"
+        app:layout_constraintTop_toBottomOf="@id/titleView" />
+
+    <View
+        android:id="@+id/divider_line"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:background="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</merge>

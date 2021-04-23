@@ -14,4 +14,73 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppBaseMaterialTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowBackground">@color/window_background</item>
+
+        <item name="colorPrimary">@color/primary_green</item>
+
+        <item name="colorAccent">@color/primary_green</item>
+    </style>
+
+    <style name="AppMaterialTheme" parent="AppBaseMaterialTheme" />
+
+
+    <!--region MaterialButton-->
+    <style name="MaterialTheme.MaterialButton" parent="AppMaterialTheme">
+        <item name="materialButtonStyle">@style/AppWidget.MaterialButton</item>
+    </style>
+
+    <style name="MaterialTheme.MaterialButton.Unelevated">
+        <item name="materialButtonStyle">@style/AppWidget.MaterialButton.Unelevated</item>
+    </style>
+
+    <style name="MaterialTheme.MaterialButton.Outlined">
+        <item name="materialButtonStyle">@style/AppWidget.MaterialButton.Outlined</item>
+    </style>
+
+    <style name="MaterialTheme.MaterialButton.SelectAll" />
+
+    <style name="MaterialTheme.MaterialButton.SelectAll.Light">
+        <item name="materialButtonStyle">@style/AppWidget.MaterialButton.SelectAll.Light</item>
+    </style>
+
+    <style name="MaterialTheme.MaterialButton.SelectAll.Dark">
+        <item name="materialButtonStyle">@style/AppWidget.MaterialButton.SelectAll.Dark</item>
+    </style>
+
+    <style name="AppWidget.MaterialButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:textAppearance">?android:attr/textAppearance</item>
+        <item name="android:gravity">center</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+    </style>
+
+    <style name="AppWidget.MaterialButton.Unelevated" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:textAppearance">?android:attr/textAppearance</item>
+        <item name="android:gravity">center</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+    </style>
+
+    <style name="AppWidget.MaterialButton.Outlined" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textAppearance">?android:attr/textAppearance</item>
+        <item name="android:gravity">center</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+    </style>
+
+    <style name="AppWidget.MaterialButton.SelectAll.Light" parent="AppWidget.MaterialButton.Unelevated">
+        <item name="android:textSize">14dp</item>
+        <item name="android:paddingLeft">2dp</item>
+        <item name="android:paddingRight">2dp</item>
+    </style>
+
+    <style name="AppWidget.MaterialButton.SelectAll.Dark" parent="AppWidget.MaterialButton.Outlined">
+        <item name="android:textSize">14dp</item>
+        <item name="android:paddingLeft">2dp</item>
+        <item name="android:paddingRight">2dp</item>
+    </style>
+    <!--endregion-->
+
 </resources>

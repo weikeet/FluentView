@@ -6,7 +6,7 @@ import android.text.TextUtils
 import android.util.AttributeSet
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.weicools.kotlinlayout.dsl.*
-import com.weicools.kotlinlayout.widget.*
+import com.weicools.kotlinlayout.widget.MoreToolKtView
 
 class MainConstraintMultiLayout2 : ConstraintLayout {
   constructor(context: Context) : super(context)
@@ -136,139 +136,22 @@ class MainConstraintMultiLayout2 : ConstraintLayout {
       isVerticalFadingEdgeEnabled = true
     }
 
-    Draw01LinearGradientView(context).apply {
-      layoutParams = constraintLayoutParams(20.dp, 20.dp) {
-        bottomToBottom = parentId
+    val (tool1) = createRefs()
+    MoreToolKtView(context).apply {
+      layoutParams = constraintLayoutParams(0, 72.dp) {
+        bottomMargin = 64.dp
         leftToLeft = parentId
+        rightToRight = parentId
+        bottomToBottom = parentId
       }
+      id = tool1
     }.also { addView(it) }
 
-    Draw02RadialGradientView(context).apply {
-      layoutParams = constraintLayoutParams(20.dp, 20.dp) {
-        leftMargin = 24.dp
-        bottomToBottom = parentId
+    MoreToolKtView(context).apply {
+      layoutParams = constraintLayoutParams(0, 72.dp) {
         leftToLeft = parentId
-      }
-    }.also { addView(it) }
-
-    Draw03SweepGradientView(context).apply {
-      layoutParams = constraintLayoutParams(20.dp, 20.dp) {
-        leftMargin = 48.dp
-        bottomToBottom = parentId
-        leftToLeft = parentId
-      }
-    }.also { addView(it) }
-
-    Draw04BitmapShaderView(context).apply {
-      layoutParams = constraintLayoutParams(20.dp, 20.dp) {
-        leftMargin = 72.dp
-        bottomToBottom = parentId
-        leftToLeft = parentId
-      }
-    }.also { addView(it) }
-
-    Draw01LinearGradientView(context).apply {
-      layoutParams = constraintLayoutParams(20.dp, 20.dp) {
-        leftMargin = 96.dp
-        bottomToBottom = parentId
-        leftToLeft = parentId
-      }
-    }.also { addView(it) }
-
-    DrawArcView(context).apply {
-      layoutParams = constraintLayoutParams(20.dp, 20.dp) {
-        leftMargin = 120.dp
-        bottomToBottom = parentId
-        leftToLeft = parentId
-      }
-    }.also { addView(it) }
-
-    DrawCircleView(context).apply {
-      layoutParams = constraintLayoutParams(20.dp, 20.dp) {
-        leftMargin = 144.dp
-        bottomToBottom = parentId
-        leftToLeft = parentId
-      }
-    }.also { addView(it) }
-
-    DrawColorView(context).apply {
-      layoutParams = constraintLayoutParams(20.dp, 20.dp) {
-        leftMargin = 168.dp
-        bottomToBottom = parentId
-        leftToLeft = parentId
-      }
-    }.also { addView(it) }
-
-    DrawLineView(context).apply {
-      layoutParams = constraintLayoutParams(20.dp, 20.dp) {
-        leftMargin = 192.dp
-        bottomToBottom = parentId
-        leftToLeft = parentId
-      }
-    }.also { addView(it) }
-
-    DrawOvalView(context).apply {
-      layoutParams = constraintLayoutParams(20.dp, 20.dp) {
-        leftMargin = 216.dp
-        bottomToBottom = parentId
-        leftToLeft = parentId
-      }
-    }.also { addView(it) }
-
-    DrawPathView(context).apply {
-      layoutParams = constraintLayoutParams(20.dp, 20.dp) {
-        leftMargin = 240.dp
-        bottomToBottom = parentId
-        leftToLeft = parentId
-      }
-    }.also { addView(it) }
-
-    DrawPointView(context).apply {
-      layoutParams = constraintLayoutParams(20.dp, 20.dp) {
-        leftMargin = 264.dp
-        bottomToBottom = parentId
-        leftToLeft = parentId
-      }
-    }.also { addView(it) }
-
-    DrawRectView(context).apply {
-      layoutParams = constraintLayoutParams(20.dp, 20.dp) {
-        leftMargin = 288.dp
-        bottomToBottom = parentId
-        leftToLeft = parentId
-      }
-    }.also { addView(it) }
-
-    DrawRoundRectView(context).apply {
-      layoutParams = constraintLayoutParams(20.dp, 20.dp) {
-        leftMargin = 312.dp
-        bottomToBottom = parentId
-        leftToLeft = parentId
-      }
-    }.also { addView(it) }
-
-    OutRippleView(context).apply {
-      layoutParams = constraintLayoutParams(20.dp, 20.dp) {
-        leftMargin = 336.dp
-        bottomToBottom = parentId
-        leftToLeft = parentId
-      }
-    }.also { addView(it) }
-
-    RippleView(context).apply {
-      layoutParams = constraintLayoutParams(20.dp, 20.dp) {
-        bottomMargin = 40.dp
-        bottomToBottom = parentId
-        leftToLeft = parentId
-      }
-    }.also { addView(it) }
-
-    WaveRippleView(context).apply {
-      layoutParams = constraintLayoutParams(20.dp, 20.dp) {
-        leftMargin = 24.dp
-        bottomMargin = 40.dp
-        bottomToBottom = parentId
-        leftToLeft = parentId
+        rightToRight = parentId
+        bottomToTop = tool1
       }
     }.also { addView(it) }
   }
