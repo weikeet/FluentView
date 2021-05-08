@@ -9,13 +9,17 @@ import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.weicools.kotlinlayout.dsl.*
 
-@SuppressLint("SetTextI18n")
 class MainDslView : ConstraintLayout {
   constructor(context: Context) : super(context)
   constructor(context: Context, attrs: AttributeSet?) : super(context, attrs)
   constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr)
 
   init {
+    createView()
+  }
+
+  @SuppressLint("SetTextI18n")
+  private fun createView() {
     val (ivBack, vDivider, layer, ivDiamond, tvTitle, tvContent,
       ivAvatar, tvSub, tvTime, tvCancel, tvOk
     ) = createRefs()

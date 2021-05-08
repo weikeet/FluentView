@@ -14,6 +14,10 @@ class MainConstraintMultiLayout2 : ConstraintLayout {
   constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr)
 
   init {
+    createView()
+  }
+
+  private fun createView() {
     val (ivHeader, ivFavorite, tvTitle, etCameraType, tvCameraLabel,
       tvSettingLabel, etSettings, btnUpload, btnDiscard, tvDescription
     ) = createRefs()
