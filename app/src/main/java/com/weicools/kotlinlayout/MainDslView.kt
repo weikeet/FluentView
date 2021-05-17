@@ -7,7 +7,7 @@ import android.util.AttributeSet
 import android.view.Gravity
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.weicools.kotlinlayout.dsl.*
+import com.weicools.kotlinlayout.widget.*
 
 class MainDslView : ConstraintLayout {
   constructor(context: Context) : super(context)

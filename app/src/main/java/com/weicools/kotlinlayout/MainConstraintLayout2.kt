@@ -5,7 +5,7 @@ import android.text.InputType
 import android.text.TextUtils
 import android.util.AttributeSet
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.weicools.kotlinlayout.dsl.*
+import com.weicools.kotlinlayout.widget.*
 
 class MainConstraintLayout2 : ConstraintLayout {
   constructor(context: Context) : super(context)

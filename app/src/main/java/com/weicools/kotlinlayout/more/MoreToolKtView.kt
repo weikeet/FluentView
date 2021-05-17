@@ -1,10 +1,10 @@
-package com.weicools.kotlinlayout.widget
+package com.weicools.kotlinlayout.more
 
 import android.content.Context
 import android.util.AttributeSet
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.weicools.kotlinlayout.R
-import com.weicools.kotlinlayout.dsl.*
+import com.weicools.kotlinlayout.widget.*
 
 /**
  * @author weicools

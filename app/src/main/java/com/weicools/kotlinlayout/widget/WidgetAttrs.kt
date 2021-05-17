@@ -1,6 +1,6 @@
 @file:Suppress("unused", "FunctionName")
 
-package com.weicools.kotlinlayout.dsl
+package com.weicools.kotlinlayout.widget
 
 import android.content.res.Resources
 import android.graphics.Color
@@ -69,7 +69,7 @@ inline fun View.color_Of(colorId: Int) = ContextCompat.getColor(context, colorId
 inline fun View.colors_Of(colorId: Int) = ContextCompat.getColorStateList(context, colorId)
 
 @Suppress("NOTHING_TO_INLINE")
-inline fun createRefs() = LayoutReferenceIds()
+inline fun createRefs() = WidgetReferenceIds()
 
 //region View extend field
 inline var View.padding_Top: Int

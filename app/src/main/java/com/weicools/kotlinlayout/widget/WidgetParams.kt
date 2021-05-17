@@ -1,6 +1,6 @@
-@file:Suppress("FunctionName")
+@file:Suppress("FunctionName", "unused")
 
-package com.weicools.kotlinlayout.dsl
+package com.weicools.kotlinlayout.widget
 
 import android.widget.FrameLayout
 import android.widget.LinearLayout

@@ -1,6 +1,6 @@
 @file:Suppress("unused", "FunctionName")
 
-package com.weicools.kotlinlayout.dsl
+package com.weicools.kotlinlayout.widget
 
 import android.content.Context
 import android.view.View

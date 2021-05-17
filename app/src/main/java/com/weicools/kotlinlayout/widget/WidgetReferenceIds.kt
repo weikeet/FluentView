@@ -1,4 +1,4 @@
-package com.weicools.kotlinlayout.dsl
+package com.weicools.kotlinlayout.widget
 
 import androidx.core.view.ViewCompat
 
@@ -7,7 +7,7 @@ import androidx.core.view.ViewCompat
  *
  * desc:
  */
-class LayoutReferenceIds {
+class WidgetReferenceIds {
   operator fun component1(): Int = ViewCompat.generateViewId()
   operator fun component2(): Int = ViewCompat.generateViewId()
   operator fun component3(): Int = ViewCompat.generateViewId()
