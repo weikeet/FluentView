@@ -10,7 +10,7 @@ import com.weicools.kotlinlayout.more.MoreToolKtView
 import com.weicools.kotlinlayout.widget.background_resource
 import com.weicools.kotlinlayout.widget.button
 import com.weicools.kotlinlayout.widget.center_HorizontalOf
-import com.weicools.kotlinlayout.widget.constraintLayoutParams
+import com.weicools.kotlinlayout.widget.constraintParams
 import com.weicools.kotlinlayout.widget.createRefs
 import com.weicools.kotlinlayout.widget.dp
 import com.weicools.kotlinlayout.widget.editText
@@ -41,7 +41,7 @@ class MainConstraintMultiLayout2 : ConstraintLayout {
     ) = createRefs()
 
     imageView(ivHeader) {
-      layoutParams = constraintLayoutParams(0, 0) {
+      layoutParams = constraintParams(0, 0) {
         bottomMargin = 16.dp
         topToTop = parentId
         bottomToBottom = ivFavorite
@@ -53,7 +53,7 @@ class MainConstraintMultiLayout2 : ConstraintLayout {
     }
 
     imageView(ivFavorite) {
-      layoutParams = constraintLayoutParams(36.dp, 36.dp) {
+      layoutParams = constraintParams(36.dp, 36.dp) {
         rightMargin = 16.dp
         bottomMargin = 16.dp
         topToTop = parentId
@@ -67,7 +67,7 @@ class MainConstraintMultiLayout2 : ConstraintLayout {
     }
 
     textView(tvTitle) {
-      layoutParams = constraintLayoutParams {
+      layoutParams = constraintParams {
         leftMargin = 16.dp
         rightMargin = 16.dp
         leftToLeft = parentId
@@ -78,7 +78,7 @@ class MainConstraintMultiLayout2 : ConstraintLayout {
     }
 
     editText(etCameraType) {
-      layoutParams = constraintLayoutParams(0, wrapContent) {
+      layoutParams = constraintParams(0, wrapContent) {
         topMargin = 8.dp
         center_HorizontalOf = etSettings
         topToBottom = tvTitle
@@ -89,7 +89,7 @@ class MainConstraintMultiLayout2 : ConstraintLayout {
     }
 
     textView(tvCameraLabel) {
-      layoutParams = constraintLayoutParams {
+      layoutParams = constraintParams {
         leftMargin = 16.dp
         leftToLeft = parentId
         baselineToBaseline = etCameraType
@@ -101,7 +101,7 @@ class MainConstraintMultiLayout2 : ConstraintLayout {
     }
 
     textView(tvSettingLabel) {
-      layoutParams = constraintLayoutParams {
+      layoutParams = constraintParams {
         leftMargin = 16.dp
         baselineToBaseline = etSettings
         leftToLeft = parentId
@@ -113,7 +113,7 @@ class MainConstraintMultiLayout2 : ConstraintLayout {
     }
 
     editText(etSettings) {
-      layoutParams = constraintLayoutParams(0, wrapContent) {
+      layoutParams = constraintParams(0, wrapContent) {
         leftMargin = 6.dp
         topMargin = 6.dp
         leftToRight = tvSettingLabel
@@ -126,7 +126,7 @@ class MainConstraintMultiLayout2 : ConstraintLayout {
     }
 
     button(btnUpload) {
-      layoutParams = constraintLayoutParams {
+      layoutParams = constraintParams {
         rightMargin = 16.dp
         bottomMargin = 16.dp
         bottomToBottom = parentId
@@ -136,7 +136,7 @@ class MainConstraintMultiLayout2 : ConstraintLayout {
     }
 
     button(btnDiscard) {
-      layoutParams = constraintLayoutParams {
+      layoutParams = constraintParams {
         rightMargin = 8.dp
         baselineToBaseline = btnUpload
         rightToLeft = btnUpload
@@ -146,7 +146,7 @@ class MainConstraintMultiLayout2 : ConstraintLayout {
     }
 
     textView(tvDescription) {
-      layoutParams = constraintLayoutParams(0, 0) {
+      layoutParams = constraintParams(0, 0) {
         leftMargin = 16.dp
         topMargin = 8.dp
         rightMargin = 16.dp
@@ -163,7 +163,7 @@ class MainConstraintMultiLayout2 : ConstraintLayout {
 
     val (tool1) = createRefs()
     MoreToolKtView(context).apply {
-      layoutParams = constraintLayoutParams(0, 72.dp) {
+      layoutParams = constraintParams(0, 72.dp) {
         bottomMargin = 64.dp
         leftToLeft = parentId
         rightToRight = parentId
@@ -173,7 +173,7 @@ class MainConstraintMultiLayout2 : ConstraintLayout {
     }.also { addView(it) }
 
     MoreToolKtView(context).apply {
-      layoutParams = constraintLayoutParams(0, 72.dp) {
+      layoutParams = constraintParams(0, 72.dp) {
         leftToLeft = parentId
         rightToRight = parentId
         bottomToTop = tool1

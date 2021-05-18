@@ -5,7 +5,7 @@ import android.content.Context
 import android.util.AttributeSet
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.weicools.kotlinlayout.widget.chainPacked
-import com.weicools.kotlinlayout.widget.constraintLayoutParams
+import com.weicools.kotlinlayout.widget.constraintParams
 import com.weicools.kotlinlayout.widget.createRefs
 import com.weicools.kotlinlayout.widget.dp
 import com.weicools.kotlinlayout.widget.imageView
@@ -31,7 +31,7 @@ class HelloKotlinDslLayout : ConstraintLayout {
     val (iconId, textId) = createRefs()
 
     imageView(iconId) {
-      layoutParams = constraintLayoutParams(40.dp, 40.dp) {
+      layoutParams = constraintParams(40.dp, 40.dp) {
         leftToLeft = parentId
         topToTop = parentId
         rightToRight = parentId
@@ -42,7 +42,7 @@ class HelloKotlinDslLayout : ConstraintLayout {
     }
 
     textView(textId) {
-      layoutParams = constraintLayoutParams {
+      layoutParams = constraintParams {
         topMargin = 8.dp
         leftToLeft = parentId
         topToBottom = iconId
@@ -53,7 +53,7 @@ class HelloKotlinDslLayout : ConstraintLayout {
     }
 
     // materialButton(style = R.style.AppWidget_MaterialButton) {
-    //   layoutParams = constraintLayoutParams {
+    //   layoutParams = constraintParams {
     //     topMargin = 48.dp
     //     leftToLeft = parentId
     //     topToBottom = iconId

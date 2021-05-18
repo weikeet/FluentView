@@ -6,7 +6,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import com.weicools.kotlinlayout.R
 import com.weicools.kotlinlayout.widget.background_colorResource
 import com.weicools.kotlinlayout.widget.chainPacked
-import com.weicools.kotlinlayout.widget.constraintLayoutParams
+import com.weicools.kotlinlayout.widget.constraintParams
 import com.weicools.kotlinlayout.widget.createRefs
 import com.weicools.kotlinlayout.widget.dp
 import com.weicools.kotlinlayout.widget.imageView
@@ -38,7 +38,7 @@ class MoreToolKtView : ConstraintLayout {
     val (icon, title, subtitle, action) = createRefs()
 
     imageView(icon) {
-      layoutParams = constraintLayoutParams(44.dp, 44.dp) {
+      layoutParams = constraintParams(44.dp, 44.dp) {
         leftMargin = 32.dp
         leftToLeft = parentId
         topToTop = parentId
@@ -48,7 +48,7 @@ class MoreToolKtView : ConstraintLayout {
     }
 
     materialButton(action, R.style.MaterialTheme_MaterialButton) {
-      layoutParams = constraintLayoutParams(0, 36.dp) {
+      layoutParams = constraintParams(0, 36.dp) {
         rightMargin = 32.dp
         rightToRight = parentId
         topToTop = parentId
@@ -61,7 +61,7 @@ class MoreToolKtView : ConstraintLayout {
     }
 
     textView(title) {
-      layoutParams = constraintLayoutParams(0, wrapContent) {
+      layoutParams = constraintParams(0, wrapContent) {
         leftMargin = 14.dp
         rightMargin = 14.dp
         leftToRight = icon
@@ -76,7 +76,7 @@ class MoreToolKtView : ConstraintLayout {
     }
 
     textView(subtitle) {
-      layoutParams = constraintLayoutParams(0, wrapContent) {
+      layoutParams = constraintParams(0, wrapContent) {
         leftMargin = 14.dp
         rightMargin = 14.dp
         topMargin = 4.dp
@@ -92,7 +92,7 @@ class MoreToolKtView : ConstraintLayout {
     }
 
     view {
-      layoutParams = constraintLayoutParams(0, 1.dp) {
+      layoutParams = constraintParams(0, 1.dp) {
         leftMargin = 32.dp
         rightMargin = 32.dp
         leftToLeft = parentId

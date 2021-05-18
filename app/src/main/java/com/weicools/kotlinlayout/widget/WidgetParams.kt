@@ -2,10 +2,15 @@
 
 package com.weicools.kotlinlayout.widget
 
+import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.coordinatorlayout.widget.CoordinatorLayout
+import androidx.drawerlayout.widget.DrawerLayout
+import com.google.android.material.appbar.AppBarLayout
+import com.google.android.material.appbar.CollapsingToolbarLayout
 
 /**
  * @author Weicools Create on 2021.03.27
@@ -13,111 +18,126 @@ import androidx.constraintlayout.widget.ConstraintLayout
  * desc:
  */
 
-inline fun frameLayoutParams(init: FrameLayout.LayoutParams.() -> Unit) = FrameLayout.LayoutParams(wrapContent, wrapContent).apply(init)
-inline fun frameLayoutParams(width: Int, height: Int, init: FrameLayout.LayoutParams.() -> Unit) = FrameLayout.LayoutParams(width, height).apply(init)
+@Suppress("NOTHING_TO_INLINE")
+inline fun defaultParams(width: Int = wrapContent, height: Int = wrapContent) = ViewGroup.LayoutParams(width, height)
 
-inline fun linearLayoutParams(init: LinearLayout.LayoutParams.() -> Unit) = LinearLayout.LayoutParams(wrapContent, wrapContent).apply(init)
-inline fun linearLayoutParams(width: Int, height: Int, init: LinearLayout.LayoutParams.() -> Unit) = LinearLayout.LayoutParams(width, height).apply(init)
+inline fun frameParams(init: FrameLayout.LayoutParams.() -> Unit) = FrameLayout.LayoutParams(wrapContent, wrapContent).apply(init)
+inline fun frameParams(width: Int, height: Int, init: FrameLayout.LayoutParams.() -> Unit) = FrameLayout.LayoutParams(width, height).apply(init)
 
-inline fun relativeLayoutParams(init: RelativeLayout.LayoutParams.() -> Unit) = RelativeLayout.LayoutParams(wrapContent, wrapContent).apply(init)
-inline fun relativeLayoutParams(width: Int, height: Int, init: RelativeLayout.LayoutParams.() -> Unit) = RelativeLayout.LayoutParams(width, height).apply(init)
+inline fun linearParams(init: LinearLayout.LayoutParams.() -> Unit) = LinearLayout.LayoutParams(wrapContent, wrapContent).apply(init)
+inline fun linearParams(width: Int, height: Int, init: LinearLayout.LayoutParams.() -> Unit) = LinearLayout.LayoutParams(width, height).apply(init)
 
-inline fun constraintLayoutParams(init: ConstraintLayout.LayoutParams.() -> Unit) = ConstraintLayout.LayoutParams(wrapContent, wrapContent).apply(init)
-inline fun constraintLayoutParams(width: Int, height: Int, init: ConstraintLayout.LayoutParams.() -> Unit) = ConstraintLayout.LayoutParams(width, height).apply(init)
+inline fun relativeParams(init: RelativeLayout.LayoutParams.() -> Unit) = RelativeLayout.LayoutParams(wrapContent, wrapContent).apply(init)
+inline fun relativeParams(width: Int, height: Int, init: RelativeLayout.LayoutParams.() -> Unit) = RelativeLayout.LayoutParams(width, height).apply(init)
+
+inline fun constraintParams(init: ConstraintLayout.LayoutParams.() -> Unit) = ConstraintLayout.LayoutParams(wrapContent, wrapContent).apply(init)
+inline fun constraintParams(width: Int, height: Int, init: ConstraintLayout.LayoutParams.() -> Unit) = ConstraintLayout.LayoutParams(width, height).apply(init)
+
+inline fun drawerParams(init: DrawerLayout.LayoutParams.() -> Unit) = DrawerLayout.LayoutParams(wrapContent, wrapContent).apply(init)
+inline fun drawerParams(width: Int, height: Int, init: DrawerLayout.LayoutParams.() -> Unit) = DrawerLayout.LayoutParams(width, height).apply(init)
+
+inline fun coordinatorParams(init: CoordinatorLayout.LayoutParams.() -> Unit) = CoordinatorLayout.LayoutParams(wrapContent, wrapContent).apply(init)
+inline fun coordinatorParams(width: Int, height: Int, init: CoordinatorLayout.LayoutParams.() -> Unit) = CoordinatorLayout.LayoutParams(width, height).apply(init)
+
+inline fun appBarParams(init: AppBarLayout.LayoutParams.() -> Unit) = AppBarLayout.LayoutParams(wrapContent, wrapContent).apply(init)
+inline fun appBarParams(width: Int, height: Int, init: AppBarLayout.LayoutParams.() -> Unit) = AppBarLayout.LayoutParams(width, height).apply(init)
+
+inline fun collapsingToolbarParams(init: CollapsingToolbarLayout.LayoutParams.() -> Unit) = CollapsingToolbarLayout.LayoutParams(wrapContent, wrapContent).apply(init)
+inline fun collapsingToolbarParams(width: Int, height: Int, init: CollapsingToolbarLayout.LayoutParams.() -> Unit) = CollapsingToolbarLayout.LayoutParams(width, height).apply(init)
 
 //region RelativeLayout.LayoutParams extend field
 inline var RelativeLayout.LayoutParams.above: Int
-  get() = 0
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     addRule(RelativeLayout.ABOVE, value)
   }
 
 inline var RelativeLayout.LayoutParams.below: Int
-  get() = 0
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     addRule(RelativeLayout.BELOW, value)
   }
 
 inline var RelativeLayout.LayoutParams.align_Baseline: Int
-  get() = 0
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     addRule(RelativeLayout.ALIGN_BASELINE, value)
   }
 
 inline var RelativeLayout.LayoutParams.align_Left: Int
-  get() = 0
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     addRule(RelativeLayout.ALIGN_LEFT, value)
   }
 
 inline var RelativeLayout.LayoutParams.align_Top: Int
-  get() = 0
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     addRule(RelativeLayout.ALIGN_TOP, value)
   }
 
 inline var RelativeLayout.LayoutParams.align_Right: Int
-  get() = 0
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     addRule(RelativeLayout.ALIGN_RIGHT, value)
   }
 
 inline var RelativeLayout.LayoutParams.align_Bottom: Int
-  get() = 0
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     addRule(RelativeLayout.ALIGN_BOTTOM, value)
   }
 
 inline var RelativeLayout.LayoutParams.align_ParentLeft: Boolean
-  get() = false
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     if (value) addRule(RelativeLayout.ALIGN_PARENT_LEFT)
   }
 
 inline var RelativeLayout.LayoutParams.align_ParentTop: Boolean
-  get() = false
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     if (value) addRule(RelativeLayout.ALIGN_PARENT_TOP)
   }
 
 inline var RelativeLayout.LayoutParams.align_ParentRight: Boolean
-  get() = false
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     if (value) addRule(RelativeLayout.ALIGN_PARENT_RIGHT)
   }
 
 inline var RelativeLayout.LayoutParams.align_ParentBottom: Boolean
-  get() = false
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     if (value) addRule(RelativeLayout.ALIGN_PARENT_BOTTOM)
   }
 
 inline var RelativeLayout.LayoutParams.center_InParent: Boolean
-  get() = false
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     if (value) addRule(RelativeLayout.CENTER_IN_PARENT)
   }
 
 inline var RelativeLayout.LayoutParams.center_Horizontal: Boolean
-  get() = false
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     if (value) addRule(RelativeLayout.CENTER_HORIZONTAL)
   }
 
 inline var RelativeLayout.LayoutParams.center_Vertical: Boolean
-  get() = false
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     if (value) addRule(RelativeLayout.CENTER_VERTICAL)
   }
 
 inline var RelativeLayout.LayoutParams.to_LeftOf: Int
-  get() = 0
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     addRule(RelativeLayout.LEFT_OF, value)
   }
 
 inline var RelativeLayout.LayoutParams.to_RightOf: Int
-  get() = 0
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     addRule(RelativeLayout.RIGHT_OF, value)
   }
@@ -125,7 +145,7 @@ inline var RelativeLayout.LayoutParams.to_RightOf: Int
 
 //region ConstraintLayout.LayoutParams extend field
 inline var ConstraintLayout.LayoutParams.center_Of: Int
-  get() = 0
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     leftToLeft = value
     topToTop = value
@@ -134,14 +154,14 @@ inline var ConstraintLayout.LayoutParams.center_Of: Int
   }
 
 inline var ConstraintLayout.LayoutParams.center_HorizontalOf: Int
-  get() = 0
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     leftToLeft = value
     rightToRight = value
   }
 
 inline var ConstraintLayout.LayoutParams.center_VerticalOf: Int
-  get() = 0
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     topToTop = value
     bottomToBottom = value

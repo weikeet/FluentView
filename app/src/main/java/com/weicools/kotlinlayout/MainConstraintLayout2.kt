@@ -9,7 +9,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import com.weicools.kotlinlayout.widget.background_resource
 import com.weicools.kotlinlayout.widget.button
 import com.weicools.kotlinlayout.widget.center_HorizontalOf
-import com.weicools.kotlinlayout.widget.constraintLayoutParams
+import com.weicools.kotlinlayout.widget.constraintParams
 import com.weicools.kotlinlayout.widget.createRefs
 import com.weicools.kotlinlayout.widget.dp
 import com.weicools.kotlinlayout.widget.editText
@@ -40,7 +40,7 @@ class MainConstraintLayout2 : ConstraintLayout {
     ) = createRefs()
 
     imageView(ivHeader) {
-      layoutParams = constraintLayoutParams(0, 0) {
+      layoutParams = constraintParams(0, 0) {
         bottomMargin = 16.dp
         topToTop = parentId
         bottomToBottom = ivFavorite
@@ -52,7 +52,7 @@ class MainConstraintLayout2 : ConstraintLayout {
     }
 
     imageView(ivFavorite) {
-      layoutParams = constraintLayoutParams(36.dp, 36.dp) {
+      layoutParams = constraintParams(36.dp, 36.dp) {
         rightMargin = 16.dp
         bottomMargin = 16.dp
         topToTop = parentId
@@ -66,7 +66,7 @@ class MainConstraintLayout2 : ConstraintLayout {
     }
 
     textView(tvTitle) {
-      layoutParams = constraintLayoutParams {
+      layoutParams = constraintParams {
         leftMargin = 16.dp
         rightMargin = 16.dp
         leftToLeft = parentId
@@ -77,7 +77,7 @@ class MainConstraintLayout2 : ConstraintLayout {
     }
 
     editText(etCameraType) {
-      layoutParams = constraintLayoutParams(0, wrapContent) {
+      layoutParams = constraintParams(0, wrapContent) {
         topMargin = 8.dp
         center_HorizontalOf = etSettings
         topToBottom = tvTitle
@@ -88,7 +88,7 @@ class MainConstraintLayout2 : ConstraintLayout {
     }
 
     textView(tvCameraLabel) {
-      layoutParams = constraintLayoutParams {
+      layoutParams = constraintParams {
         leftMargin = 16.dp
         leftToLeft = parentId
         baselineToBaseline = etCameraType
@@ -100,7 +100,7 @@ class MainConstraintLayout2 : ConstraintLayout {
     }
 
     textView(tvSettingLabel) {
-      layoutParams = constraintLayoutParams {
+      layoutParams = constraintParams {
         leftMargin = 16.dp
         baselineToBaseline = etSettings
         leftToLeft = parentId
@@ -112,7 +112,7 @@ class MainConstraintLayout2 : ConstraintLayout {
     }
 
     editText(etSettings) {
-      layoutParams = constraintLayoutParams(0, wrapContent) {
+      layoutParams = constraintParams(0, wrapContent) {
         leftMargin = 6.dp
         topMargin = 6.dp
         leftToRight = tvSettingLabel
@@ -125,7 +125,7 @@ class MainConstraintLayout2 : ConstraintLayout {
     }
 
     button(btnUpload) {
-      layoutParams = constraintLayoutParams {
+      layoutParams = constraintParams {
         rightMargin = 16.dp
         bottomMargin = 16.dp
         bottomToBottom = parentId
@@ -135,7 +135,7 @@ class MainConstraintLayout2 : ConstraintLayout {
     }
 
     button(btnDiscard) {
-      layoutParams = constraintLayoutParams {
+      layoutParams = constraintParams {
         rightMargin = 8.dp
         baselineToBaseline = btnUpload
         rightToLeft = btnUpload
@@ -145,7 +145,7 @@ class MainConstraintLayout2 : ConstraintLayout {
     }
 
     textView(tvDescription) {
-      layoutParams = constraintLayoutParams(0, 0) {
+      layoutParams = constraintParams(0, 0) {
         leftMargin = 16.dp
         topMargin = 8.dp
         rightMargin = 16.dp
