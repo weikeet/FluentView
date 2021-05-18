@@ -30,6 +30,12 @@ import com.google.android.material.tabs.TabLayout
  * @date 2020.05.14
  */
 
+@Suppress("NOTHING_TO_INLINE")
+inline fun Context.withTheme(theme: Int): Context = ContextThemeWrapper(this, theme)
+
+@Suppress("NOTHING_TO_INLINE")
+inline fun wrapContextIfNeeded(context: Context, theme: Int? = null): Context = if (theme == null) context else ContextThemeWrapper(context, theme)
+
 //region create widget function by ViewGroup
 /**
  * create Widget instance within a [ViewGroup]
@@ -38,7 +44,7 @@ import com.google.android.material.tabs.TabLayout
  */
 
 inline fun ViewGroup.view(id: Int? = null, style: Int? = null, init: View.() -> Unit): View {
-  val widget = if (style == null) View(context) else View(ContextThemeWrapper(context, style))
+  val widget = View(wrapContextIfNeeded(context, style))
   if (id != null) widget.id = id
   return widget.apply(init).also { addView(it) }
 }
@@ -52,98 +58,98 @@ inline fun ViewGroup.space(id: Int? = null, init: Space.() -> Unit): Space {
 
 
 inline fun ViewGroup.imageView(id: Int? = null, style: Int? = null, init: AppCompatImageView.() -> Unit): AppCompatImageView {
-  val widget = if (style == null) AppCompatImageView(context) else AppCompatImageView(ContextThemeWrapper(context, style))
+  val widget = AppCompatImageView(wrapContextIfNeeded(context, style))
   if (id != null) widget.id = id
   return widget.apply(init).also { addView(it) }
 }
 
 
 inline fun ViewGroup.textView(id: Int? = null, style: Int? = null, init: AppCompatTextView.() -> Unit): AppCompatTextView {
-  val widget = if (style == null) AppCompatTextView(context) else AppCompatTextView(ContextThemeWrapper(context, style))
+  val widget = AppCompatTextView(wrapContextIfNeeded(context, style))
   if (id != null) widget.id = id
   return widget.apply(init).also { addView(it) }
 }
 
 
 inline fun ViewGroup.button(id: Int? = null, style: Int? = null, init: AppCompatButton.() -> Unit): AppCompatButton {
-  val widget = if (style == null) AppCompatButton(context) else AppCompatButton(ContextThemeWrapper(context, style))
+  val widget = AppCompatButton(wrapContextIfNeeded(context, style))
   if (id != null) widget.id = id
   return widget.apply(init).also { addView(it) }
 }
 
 
 inline fun ViewGroup.materialButton(id: Int? = null, style: Int? = null, init: MaterialButton.() -> Unit): MaterialButton {
-  val widget = if (style == null) MaterialButton(context) else MaterialButton(ContextThemeWrapper(context, style))
+  val widget = MaterialButton(wrapContextIfNeeded(context, style))
   if (id != null) widget.id = id
   return widget.apply(init).also { addView(it) }
 }
 
 
 inline fun ViewGroup.editText(id: Int? = null, style: Int? = null, init: EditText.() -> Unit): EditText {
-  val widget = if (style == null) EditText(context) else EditText(ContextThemeWrapper(context, style))
+  val widget = EditText(wrapContextIfNeeded(context, style))
   if (id != null) widget.id = id
   return widget.apply(init).also { addView(it) }
 }
 
 
 inline fun ViewGroup.recyclerView(id: Int? = null, style: Int? = null, init: RecyclerView.() -> Unit): RecyclerView {
-  val widget = if (style == null) RecyclerView(context) else RecyclerView(ContextThemeWrapper(context, style))
+  val widget = RecyclerView(wrapContextIfNeeded(context, style))
   if (id != null) widget.id = id
   return widget.apply(init).also { addView(it) }
 }
 
 
 inline fun ViewGroup.nestedScrollView(id: Int? = null, style: Int? = null, init: NestedScrollView.() -> Unit): NestedScrollView {
-  val widget = if (style == null) NestedScrollView(context) else NestedScrollView(ContextThemeWrapper(context, style))
+  val widget = NestedScrollView(wrapContextIfNeeded(context, style))
   if (id != null) widget.id = id
   return widget.apply(init).also { addView(it) }
 }
 
 
 inline fun ViewGroup.toolbar(id: Int? = null, style: Int? = null, init: Toolbar.() -> Unit): Toolbar {
-  val widget = if (style == null) Toolbar(context) else Toolbar(ContextThemeWrapper(context, style))
+  val widget = Toolbar(wrapContextIfNeeded(context, style))
   if (id != null) widget.id = id
   return widget.apply(init).also { addView(it) }
 }
 
 
 inline fun ViewGroup.tabLayout(id: Int? = null, style: Int? = null, init: TabLayout.() -> Unit): TabLayout {
-  val widget = if (style == null) TabLayout(context) else TabLayout(ContextThemeWrapper(context, style))
+  val widget = TabLayout(wrapContextIfNeeded(context, style))
   if (id != null) widget.id = id
   return widget.apply(init).also { addView(it) }
 }
 
 
 inline fun ViewGroup.viewPager(id: Int? = null, style: Int? = null, init: ViewPager.() -> Unit): ViewPager {
-  val widget = if (style == null) ViewPager(context) else ViewPager(ContextThemeWrapper(context, style))
+  val widget = ViewPager(wrapContextIfNeeded(context, style))
   if (id != null) widget.id = id
   return widget.apply(init).also { addView(it) }
 }
 
 
 inline fun ViewGroup.frameLayout(id: Int? = null, style: Int? = null, init: FrameLayout.() -> Unit): FrameLayout {
-  val widget = if (style == null) FrameLayout(context) else FrameLayout(ContextThemeWrapper(context, style))
+  val widget = FrameLayout(wrapContextIfNeeded(context, style))
   if (id != null) widget.id = id
   return widget.apply(init).also { addView(it) }
 }
 
 
 inline fun ViewGroup.linearLayout(id: Int? = null, style: Int? = null, init: LinearLayout.() -> Unit): LinearLayout {
-  val widget = if (style == null) LinearLayout(context) else LinearLayout(ContextThemeWrapper(context, style))
+  val widget = LinearLayout(wrapContextIfNeeded(context, style))
   if (id != null) widget.id = id
   return widget.apply(init).also { addView(it) }
 }
 
 
 inline fun ViewGroup.relativeLayout(id: Int? = null, style: Int? = null, init: RelativeLayout.() -> Unit): RelativeLayout {
-  val widget = if (style == null) RelativeLayout(context) else RelativeLayout(ContextThemeWrapper(context, style))
+  val widget = RelativeLayout(wrapContextIfNeeded(context, style))
   if (id != null) widget.id = id
   return widget.apply(init).also { addView(it) }
 }
 
 
 inline fun ViewGroup.constraintLayout(id: Int? = null, style: Int? = null, init: ConstraintLayout.() -> Unit): ConstraintLayout {
-  val widget = if (style == null) ConstraintLayout(context) else ConstraintLayout(ContextThemeWrapper(context, style))
+  val widget = ConstraintLayout(wrapContextIfNeeded(context, style))
   if (id != null) widget.id = id
   return widget.apply(init).also { addView(it) }
 }
@@ -177,77 +183,77 @@ inline fun ConstraintLayout.layer(id: Int? = null, init: Layer.() -> Unit): Laye
  */
 
 inline fun Context.view(id: Int? = null, style: Int? = null, init: View.() -> Unit): View {
-  val widget = if (style == null) View(this) else View(ContextThemeWrapper(this, style))
+  val widget = View(wrapContextIfNeeded(this, style))
   if (id != null) widget.id = id
   return widget.apply(init)
 }
 
 
 inline fun Context.imageView(id: Int? = null, style: Int? = null, init: AppCompatImageView.() -> Unit): AppCompatImageView {
-  val widget = if (style == null) AppCompatImageView(this) else AppCompatImageView(ContextThemeWrapper(this, style))
+  val widget = AppCompatImageView(wrapContextIfNeeded(this, style))
   if (id != null) widget.id = id
   return widget.apply(init)
 }
 
 
 inline fun Context.textView(id: Int? = null, style: Int? = null, init: AppCompatTextView.() -> Unit): AppCompatTextView {
-  val widget = if (style == null) AppCompatTextView(this) else AppCompatTextView(ContextThemeWrapper(this, style))
+  val widget = AppCompatTextView(wrapContextIfNeeded(this, style))
   if (id != null) widget.id = id
   return widget.apply(init)
 }
 
 
 inline fun Context.button(id: Int? = null, style: Int? = null, init: AppCompatButton.() -> Unit): AppCompatButton {
-  val widget = if (style == null) AppCompatButton(this) else AppCompatButton(ContextThemeWrapper(this, style))
+  val widget = AppCompatButton(wrapContextIfNeeded(this, style))
   if (id != null) widget.id = id
   return widget.apply(init)
 }
 
 
 inline fun Context.materialButton(id: Int? = null, style: Int? = null, init: MaterialButton.() -> Unit): MaterialButton {
-  val widget = if (style == null) MaterialButton(this) else MaterialButton(ContextThemeWrapper(this, style))
+  val widget = MaterialButton(wrapContextIfNeeded(this, style))
   if (id != null) widget.id = id
   return widget.apply(init)
 }
 
 
 inline fun Context.recyclerView(id: Int? = null, style: Int? = null, init: RecyclerView.() -> Unit): RecyclerView {
-  val widget = if (style == null) RecyclerView(this) else RecyclerView(ContextThemeWrapper(this, style))
+  val widget = RecyclerView(wrapContextIfNeeded(this, style))
   if (id != null) widget.id = id
   return widget.apply(init)
 }
 
 
 inline fun Context.nestedScrollView(id: Int? = null, style: Int? = null, init: NestedScrollView.() -> Unit): NestedScrollView {
-  val widget = if (style == null) NestedScrollView(this) else NestedScrollView(ContextThemeWrapper(this, style))
+  val widget = NestedScrollView(wrapContextIfNeeded(this, style))
   if (id != null) widget.id = id
   return widget.apply(init)
 }
 
 
 inline fun Context.frameLayout(id: Int? = null, style: Int? = null, init: FrameLayout.() -> Unit): FrameLayout {
-  val widget = if (style == null) FrameLayout(this) else FrameLayout(ContextThemeWrapper(this, style))
+  val widget = FrameLayout(wrapContextIfNeeded(this, style))
   if (id != null) widget.id = id
   return widget.apply(init)
 }
 
 
 inline fun Context.linearLayout(id: Int? = null, style: Int? = null, init: LinearLayout.() -> Unit): LinearLayout {
-  val widget = if (style == null) LinearLayout(this) else LinearLayout(ContextThemeWrapper(this, style))
+  val widget = LinearLayout(wrapContextIfNeeded(this, style))
   if (id != null) widget.id = id
   return widget.apply(init)
 }
 
 
 inline fun Context.relativeLayout(id: Int? = null, style: Int? = null, init: RelativeLayout.() -> Unit): RelativeLayout {
-  val widget = if (style == null) RelativeLayout(this) else RelativeLayout(ContextThemeWrapper(this, style))
+  val widget = RelativeLayout(wrapContextIfNeeded(this, style))
   if (id != null) widget.id = id
   return widget.apply(init)
 }
 
 
 inline fun Context.constraintLayout(id: Int? = null, style: Int? = null, init: ConstraintLayout.() -> Unit): ConstraintLayout {
-  val widget = if (style == null) ConstraintLayout(this) else ConstraintLayout(ContextThemeWrapper(this, style))
+  val widget = ConstraintLayout(wrapContextIfNeeded(this, style))
   if (id != null) widget.id = id
   return widget.apply(init)
 }
