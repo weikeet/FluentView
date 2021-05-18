@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.Gravity
 import androidx.appcompat.app.AppCompatActivity
 import com.weicools.kotlinlayout.R
-import com.weicools.kotlinlayout.widget.dp
+import com.weicools.kotlinlayout.widget.extensions.dp
 import org.jetbrains.anko.imageView
 import org.jetbrains.anko.textView
 import org.jetbrains.anko.verticalLayout

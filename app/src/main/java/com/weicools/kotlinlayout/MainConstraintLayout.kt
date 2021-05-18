@@ -6,41 +6,41 @@ import android.text.InputType
 import android.text.TextUtils
 import android.util.AttributeSet
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.weicools.kotlinlayout.widget.background_resource
-import com.weicools.kotlinlayout.widget.baseline_toBaselineOf
-import com.weicools.kotlinlayout.widget.bottom_toBottomOf
-import com.weicools.kotlinlayout.widget.bottom_toTopOf
-import com.weicools.kotlinlayout.widget.button
-import com.weicools.kotlinlayout.widget.center_horizontalOf
-import com.weicools.kotlinlayout.widget.center_verticalOf
-import com.weicools.kotlinlayout.widget.createRefs
-import com.weicools.kotlinlayout.widget.dp
-import com.weicools.kotlinlayout.widget.editText
-import com.weicools.kotlinlayout.widget.elevation_compat
-import com.weicools.kotlinlayout.widget.end_toEndOf
-import com.weicools.kotlinlayout.widget.end_toStartOf
-import com.weicools.kotlinlayout.widget.horizontal_bias
-import com.weicools.kotlinlayout.widget.imageView
-import com.weicools.kotlinlayout.widget.image_resource
-import com.weicools.kotlinlayout.widget.layout_height
-import com.weicools.kotlinlayout.widget.layout_width
-import com.weicools.kotlinlayout.widget.margin_Bottom
-import com.weicools.kotlinlayout.widget.margin_End
-import com.weicools.kotlinlayout.widget.margin_Start
-import com.weicools.kotlinlayout.widget.margin_Top
-import com.weicools.kotlinlayout.widget.paddings
-import com.weicools.kotlinlayout.widget.parentId
-import com.weicools.kotlinlayout.widget.scaleCenterCrop
-import com.weicools.kotlinlayout.widget.start_toEndOf
-import com.weicools.kotlinlayout.widget.start_toStartOf
-import com.weicools.kotlinlayout.widget.textView
-import com.weicools.kotlinlayout.widget.text_ems
-import com.weicools.kotlinlayout.widget.text_resource
-import com.weicools.kotlinlayout.widget.text_sizeDp
-import com.weicools.kotlinlayout.widget.top_toBottomOf
-import com.weicools.kotlinlayout.widget.top_toTopOf
-import com.weicools.kotlinlayout.widget.vertical_bias
-import com.weicools.kotlinlayout.widget.wrapContent
+import com.weicools.kotlinlayout.widget.dsl.button
+import com.weicools.kotlinlayout.widget.dsl.editText
+import com.weicools.kotlinlayout.widget.dsl.imageView
+import com.weicools.kotlinlayout.widget.dsl.textView
+import com.weicools.kotlinlayout.widget.extensions.background_resource
+import com.weicools.kotlinlayout.widget.extensions.baseline_toBaselineOf
+import com.weicools.kotlinlayout.widget.extensions.bottom_toBottomOf
+import com.weicools.kotlinlayout.widget.extensions.bottom_toTopOf
+import com.weicools.kotlinlayout.widget.extensions.center_horizontalOf
+import com.weicools.kotlinlayout.widget.extensions.center_verticalOf
+import com.weicools.kotlinlayout.widget.extensions.dp
+import com.weicools.kotlinlayout.widget.extensions.elevation_compat
+import com.weicools.kotlinlayout.widget.extensions.end_toEndOf
+import com.weicools.kotlinlayout.widget.extensions.end_toStartOf
+import com.weicools.kotlinlayout.widget.extensions.horizontal_bias
+import com.weicools.kotlinlayout.widget.extensions.image_resource
+import com.weicools.kotlinlayout.widget.extensions.layout_height
+import com.weicools.kotlinlayout.widget.extensions.layout_width
+import com.weicools.kotlinlayout.widget.extensions.margin_bottom
+import com.weicools.kotlinlayout.widget.extensions.margin_end
+import com.weicools.kotlinlayout.widget.extensions.margin_start
+import com.weicools.kotlinlayout.widget.extensions.margin_top
+import com.weicools.kotlinlayout.widget.extensions.paddings
+import com.weicools.kotlinlayout.widget.extensions.scaleCenterCrop
+import com.weicools.kotlinlayout.widget.extensions.start_toEndOf
+import com.weicools.kotlinlayout.widget.extensions.start_toStartOf
+import com.weicools.kotlinlayout.widget.extensions.text_ems
+import com.weicools.kotlinlayout.widget.extensions.text_resource
+import com.weicools.kotlinlayout.widget.extensions.text_sizeDp
+import com.weicools.kotlinlayout.widget.extensions.top_toBottomOf
+import com.weicools.kotlinlayout.widget.extensions.top_toTopOf
+import com.weicools.kotlinlayout.widget.extensions.vertical_bias
+import com.weicools.kotlinlayout.widget.ids.createRefs
+import com.weicools.kotlinlayout.widget.params.parentId
+import com.weicools.kotlinlayout.widget.params.wrapContent
 
 class MainConstraintLayout : ConstraintLayout {
   constructor(context: Context) : super(context)
@@ -59,7 +59,7 @@ class MainConstraintLayout : ConstraintLayout {
     imageView(ivHeader) {
       layout_width = 0
       layout_height = 0
-      margin_Bottom = 16.dp
+      margin_bottom = 16.dp
       bottom_toBottomOf = ivFavorite
       top_toTopOf = parentId
       center_horizontalOf = parentId
@@ -72,8 +72,8 @@ class MainConstraintLayout : ConstraintLayout {
     imageView(ivFavorite) {
       layout_width = 36.dp
       layout_height = 36.dp
-      margin_End = 16.dp
-      margin_Bottom = 16.dp
+      margin_end = 16.dp
+      margin_bottom = 16.dp
       center_verticalOf = parentId
       end_toEndOf = parentId
       vertical_bias = 0.19f
@@ -85,8 +85,8 @@ class MainConstraintLayout : ConstraintLayout {
     textView(tvTitle) {
       layout_width = wrapContent
       layout_height = wrapContent
-      margin_Start = 16.dp
-      margin_Top = 16.dp
+      margin_start = 16.dp
+      margin_top = 16.dp
       top_toBottomOf = ivHeader
       text_resource = R.string.singapore
       text_sizeDp = 24f
@@ -96,7 +96,7 @@ class MainConstraintLayout : ConstraintLayout {
     editText(etCameraType) {
       layout_width = 0
       layout_height = wrapContent
-      margin_Top = 8.dp
+      margin_top = 8.dp
       center_horizontalOf = etSettings
       top_toBottomOf = tvTitle
       text_ems = 10
@@ -107,7 +107,7 @@ class MainConstraintLayout : ConstraintLayout {
     textView(tvCameraLabel) {
       layout_width = wrapContent
       layout_height = wrapContent
-      margin_Start = 16.dp
+      margin_start = 16.dp
       start_toStartOf = parentId
       baseline_toBaselineOf = etCameraType
       if (Build.VERSION.SDK_INT > 16) {
@@ -119,7 +119,7 @@ class MainConstraintLayout : ConstraintLayout {
     textView(tvSettingLabel) {
       layout_width = wrapContent
       layout_height = wrapContent
-      margin_Start = 16.dp
+      margin_start = 16.dp
       baseline_toBaselineOf = etSettings
       start_toStartOf = parentId
       if (Build.VERSION.SDK_INT > 16) {
@@ -131,8 +131,8 @@ class MainConstraintLayout : ConstraintLayout {
     editText(etSettings) {
       layout_width = 0
       layout_height = wrapContent
-      margin_Start = 6.dp
-      margin_Top = 8.dp
+      margin_start = 6.dp
+      margin_top = 8.dp
       start_toEndOf = tvSettingLabel
       end_toEndOf = tvDescription
       top_toBottomOf = etCameraType
@@ -144,8 +144,8 @@ class MainConstraintLayout : ConstraintLayout {
     button(btnUpload) {
       layout_width = wrapContent
       layout_height = wrapContent
-      margin_End = 16.dp
-      margin_Bottom = 16.dp
+      margin_end = 16.dp
+      margin_bottom = 16.dp
       bottom_toBottomOf = parentId
       end_toEndOf = parentId
       text_resource = R.string.upload
@@ -154,7 +154,7 @@ class MainConstraintLayout : ConstraintLayout {
     button(btnDiscard) {
       layout_width = wrapContent
       layout_height = wrapContent
-      margin_End = 8.dp
+      margin_end = 8.dp
       baseline_toBaselineOf = btnUpload
       end_toStartOf = btnUpload
       text_resource = R.string.discard
@@ -164,10 +164,10 @@ class MainConstraintLayout : ConstraintLayout {
     textView(tvDescription) {
       layout_width = 0
       layout_height = 0
-      margin_Start = 16.dp
-      margin_Top = 8.dp
-      margin_End = 16.dp
-      margin_Bottom = 8.dp
+      margin_start = 16.dp
+      margin_top = 8.dp
+      margin_end = 16.dp
+      margin_bottom = 8.dp
       bottom_toTopOf = btnDiscard
       top_toBottomOf = etSettings
       center_horizontalOf = parentId

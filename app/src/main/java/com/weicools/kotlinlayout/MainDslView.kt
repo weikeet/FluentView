@@ -6,43 +6,43 @@ import android.graphics.Typeface
 import android.util.AttributeSet
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.weicools.kotlinlayout.widget.background_colorString
-import com.weicools.kotlinlayout.widget.background_resource
-import com.weicools.kotlinlayout.widget.bottom_toBottomOf
-import com.weicools.kotlinlayout.widget.center_horizontalOf
-import com.weicools.kotlinlayout.widget.center_verticalOf
-import com.weicools.kotlinlayout.widget.chainPacked
-import com.weicools.kotlinlayout.widget.createRefs
-import com.weicools.kotlinlayout.widget.dp
-import com.weicools.kotlinlayout.widget.end_toEndOf
-import com.weicools.kotlinlayout.widget.end_toStartOf
-import com.weicools.kotlinlayout.widget.gravity_center
-import com.weicools.kotlinlayout.widget.horizontal_chainStyle
-import com.weicools.kotlinlayout.widget.imageView
-import com.weicools.kotlinlayout.widget.image_resource
-import com.weicools.kotlinlayout.widget.layout_height
-import com.weicools.kotlinlayout.widget.layout_width
-import com.weicools.kotlinlayout.widget.margin_Bottom
-import com.weicools.kotlinlayout.widget.margin_End
-import com.weicools.kotlinlayout.widget.margin_Start
-import com.weicools.kotlinlayout.widget.margin_Top
-import com.weicools.kotlinlayout.widget.matchParent
-import com.weicools.kotlinlayout.widget.padding_bottom
-import com.weicools.kotlinlayout.widget.padding_left
-import com.weicools.kotlinlayout.widget.padding_right
-import com.weicools.kotlinlayout.widget.padding_top
-import com.weicools.kotlinlayout.widget.paddings
-import com.weicools.kotlinlayout.widget.parentId
-import com.weicools.kotlinlayout.widget.start_toEndOf
-import com.weicools.kotlinlayout.widget.start_toStartOf
-import com.weicools.kotlinlayout.widget.textView
-import com.weicools.kotlinlayout.widget.text_colorString
-import com.weicools.kotlinlayout.widget.text_sizeDp
-import com.weicools.kotlinlayout.widget.text_style
-import com.weicools.kotlinlayout.widget.top_toBottomOf
-import com.weicools.kotlinlayout.widget.top_toTopOf
-import com.weicools.kotlinlayout.widget.view
-import com.weicools.kotlinlayout.widget.wrapContent
+import com.weicools.kotlinlayout.widget.dsl.imageView
+import com.weicools.kotlinlayout.widget.dsl.textView
+import com.weicools.kotlinlayout.widget.dsl.view
+import com.weicools.kotlinlayout.widget.extensions.background_colorString
+import com.weicools.kotlinlayout.widget.extensions.background_resource
+import com.weicools.kotlinlayout.widget.extensions.bottom_toBottomOf
+import com.weicools.kotlinlayout.widget.extensions.center_horizontalOf
+import com.weicools.kotlinlayout.widget.extensions.center_verticalOf
+import com.weicools.kotlinlayout.widget.extensions.dp
+import com.weicools.kotlinlayout.widget.extensions.end_toEndOf
+import com.weicools.kotlinlayout.widget.extensions.end_toStartOf
+import com.weicools.kotlinlayout.widget.extensions.gravity_center
+import com.weicools.kotlinlayout.widget.extensions.horizontal_chainStyle
+import com.weicools.kotlinlayout.widget.extensions.image_resource
+import com.weicools.kotlinlayout.widget.extensions.layout_height
+import com.weicools.kotlinlayout.widget.extensions.layout_width
+import com.weicools.kotlinlayout.widget.extensions.margin_bottom
+import com.weicools.kotlinlayout.widget.extensions.margin_end
+import com.weicools.kotlinlayout.widget.extensions.margin_start
+import com.weicools.kotlinlayout.widget.extensions.margin_top
+import com.weicools.kotlinlayout.widget.extensions.padding_bottom
+import com.weicools.kotlinlayout.widget.extensions.padding_left
+import com.weicools.kotlinlayout.widget.extensions.padding_right
+import com.weicools.kotlinlayout.widget.extensions.padding_top
+import com.weicools.kotlinlayout.widget.extensions.paddings
+import com.weicools.kotlinlayout.widget.extensions.start_toEndOf
+import com.weicools.kotlinlayout.widget.extensions.start_toStartOf
+import com.weicools.kotlinlayout.widget.extensions.text_colorString
+import com.weicools.kotlinlayout.widget.extensions.text_sizeDp
+import com.weicools.kotlinlayout.widget.extensions.text_style
+import com.weicools.kotlinlayout.widget.extensions.top_toBottomOf
+import com.weicools.kotlinlayout.widget.extensions.top_toTopOf
+import com.weicools.kotlinlayout.widget.ids.createRefs
+import com.weicools.kotlinlayout.widget.params.chainPacked
+import com.weicools.kotlinlayout.widget.params.matchParent
+import com.weicools.kotlinlayout.widget.params.parentId
+import com.weicools.kotlinlayout.widget.params.wrapContent
 
 class MainDslView : ConstraintLayout {
   constructor(context: Context) : super(context)
@@ -62,8 +62,8 @@ class MainDslView : ConstraintLayout {
     imageView(ivBack) {
       layout_width = 40.dp
       layout_height = 40.dp
-      margin_Start = 20.dp
-      margin_Top = 20.dp
+      margin_start = 20.dp
+      margin_top = 20.dp
       start_toStartOf = parentId
       top_toTopOf = parentId
       image_resource = R.drawable.ic_back_black
@@ -85,7 +85,7 @@ class MainDslView : ConstraintLayout {
     imageView {
       layout_width = 40.dp
       layout_height = 40.dp
-      margin_End = 20.dp
+      margin_end = 20.dp
       center_verticalOf = ivBack
       end_toEndOf = parentId
       image_resource = R.drawable.ic_member_more
@@ -94,7 +94,7 @@ class MainDslView : ConstraintLayout {
     view(vDivider) {
       layout_width = matchParent
       layout_height = 1
-      margin_Top = 10.dp
+      margin_top = 10.dp
       top_toBottomOf = ivBack
       background_colorString = "#eeeeee"
     }
@@ -102,8 +102,8 @@ class MainDslView : ConstraintLayout {
     view(layer) {
       layout_width = 0
       layout_height = 0
-      margin_Start = 16.dp
-      margin_End = 16.dp
+      margin_start = 16.dp
+      margin_end = 16.dp
       bottom_toBottomOf = tvTime
       end_toEndOf = parentId
       start_toStartOf = parentId
@@ -114,8 +114,8 @@ class MainDslView : ConstraintLayout {
     imageView(ivDiamond) {
       layout_width = 40.dp
       layout_height = 40.dp
-      margin_Start = 20.dp
-      margin_Top = 40.dp
+      margin_start = 20.dp
+      margin_top = 40.dp
       start_toStartOf = ivBack
       top_toBottomOf = vDivider
       image_resource = R.drawable.diamond_tag
@@ -124,7 +124,7 @@ class MainDslView : ConstraintLayout {
     textView(tvTitle) {
       layout_width = wrapContent
       layout_height = wrapContent
-      margin_Start = 5.dp
+      margin_start = 5.dp
       center_verticalOf = ivDiamond
       start_toEndOf = ivDiamond
       gravity = gravity_center
@@ -141,7 +141,7 @@ class MainDslView : ConstraintLayout {
       end_toStartOf = ivAvatar
       start_toStartOf = ivDiamond
       top_toBottomOf = ivDiamond
-      margin_Top = 5.dp
+      margin_top = 5.dp
       text_sizeDp = 23f
       text = "The changes were merged into release with so many bugs"
     }
@@ -149,7 +149,7 @@ class MainDslView : ConstraintLayout {
     imageView(ivAvatar) {
       layout_width = 100.dp
       layout_height = 100.dp
-      margin_End = 20.dp
+      margin_end = 20.dp
       end_toEndOf = parentId
       start_toEndOf = tvContent
       top_toTopOf = tvContent
@@ -169,8 +169,8 @@ class MainDslView : ConstraintLayout {
     textView(tvTime) {
       layout_width = wrapContent
       layout_height = wrapContent
-      margin_Top = 20.dp
-      margin_End = 16.dp
+      margin_top = 20.dp
+      margin_end = 16.dp
       end_toEndOf = ivAvatar
       top_toBottomOf = ivAvatar
       text = "2020.04.30"
@@ -179,8 +179,8 @@ class MainDslView : ConstraintLayout {
     textView(tvCancel) {
       layout_width = wrapContent
       layout_height = wrapContent
-      margin_End = 30.dp
-      margin_Bottom = 20.dp
+      margin_end = 30.dp
+      margin_bottom = 20.dp
       end_toStartOf = tvOk
       start_toStartOf = parentId
       bottom_toBottomOf = parentId
@@ -198,7 +198,7 @@ class MainDslView : ConstraintLayout {
     textView(tvOk) {
       layout_width = wrapContent
       layout_height = wrapContent
-      margin_Bottom = 20.dp
+      margin_bottom = 20.dp
       end_toEndOf = parentId
       bottom_toBottomOf = parentId
       horizontal_chainStyle = chainPacked

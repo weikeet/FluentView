@@ -6,24 +6,24 @@ import android.text.InputType
 import android.text.TextUtils
 import android.util.AttributeSet
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.weicools.kotlinlayout.widget.background_resource
-import com.weicools.kotlinlayout.widget.button
-import com.weicools.kotlinlayout.widget.center_HorizontalOf
-import com.weicools.kotlinlayout.widget.constraintParams
-import com.weicools.kotlinlayout.widget.createRefs
-import com.weicools.kotlinlayout.widget.dp
-import com.weicools.kotlinlayout.widget.editText
-import com.weicools.kotlinlayout.widget.elevation_compat
-import com.weicools.kotlinlayout.widget.imageView
-import com.weicools.kotlinlayout.widget.image_resource
-import com.weicools.kotlinlayout.widget.paddings
-import com.weicools.kotlinlayout.widget.parentId
-import com.weicools.kotlinlayout.widget.scaleCenterCrop
-import com.weicools.kotlinlayout.widget.textView
-import com.weicools.kotlinlayout.widget.text_ems
-import com.weicools.kotlinlayout.widget.text_resource
-import com.weicools.kotlinlayout.widget.text_sizeDp
-import com.weicools.kotlinlayout.widget.wrapContent
+import com.weicools.kotlinlayout.widget.dsl.button
+import com.weicools.kotlinlayout.widget.dsl.editText
+import com.weicools.kotlinlayout.widget.dsl.imageView
+import com.weicools.kotlinlayout.widget.dsl.textView
+import com.weicools.kotlinlayout.widget.extensions.background_resource
+import com.weicools.kotlinlayout.widget.extensions.dp
+import com.weicools.kotlinlayout.widget.extensions.elevation_compat
+import com.weicools.kotlinlayout.widget.extensions.image_resource
+import com.weicools.kotlinlayout.widget.extensions.paddings
+import com.weicools.kotlinlayout.widget.extensions.scaleCenterCrop
+import com.weicools.kotlinlayout.widget.extensions.text_ems
+import com.weicools.kotlinlayout.widget.extensions.text_resource
+import com.weicools.kotlinlayout.widget.extensions.text_sizeDp
+import com.weicools.kotlinlayout.widget.ids.createRefs
+import com.weicools.kotlinlayout.widget.params.center_HorizontalOf
+import com.weicools.kotlinlayout.widget.params.constraintParams
+import com.weicools.kotlinlayout.widget.params.parentId
+import com.weicools.kotlinlayout.widget.params.wrapContent
 
 class MainConstraintLayout2 : ConstraintLayout {
   constructor(context: Context) : super(context)

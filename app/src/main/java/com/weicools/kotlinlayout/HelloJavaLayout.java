@@ -11,7 +11,7 @@ import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.view.ViewCompat;
-import com.weicools.kotlinlayout.widget.WidgetAttrsKt;
+import com.weicools.kotlinlayout.widget.extensions.ResourceKt;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -42,7 +42,7 @@ public class HelloJavaLayout extends ConstraintLayout {
     ImageView iconView = new AppCompatImageView(context);
     iconView.setId(iconId);
     iconView.setImageResource(R.drawable.ic_android_24dp);
-    LayoutParams iconParams = new LayoutParams(WidgetAttrsKt.getDp(40), WidgetAttrsKt.getDp(40));
+    LayoutParams iconParams = new LayoutParams(ResourceKt.getDp(40), ResourceKt.getDp(40));
     iconParams.leftToLeft = LayoutParams.PARENT_ID;
     iconParams.topToTop = LayoutParams.PARENT_ID;
     iconParams.rightToRight = LayoutParams.PARENT_ID;
@@ -54,7 +54,7 @@ public class HelloJavaLayout extends ConstraintLayout {
     textView.setId(textId);
     textView.setText("Hello Android");
     LayoutParams textParams = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-    textParams.topMargin = WidgetAttrsKt.getDp(8);
+    textParams.topMargin = ResourceKt.getDp(8);
     textParams.leftToLeft = LayoutParams.PARENT_ID;
     textParams.topToBottom = iconId;
     textParams.rightToRight = LayoutParams.PARENT_ID;

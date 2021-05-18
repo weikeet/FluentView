@@ -4,14 +4,14 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.util.AttributeSet
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.weicools.kotlinlayout.widget.chainPacked
-import com.weicools.kotlinlayout.widget.constraintParams
-import com.weicools.kotlinlayout.widget.createRefs
-import com.weicools.kotlinlayout.widget.dp
-import com.weicools.kotlinlayout.widget.imageView
-import com.weicools.kotlinlayout.widget.image_resource
-import com.weicools.kotlinlayout.widget.parentId
-import com.weicools.kotlinlayout.widget.textView
+import com.weicools.kotlinlayout.widget.dsl.imageView
+import com.weicools.kotlinlayout.widget.dsl.textView
+import com.weicools.kotlinlayout.widget.extensions.dp
+import com.weicools.kotlinlayout.widget.extensions.image_resource
+import com.weicools.kotlinlayout.widget.ids.createRefs
+import com.weicools.kotlinlayout.widget.params.chainPacked
+import com.weicools.kotlinlayout.widget.params.constraintParams
+import com.weicools.kotlinlayout.widget.params.parentId
 
 /**
  * @author weicools

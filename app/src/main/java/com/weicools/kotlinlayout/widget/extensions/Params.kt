@@ -1,4 +1,6 @@
-package com.weicools.kotlinlayout.widget
+@file:Suppress("unused")
+
+package com.weicools.kotlinlayout.widget.extensions
 
 import android.view.View
 import android.view.ViewGroup
@@ -7,15 +9,17 @@ import android.widget.RelativeLayout
 import androidx.constraintlayout.helper.widget.Flow
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.MarginLayoutParamsCompat
+import com.weicools.kotlinlayout.widget.NO_GETTER
+import com.weicools.kotlinlayout.widget.noGetter
 
 /**
  * @author weicools
- * @date 2021.05.18
+ * @date 2020.05.13
  */
 
 //region View extend common params field
 inline var View.layout_width: Int
-  get() = 0
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     val h = layoutParams?.height ?: 0
     layoutParams = if (layoutParams == null) {
@@ -29,7 +33,7 @@ inline var View.layout_width: Int
   }
 
 inline var View.layout_height: Int
-  get() = 0
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     val w = layoutParams?.width ?: 0
     layoutParams = if (layoutParams == null) {
@@ -42,38 +46,38 @@ inline var View.layout_height: Int
     }
   }
 
-inline var View.margin_Top: Int
-  get() = 0
+inline var View.margin_top: Int
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     (layoutParams as? ViewGroup.MarginLayoutParams)?.apply { topMargin = value }
   }
 
-inline var View.margin_Bottom: Int
-  get() = 0
+inline var View.margin_bottom: Int
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     (layoutParams as? ViewGroup.MarginLayoutParams)?.apply { bottomMargin = value }
   }
 
-inline var View.margin_Left: Int
-  get() = 0
+inline var View.margin_left: Int
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     (layoutParams as? ViewGroup.MarginLayoutParams)?.apply { leftMargin = value }
   }
 
-inline var View.margin_Right: Int
-  get() = 0
+inline var View.margin_right: Int
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     (layoutParams as? ViewGroup.MarginLayoutParams)?.apply { rightMargin = value }
   }
 
-inline var View.margin_Start: Int
-  get() = 0
+inline var View.margin_start: Int
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     (layoutParams as? ViewGroup.MarginLayoutParams)?.apply { MarginLayoutParamsCompat.setMarginStart(this, value) }
   }
 
-inline var View.margin_End: Int
-  get() = 0
+inline var View.margin_end: Int
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     (layoutParams as? ViewGroup.MarginLayoutParams)?.apply { MarginLayoutParamsCompat.setMarginEnd(this, value) }
   }
@@ -81,7 +85,7 @@ inline var View.margin_End: Int
 
 //region View extend linear params field
 inline var View.linearWeight: Float
-  get() = 0f
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     layoutParams = LinearLayout.LayoutParams(layoutParams.width, layoutParams.height).also {
       it.gravity = (layoutParams as? LinearLayout.LayoutParams)?.gravity ?: -1
@@ -90,7 +94,7 @@ inline var View.linearWeight: Float
   }
 
 inline var View.linearGravity: Int
-  get() = -1
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     layoutParams = LinearLayout.LayoutParams(layoutParams.width, layoutParams.height).also {
       it.weight = (layoutParams as? LinearLayout.LayoutParams)?.weight ?: 0f
@@ -101,7 +105,7 @@ inline var View.linearGravity: Int
 
 //region View extend relative params field
 inline var View.alignParentStart: Boolean
-  get() = false
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     if (!value) return
     layoutParams = RelativeLayout.LayoutParams(layoutParams.width, layoutParams.height).apply {
@@ -113,7 +117,7 @@ inline var View.alignParentStart: Boolean
   }
 
 inline var View.alignParentEnd: Boolean
-  get() = false
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     if (!value) return
     layoutParams = RelativeLayout.LayoutParams(layoutParams.width, layoutParams.height).apply {
@@ -125,7 +129,7 @@ inline var View.alignParentEnd: Boolean
   }
 
 inline var View.centerInParent: Boolean
-  get() = false
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     if (!value) return
     layoutParams = RelativeLayout.LayoutParams(layoutParams.width, layoutParams.height).apply {
@@ -137,7 +141,7 @@ inline var View.centerInParent: Boolean
   }
 
 inline var View.centerHorizontal: Boolean
-  get() = false
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     if (!value) return
     layoutParams = RelativeLayout.LayoutParams(layoutParams.width, layoutParams.height).apply {
@@ -149,7 +153,7 @@ inline var View.centerHorizontal: Boolean
   }
 
 inline var View.centerVertical: Boolean
-  get() = false
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     if (!value) return
     layoutParams = RelativeLayout.LayoutParams(layoutParams.width, layoutParams.height).apply {
@@ -163,7 +167,7 @@ inline var View.centerVertical: Boolean
 
 //region View extend constraint params field
 inline var View.top_toTopOf: Int
-  get() = -1
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     layoutParams = layoutParams.append {
       topToTop = value
@@ -172,7 +176,7 @@ inline var View.top_toTopOf: Int
   }
 
 inline var View.top_toBottomOf: Int
-  get() = -1
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     layoutParams = layoutParams.append {
       topToBottom = value
@@ -181,7 +185,7 @@ inline var View.top_toBottomOf: Int
   }
 
 inline var View.bottom_toBottomOf: Int
-  get() = -1
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     layoutParams = layoutParams.append {
       bottomToBottom = value
@@ -190,7 +194,7 @@ inline var View.bottom_toBottomOf: Int
   }
 
 inline var View.bottom_toTopOf: Int
-  get() = -1
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     layoutParams = layoutParams.append {
       bottomToTop = value
@@ -199,7 +203,7 @@ inline var View.bottom_toTopOf: Int
   }
 
 inline var View.start_toStartOf: Int
-  get() = -1
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     layoutParams = layoutParams.append {
       startToStart = value
@@ -208,7 +212,7 @@ inline var View.start_toStartOf: Int
   }
 
 inline var View.start_toEndOf: Int
-  get() = -1
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     layoutParams = layoutParams.append {
       startToEnd = value
@@ -217,7 +221,7 @@ inline var View.start_toEndOf: Int
   }
 
 inline var View.end_toEndOf: Int
-  get() = -1
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     layoutParams = layoutParams.append {
       endToEnd = value
@@ -226,7 +230,7 @@ inline var View.end_toEndOf: Int
   }
 
 inline var View.end_toStartOf: Int
-  get() = -1
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     layoutParams = layoutParams.append {
       endToStart = value
@@ -235,7 +239,7 @@ inline var View.end_toStartOf: Int
   }
 
 inline var View.baseline_toBaselineOf: Int
-  get() = -1
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     layoutParams = layoutParams.append {
       baselineToBaseline = value
@@ -243,7 +247,7 @@ inline var View.baseline_toBaselineOf: Int
   }
 
 inline var View.center_of: Int
-  get() = -1
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     start_toStartOf = value
     end_toEndOf = value
@@ -252,21 +256,21 @@ inline var View.center_of: Int
   }
 
 inline var View.center_horizontalOf: Int
-  get() = -1
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     start_toStartOf = value
     end_toEndOf = value
   }
 
 inline var View.center_verticalOf: Int
-  get() = -1
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     top_toTopOf = value
     bottom_toBottomOf = value
   }
 
 inline var View.horizontal_bias: Float
-  get() = 0f
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     layoutParams = layoutParams.append {
       horizontalBias = value
@@ -274,7 +278,7 @@ inline var View.horizontal_bias: Float
   }
 
 inline var View.vertical_bias: Float
-  get() = 0f
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     layoutParams = layoutParams.append {
       verticalBias = value
@@ -282,7 +286,7 @@ inline var View.vertical_bias: Float
   }
 
 inline var View.horizontal_chainStyle: Int
-  get() = 0
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     layoutParams = layoutParams.append {
       horizontalChainStyle = value
@@ -290,7 +294,7 @@ inline var View.horizontal_chainStyle: Int
   }
 
 inline var View.vertical_chainStyle: Int
-  get() = 0
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     layoutParams = layoutParams.append {
       verticalChainStyle = value
@@ -298,19 +302,19 @@ inline var View.vertical_chainStyle: Int
   }
 
 inline var Flow.flow_horizontalGap: Int
-  get() = 0
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     setHorizontalGap(value)
   }
 
 inline var Flow.flow_verticalGap: Int
-  get() = 0
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     setVerticalGap(value)
   }
 
 inline var Flow.flow_wrapMode: Int
-  get() = 0
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     setWrapMode(value)
   }

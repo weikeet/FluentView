@@ -1,6 +1,6 @@
 @file:Suppress("FunctionName", "unused")
 
-package com.weicools.kotlinlayout.widget
+package com.weicools.kotlinlayout.widget.params
 
 import android.view.ViewGroup
 import android.widget.FrameLayout
@@ -9,14 +9,17 @@ import android.widget.RelativeLayout
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.drawerlayout.widget.DrawerLayout
-import com.google.android.material.appbar.AppBarLayout
-import com.google.android.material.appbar.CollapsingToolbarLayout
+import com.weicools.kotlinlayout.widget.NO_GETTER
+import com.weicools.kotlinlayout.widget.noGetter
 
 /**
  * @author Weicools Create on 2021.03.27
  *
  * desc:
  */
+
+const val matchParent = ViewGroup.LayoutParams.MATCH_PARENT
+const val wrapContent = ViewGroup.LayoutParams.WRAP_CONTENT
 
 @Suppress("NOTHING_TO_INLINE")
 inline fun defaultParams(width: Int = wrapContent, height: Int = wrapContent) = ViewGroup.LayoutParams(width, height)
@@ -30,20 +33,11 @@ inline fun linearParams(width: Int, height: Int, init: LinearLayout.LayoutParams
 inline fun relativeParams(init: RelativeLayout.LayoutParams.() -> Unit) = RelativeLayout.LayoutParams(wrapContent, wrapContent).apply(init)
 inline fun relativeParams(width: Int, height: Int, init: RelativeLayout.LayoutParams.() -> Unit) = RelativeLayout.LayoutParams(width, height).apply(init)
 
-inline fun constraintParams(init: ConstraintLayout.LayoutParams.() -> Unit) = ConstraintLayout.LayoutParams(wrapContent, wrapContent).apply(init)
-inline fun constraintParams(width: Int, height: Int, init: ConstraintLayout.LayoutParams.() -> Unit) = ConstraintLayout.LayoutParams(width, height).apply(init)
-
 inline fun drawerParams(init: DrawerLayout.LayoutParams.() -> Unit) = DrawerLayout.LayoutParams(wrapContent, wrapContent).apply(init)
 inline fun drawerParams(width: Int, height: Int, init: DrawerLayout.LayoutParams.() -> Unit) = DrawerLayout.LayoutParams(width, height).apply(init)
 
 inline fun coordinatorParams(init: CoordinatorLayout.LayoutParams.() -> Unit) = CoordinatorLayout.LayoutParams(wrapContent, wrapContent).apply(init)
 inline fun coordinatorParams(width: Int, height: Int, init: CoordinatorLayout.LayoutParams.() -> Unit) = CoordinatorLayout.LayoutParams(width, height).apply(init)
-
-inline fun appBarParams(init: AppBarLayout.LayoutParams.() -> Unit) = AppBarLayout.LayoutParams(wrapContent, wrapContent).apply(init)
-inline fun appBarParams(width: Int, height: Int, init: AppBarLayout.LayoutParams.() -> Unit) = AppBarLayout.LayoutParams(width, height).apply(init)
-
-inline fun collapsingToolbarParams(init: CollapsingToolbarLayout.LayoutParams.() -> Unit) = CollapsingToolbarLayout.LayoutParams(wrapContent, wrapContent).apply(init)
-inline fun collapsingToolbarParams(width: Int, height: Int, init: CollapsingToolbarLayout.LayoutParams.() -> Unit) = CollapsingToolbarLayout.LayoutParams(width, height).apply(init)
 
 //region RelativeLayout.LayoutParams extend field
 inline var RelativeLayout.LayoutParams.above: Int
@@ -140,30 +134,5 @@ inline var RelativeLayout.LayoutParams.to_RightOf: Int
   @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     addRule(RelativeLayout.RIGHT_OF, value)
-  }
-//endregion
-
-//region ConstraintLayout.LayoutParams extend field
-inline var ConstraintLayout.LayoutParams.center_Of: Int
-  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
-  set(value) {
-    leftToLeft = value
-    topToTop = value
-    rightToRight = value
-    bottomToBottom = value
-  }
-
-inline var ConstraintLayout.LayoutParams.center_HorizontalOf: Int
-  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
-  set(value) {
-    leftToLeft = value
-    rightToRight = value
-  }
-
-inline var ConstraintLayout.LayoutParams.center_VerticalOf: Int
-  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
-  set(value) {
-    topToTop = value
-    bottomToBottom = value
   }
 //endregion

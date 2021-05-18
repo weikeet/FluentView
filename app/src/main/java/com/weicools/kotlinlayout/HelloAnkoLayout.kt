@@ -4,8 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.Gravity
 import android.widget.FrameLayout
-import com.weicools.kotlinlayout.widget.dp
-import com.weicools.kotlinlayout.widget.linearLayoutParams
+import com.weicools.kotlinlayout.widget.extensions.dp
 import org.jetbrains.anko.imageView
 import org.jetbrains.anko.textView
 import org.jetbrains.anko.verticalLayout

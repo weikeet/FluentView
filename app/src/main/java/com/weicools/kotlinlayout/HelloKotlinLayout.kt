@@ -7,7 +7,7 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.ViewCompat
-import com.weicools.kotlinlayout.widget.dp
+import com.weicools.kotlinlayout.widget.extensions.dp
 
 /**
  * @author weicools
