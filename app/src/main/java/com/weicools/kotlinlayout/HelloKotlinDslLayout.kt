@@ -4,7 +4,14 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.util.AttributeSet
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.weicools.kotlinlayout.widget.*
+import com.weicools.kotlinlayout.widget.chainPacked
+import com.weicools.kotlinlayout.widget.constraintLayoutParams
+import com.weicools.kotlinlayout.widget.createRefs
+import com.weicools.kotlinlayout.widget.dp
+import com.weicools.kotlinlayout.widget.imageView
+import com.weicools.kotlinlayout.widget.image_resource
+import com.weicools.kotlinlayout.widget.parentId
+import com.weicools.kotlinlayout.widget.textView
 
 /**
  * @author weicools
@@ -31,7 +38,7 @@ class HelloKotlinDslLayout : ConstraintLayout {
         bottomToTop = textId
         verticalChainStyle = chainPacked
       }
-      src = R.drawable.ic_android_24dp
+      image_resource = R.drawable.ic_android_24dp
     }
 
     textView(textId) {
@@ -44,5 +51,16 @@ class HelloKotlinDslLayout : ConstraintLayout {
       }
       text = "Hello Android"
     }
+
+    // materialButton(style = R.style.AppWidget_MaterialButton) {
+    //   layoutParams = constraintLayoutParams {
+    //     topMargin = 48.dp
+    //     leftToLeft = parentId
+    //     topToBottom = iconId
+    //     rightToRight = parentId
+    //     bottomToBottom = parentId
+    //   }
+    //   text = "Hello Android"
+    // }
   }
 }

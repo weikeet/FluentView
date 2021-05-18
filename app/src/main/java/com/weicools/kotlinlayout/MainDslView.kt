@@ -4,10 +4,45 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Typeface
 import android.util.AttributeSet
-import android.view.Gravity
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.weicools.kotlinlayout.widget.*
+import com.weicools.kotlinlayout.widget.background_colorString
+import com.weicools.kotlinlayout.widget.background_resource
+import com.weicools.kotlinlayout.widget.bottom_toBottomOf
+import com.weicools.kotlinlayout.widget.center_horizontalOf
+import com.weicools.kotlinlayout.widget.center_verticalOf
+import com.weicools.kotlinlayout.widget.chainPacked
+import com.weicools.kotlinlayout.widget.createRefs
+import com.weicools.kotlinlayout.widget.dp
+import com.weicools.kotlinlayout.widget.end_toEndOf
+import com.weicools.kotlinlayout.widget.end_toStartOf
+import com.weicools.kotlinlayout.widget.gravity_center
+import com.weicools.kotlinlayout.widget.horizontal_chainStyle
+import com.weicools.kotlinlayout.widget.imageView
+import com.weicools.kotlinlayout.widget.image_resource
+import com.weicools.kotlinlayout.widget.layout_height
+import com.weicools.kotlinlayout.widget.layout_width
+import com.weicools.kotlinlayout.widget.margin_Bottom
+import com.weicools.kotlinlayout.widget.margin_End
+import com.weicools.kotlinlayout.widget.margin_Start
+import com.weicools.kotlinlayout.widget.margin_Top
+import com.weicools.kotlinlayout.widget.matchParent
+import com.weicools.kotlinlayout.widget.padding_bottom
+import com.weicools.kotlinlayout.widget.padding_left
+import com.weicools.kotlinlayout.widget.padding_right
+import com.weicools.kotlinlayout.widget.padding_top
+import com.weicools.kotlinlayout.widget.paddings
+import com.weicools.kotlinlayout.widget.parentId
+import com.weicools.kotlinlayout.widget.start_toEndOf
+import com.weicools.kotlinlayout.widget.start_toStartOf
+import com.weicools.kotlinlayout.widget.textView
+import com.weicools.kotlinlayout.widget.text_colorString
+import com.weicools.kotlinlayout.widget.text_sizeDp
+import com.weicools.kotlinlayout.widget.text_style
+import com.weicools.kotlinlayout.widget.top_toBottomOf
+import com.weicools.kotlinlayout.widget.top_toTopOf
+import com.weicools.kotlinlayout.widget.view
+import com.weicools.kotlinlayout.widget.wrapContent
 
 class MainDslView : ConstraintLayout {
   constructor(context: Context) : super(context)
@@ -31,7 +66,7 @@ class MainDslView : ConstraintLayout {
       margin_Top = 20.dp
       start_toStartOf = parentId
       top_toTopOf = parentId
-      src_compat = R.drawable.ic_back_black
+      image_resource = R.drawable.ic_back_black
       setOnClickListener {
         Toast.makeText(context, "Click back!", Toast.LENGTH_SHORT).show()
       }
@@ -53,7 +88,7 @@ class MainDslView : ConstraintLayout {
       margin_End = 20.dp
       center_verticalOf = ivBack
       end_toEndOf = parentId
-      src_compat = R.drawable.ic_member_more
+      image_resource = R.drawable.ic_member_more
     }
 
     view(vDivider) {
@@ -73,7 +108,7 @@ class MainDslView : ConstraintLayout {
       end_toEndOf = parentId
       start_toStartOf = parentId
       top_toTopOf = ivDiamond
-      background_res = R.drawable.tag_checked_shape
+      background_resource = R.drawable.tag_checked_shape
     }
 
     imageView(ivDiamond) {
@@ -83,7 +118,7 @@ class MainDslView : ConstraintLayout {
       margin_Top = 40.dp
       start_toStartOf = ivBack
       top_toBottomOf = vDivider
-      src_compat = R.drawable.diamond_tag
+      image_resource = R.drawable.diamond_tag
     }
 
     textView(tvTitle) {
@@ -92,7 +127,7 @@ class MainDslView : ConstraintLayout {
       margin_Start = 5.dp
       center_verticalOf = ivDiamond
       start_toEndOf = ivDiamond
-      gravity = Gravity.CENTER
+      gravity = gravity_center
       paddings = 10.dp
       text_colorString = "#389793"
       text_sizeDp = 20f
@@ -118,7 +153,7 @@ class MainDslView : ConstraintLayout {
       end_toEndOf = parentId
       start_toEndOf = tvContent
       top_toTopOf = tvContent
-      src_compat = R.drawable.user_portrait_gender_female
+      image_resource = R.drawable.user_portrait_gender_female
     }
 
     textView(tvSub) {
@@ -150,13 +185,13 @@ class MainDslView : ConstraintLayout {
       start_toStartOf = parentId
       bottom_toBottomOf = parentId
       horizontal_chainStyle = chainPacked
-      background_res = R.drawable.bg_orange_btn
-      padding_Left = 30.dp
-      padding_Top = 10.dp
-      padding_Right = 30.dp
-      padding_Bottom = 10.dp
+      background_resource = R.drawable.bg_orange_btn
+      padding_left = 30.dp
+      padding_top = 10.dp
+      padding_right = 30.dp
+      padding_bottom = 10.dp
       text_sizeDp = 20f
-      text_style = Gravity.CENTER
+      text_style = gravity_center
       text = "cancel"
     }
 
@@ -167,11 +202,11 @@ class MainDslView : ConstraintLayout {
       end_toEndOf = parentId
       bottom_toBottomOf = parentId
       horizontal_chainStyle = chainPacked
-      background_res = R.drawable.bg_orange_btn
-      padding_Left = 30.dp
-      padding_Top = 10.dp
-      padding_Right = 30.dp
-      padding_Bottom = 10.dp
+      background_resource = R.drawable.bg_orange_btn
+      padding_left = 30.dp
+      padding_top = 10.dp
+      padding_right = 30.dp
+      padding_bottom = 10.dp
       textSize = 20f
       text_style = Typeface.BOLD
       start_toEndOf = tvCancel

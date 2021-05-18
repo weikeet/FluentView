@@ -4,7 +4,20 @@ import android.content.Context
 import android.util.AttributeSet
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.weicools.kotlinlayout.R
-import com.weicools.kotlinlayout.widget.*
+import com.weicools.kotlinlayout.widget.background_colorResource
+import com.weicools.kotlinlayout.widget.chainPacked
+import com.weicools.kotlinlayout.widget.constraintLayoutParams
+import com.weicools.kotlinlayout.widget.createRefs
+import com.weicools.kotlinlayout.widget.dp
+import com.weicools.kotlinlayout.widget.imageView
+import com.weicools.kotlinlayout.widget.image_resource
+import com.weicools.kotlinlayout.widget.materialButton
+import com.weicools.kotlinlayout.widget.parentId
+import com.weicools.kotlinlayout.widget.textView
+import com.weicools.kotlinlayout.widget.text_colorResource
+import com.weicools.kotlinlayout.widget.text_resource
+import com.weicools.kotlinlayout.widget.view
+import com.weicools.kotlinlayout.widget.wrapContent
 
 /**
  * @author weicools
@@ -16,7 +29,11 @@ class MoreToolKtView : ConstraintLayout {
   constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr)
 
   init {
-    background_colorRes = R.color.white_primary
+    initView()
+  }
+
+  private fun initView() {
+    background_colorResource = R.color.white_primary
 
     val (icon, title, subtitle, action) = createRefs()
 
@@ -27,7 +44,7 @@ class MoreToolKtView : ConstraintLayout {
         topToTop = parentId
         bottomToBottom = parentId
       }
-      src_compat = R.drawable.ic_android_24dp
+      image_resource = R.drawable.ic_android_24dp
     }
 
     materialButton(action, R.style.MaterialTheme_MaterialButton) {
@@ -39,8 +56,8 @@ class MoreToolKtView : ConstraintLayout {
         matchConstraintPercentWidth = 0.2444f
       }
       textSize = 14f
-      text_colorRes = R.color.white_primary
-      text_res = R.string.tool_action_button
+      text_colorResource = R.color.white_primary
+      text_resource = R.string.tool_action_button
     }
 
     textView(title) {
@@ -53,8 +70,8 @@ class MoreToolKtView : ConstraintLayout {
         bottomToTop = subtitle
         verticalChainStyle = chainPacked
       }
-      text_colorRes = R.color.black_87_transparent
-      text_res = R.string.tool_title
+      text_colorResource = R.color.black_87_transparent
+      text_resource = R.string.tool_title
       textSize = 16f
     }
 
@@ -69,8 +86,8 @@ class MoreToolKtView : ConstraintLayout {
         bottomToBottom = parentId
         verticalChainStyle = chainPacked
       }
-      text_colorRes = R.color.black_54_transparent
-      text_res = R.string.tool_subtitle
+      text_colorResource = R.color.black_54_transparent
+      text_resource = R.string.tool_subtitle
       textSize = 12f
     }
 
@@ -82,7 +99,7 @@ class MoreToolKtView : ConstraintLayout {
         rightToRight = parentId
         bottomToBottom = parentId
       }
-      background_colorRes = R.color.colorAccent
+      background_colorResource = R.color.colorAccent
     }
   }
 }

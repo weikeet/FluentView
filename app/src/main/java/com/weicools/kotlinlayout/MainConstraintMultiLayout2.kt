@@ -1,12 +1,30 @@
 package com.weicools.kotlinlayout
 
 import android.content.Context
+import android.os.Build
 import android.text.InputType
 import android.text.TextUtils
 import android.util.AttributeSet
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.weicools.kotlinlayout.widget.*
 import com.weicools.kotlinlayout.more.MoreToolKtView
+import com.weicools.kotlinlayout.widget.background_resource
+import com.weicools.kotlinlayout.widget.button
+import com.weicools.kotlinlayout.widget.center_HorizontalOf
+import com.weicools.kotlinlayout.widget.constraintLayoutParams
+import com.weicools.kotlinlayout.widget.createRefs
+import com.weicools.kotlinlayout.widget.dp
+import com.weicools.kotlinlayout.widget.editText
+import com.weicools.kotlinlayout.widget.elevation_compat
+import com.weicools.kotlinlayout.widget.imageView
+import com.weicools.kotlinlayout.widget.image_resource
+import com.weicools.kotlinlayout.widget.paddings
+import com.weicools.kotlinlayout.widget.parentId
+import com.weicools.kotlinlayout.widget.scaleCenterCrop
+import com.weicools.kotlinlayout.widget.textView
+import com.weicools.kotlinlayout.widget.text_ems
+import com.weicools.kotlinlayout.widget.text_resource
+import com.weicools.kotlinlayout.widget.text_sizeDp
+import com.weicools.kotlinlayout.widget.wrapContent
 
 class MainConstraintMultiLayout2 : ConstraintLayout {
   constructor(context: Context) : super(context)
@@ -30,7 +48,7 @@ class MainConstraintMultiLayout2 : ConstraintLayout {
         center_HorizontalOf = parentId
         horizontalBias = 1f
       }
-      src_compat = R.drawable.singapore
+      image_resource = R.drawable.singapore
       scaleType = scaleCenterCrop
     }
 
@@ -44,8 +62,8 @@ class MainConstraintMultiLayout2 : ConstraintLayout {
         verticalBias = 0.19f
       }
       paddings = 5.dp
-      src_compat = R.drawable.ic_star
-      background_res = R.drawable.info_background
+      image_resource = R.drawable.ic_star
+      background_resource = R.drawable.info_background
     }
 
     textView(tvTitle) {
@@ -55,9 +73,8 @@ class MainConstraintMultiLayout2 : ConstraintLayout {
         leftToLeft = parentId
         topToBottom = ivHeader
       }
-      text_res = R.string.singapore
+      text_resource = R.string.singapore
       text_sizeDp = 24f
-      start_toStartOf = parentId
     }
 
     editText(etCameraType) {
@@ -67,7 +84,7 @@ class MainConstraintMultiLayout2 : ConstraintLayout {
         topToBottom = tvTitle
       }
       text_ems = 10
-      text_res = R.string.camera_value
+      text_resource = R.string.camera_value
       inputType = InputType.TYPE_TEXT_VARIATION_PERSON_NAME
     }
 
@@ -76,9 +93,11 @@ class MainConstraintMultiLayout2 : ConstraintLayout {
         leftMargin = 16.dp
         leftToLeft = parentId
         baselineToBaseline = etCameraType
-        labelFor = etCameraType
+        if (Build.VERSION.SDK_INT >= 21) {
+          labelFor = etCameraType
+        }
       }
-      text_res = R.string.camera
+      text_resource = R.string.camera
     }
 
     textView(tvSettingLabel) {
@@ -86,9 +105,11 @@ class MainConstraintMultiLayout2 : ConstraintLayout {
         leftMargin = 16.dp
         baselineToBaseline = etSettings
         leftToLeft = parentId
-        labelFor = etSettings
+        if (Build.VERSION.SDK_INT >= 21) {
+          labelFor = etSettings
+        }
       }
-      text_res = R.string.settings
+      text_resource = R.string.settings
     }
 
     editText(etSettings) {
@@ -100,7 +121,7 @@ class MainConstraintMultiLayout2 : ConstraintLayout {
         topToBottom = etCameraType
       }
       text_ems = 10
-      text_res = R.string.camera_settings
+      text_resource = R.string.camera_settings
       inputType = InputType.TYPE_TEXT_VARIATION_PERSON_NAME
     }
 
@@ -111,7 +132,7 @@ class MainConstraintMultiLayout2 : ConstraintLayout {
         bottomToBottom = parentId
         rightToRight = parentId
       }
-      text_res = R.string.upload
+      text_resource = R.string.upload
     }
 
     button(btnDiscard) {
@@ -120,8 +141,8 @@ class MainConstraintMultiLayout2 : ConstraintLayout {
         baselineToBaseline = btnUpload
         rightToLeft = btnUpload
       }
-      text_res = R.string.discard
-      elevation = 0f
+      text_resource = R.string.discard
+      elevation_compat = 0f
     }
 
     textView(tvDescription) {
@@ -134,7 +155,7 @@ class MainConstraintMultiLayout2 : ConstraintLayout {
         topToBottom = etSettings
         center_HorizontalOf = parentId
       }
-      text_res = R.string.singapore_description
+      text_resource = R.string.singapore_description
       textSize = 15f
       ellipsize = TextUtils.TruncateAt.END
       isVerticalFadingEdgeEnabled = true
