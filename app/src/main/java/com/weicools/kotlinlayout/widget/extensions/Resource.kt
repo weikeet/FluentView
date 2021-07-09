@@ -5,6 +5,7 @@ package com.weicools.kotlinlayout.widget.extensions
 import android.content.res.Resources
 import android.view.View
 import androidx.annotation.ColorRes
+import androidx.annotation.DimenRes
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.appcompat.content.res.AppCompatResources
@@ -43,4 +44,14 @@ inline fun View.drawable_of(@DrawableRes drawableId: Int) = ContextCompat.getDra
 
 @Suppress("NOTHING_TO_INLINE")
 inline fun View.drawable_ofCompat(@DrawableRes drawableId: Int) = AppCompatResources.getDrawable(context, drawableId)
+
+@Suppress("NOTHING_TO_INLINE")
+inline fun View.dimen_of(@DimenRes dimenId: Int) = context.resources.getDimension(dimenId)
+
+@Suppress("NOTHING_TO_INLINE")
+inline fun View.dimenSize_of(@DimenRes dimenId: Int) = context.resources.getDimensionPixelSize(dimenId)
+
+@Suppress("NOTHING_TO_INLINE")
+inline fun View.dimenOffset_of(@DimenRes dimenId: Int) = context.resources.getDimensionPixelOffset(dimenId)
+
 //endregion
