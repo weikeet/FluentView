@@ -4,7 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.weicools.fluentlayout.R
-import com.weicools.fluentlayout.widget.extensions.background_colorResource
+import com.weicools.fluent.widget.extensions.background_colorResource
 
 /**
  * @author weicools

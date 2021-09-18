@@ -4,7 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.Gravity
 import android.widget.FrameLayout
-import com.weicools.fluentlayout.widget.extensions.dp
+import com.weicools.fluent.widget.extensions.dp
 import org.jetbrains.anko.imageView
 import org.jetbrains.anko.textView
 import org.jetbrains.anko.verticalLayout

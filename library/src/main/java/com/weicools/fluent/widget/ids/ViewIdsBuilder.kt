@@ -1,4 +1,4 @@
-package com.weicools.fluentlayout.widget.ids
+package com.weicools.fluent.widget.ids
 
 import android.view.View
 

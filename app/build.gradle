@@ -54,4 +54,6 @@ dependencies {
   implementation "org.jetbrains.anko:anko-appcompat-v7:0.10.8"
 
   implementation 'com.google.code.gson:gson:2.8.8'
+
+  implementation project(path: ':library')
 }

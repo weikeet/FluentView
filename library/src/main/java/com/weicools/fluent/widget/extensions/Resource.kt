@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.weicools.fluentlayout.widget.extensions
+package com.weicools.fluent.widget.extensions
 
 import android.content.res.Resources
 import android.view.View

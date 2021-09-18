@@ -1,8 +1,8 @@
-package com.weicools.fluentlayout.widget.params
+package com.weicools.fluent.widget.params
 
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.weicools.fluentlayout.widget.NO_GETTER
-import com.weicools.fluentlayout.widget.noGetter
+import com.weicools.fluent.widget.annotation.NO_GETTER
+import com.weicools.fluent.widget.annotation.noGetter
 
 /**
  * @author weicools

@@ -14,7 +14,7 @@ import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.view.ViewCompat;
-import com.weicools.fluentlayout.widget.extensions.ResourceKt;
+import com.weicools.fluent.widget.extensions.ResourceKt;
 import org.jetbrains.annotations.NotNull;
 
 /**

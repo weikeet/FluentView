@@ -6,24 +6,24 @@ import android.text.InputType
 import android.text.TextUtils
 import android.util.AttributeSet
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.weicools.fluentlayout.widget.dsl.button
-import com.weicools.fluentlayout.widget.dsl.editText
-import com.weicools.fluentlayout.widget.dsl.imageView
-import com.weicools.fluentlayout.widget.dsl.textView
-import com.weicools.fluentlayout.widget.extensions.background_resource
-import com.weicools.fluentlayout.widget.extensions.dp
-import com.weicools.fluentlayout.widget.extensions.elevation_compat
-import com.weicools.fluentlayout.widget.extensions.image_resource
-import com.weicools.fluentlayout.widget.extensions.paddings
-import com.weicools.fluentlayout.widget.extensions.scaleCenterCrop
-import com.weicools.fluentlayout.widget.extensions.text_ems
-import com.weicools.fluentlayout.widget.extensions.text_resource
-import com.weicools.fluentlayout.widget.extensions.text_sizeDp
-import com.weicools.fluentlayout.widget.ids.createRefs
-import com.weicools.fluentlayout.widget.params.center_HorizontalOf
-import com.weicools.fluentlayout.widget.params.constraintParams
-import com.weicools.fluentlayout.widget.params.parentId
-import com.weicools.fluentlayout.widget.params.wrapContent
+import com.weicools.fluent.widget.dsl.button
+import com.weicools.fluent.widget.dsl.editText
+import com.weicools.fluent.widget.dsl.imageView
+import com.weicools.fluent.widget.dsl.textView
+import com.weicools.fluent.widget.extensions.background_resource
+import com.weicools.fluent.widget.extensions.dp
+import com.weicools.fluent.widget.extensions.elevation_compat
+import com.weicools.fluent.widget.extensions.image_resource
+import com.weicools.fluent.widget.extensions.paddings
+import com.weicools.fluent.widget.extensions.scaleCenterCrop
+import com.weicools.fluent.widget.extensions.text_ems
+import com.weicools.fluent.widget.extensions.text_resource
+import com.weicools.fluent.widget.extensions.text_sizeDp
+import com.weicools.fluent.widget.ids.createRefs
+import com.weicools.fluent.widget.params.center_HorizontalOf
+import com.weicools.fluent.widget.params.constraintParams
+import com.weicools.fluent.widget.params.parentId
+import com.weicools.fluent.widget.params.wrapContent
 
 class MainConstraintLayout2 : ConstraintLayout {
   constructor(context: Context) : super(context)

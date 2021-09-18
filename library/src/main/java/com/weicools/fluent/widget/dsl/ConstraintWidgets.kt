@@ -1,4 +1,4 @@
-package com.weicools.fluentlayout.widget.dsl
+package com.weicools.fluent.widget.dsl
 
 import android.content.Context
 import android.view.ViewGroup
@@ -6,7 +6,7 @@ import androidx.constraintlayout.helper.widget.Flow
 import androidx.constraintlayout.helper.widget.Layer
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.Guideline
-import com.weicools.fluentlayout.widget.params.constraintParams
+import com.weicools.fluent.widget.params.constraintParams
 
 /**
  * @author weicools

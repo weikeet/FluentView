@@ -1,4 +1,4 @@
-package com.weicools.fluentlayout.widget
+package com.weicools.fluent.widget.annotation
 
 /**
  * @author weicools

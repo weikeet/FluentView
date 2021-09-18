@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.weicools.fluentlayout.widget.extensions
+package com.weicools.fluent.widget.extensions
 
 import android.content.res.ColorStateList
 import android.graphics.Color
@@ -16,8 +16,8 @@ import androidx.annotation.FontRes
 import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
-import com.weicools.fluentlayout.widget.NO_GETTER
-import com.weicools.fluentlayout.widget.noGetter
+import com.weicools.fluent.widget.annotation.NO_GETTER
+import com.weicools.fluent.widget.annotation.noGetter
 
 /**
  * @author weicools
@@ -34,7 +34,7 @@ inline var TextView.text_color: Int
   set(@ColorInt colorInt) = setTextColor(colorInt)
 
 inline var TextView.text_colors: ColorStateList?
-  get() = textColors
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(colorList) = setTextColor(colorList)
 
 inline var TextView.text_colorResource: Int
@@ -72,7 +72,7 @@ inline var TextView.text_lines: Int
   set(value) = setLines(value)
 
 inline var TextView.text_maxLine: Int
-  get() = maxLines
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     maxLines = value
   }
@@ -112,7 +112,7 @@ inline var TextView.text_lineSpacingExtra: Float
 inline val TextView.sans_serif: Typeface
   get() = Typeface.create("sans-serif", Typeface.NORMAL)
 
-inline val TextView.sans_serifMedium: Typeface
+inline val TextView.sans_serif_medium: Typeface
   get() = Typeface.create("sans-serif-medium", Typeface.NORMAL)
 
 @Suppress("NOTHING_TO_INLINE")

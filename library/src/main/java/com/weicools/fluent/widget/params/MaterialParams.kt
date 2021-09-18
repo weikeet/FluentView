@@ -1,4 +1,4 @@
-package com.weicools.fluentlayout.widget.params
+package com.weicools.fluent.widget.params
 
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.appbar.CollapsingToolbarLayout

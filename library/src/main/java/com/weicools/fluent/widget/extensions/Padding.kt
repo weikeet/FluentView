@@ -1,10 +1,10 @@
 @file:Suppress("unused")
 
-package com.weicools.fluentlayout.widget.extensions
+package com.weicools.fluent.widget.extensions
 
 import android.view.View
-import com.weicools.fluentlayout.widget.NO_GETTER
-import com.weicools.fluentlayout.widget.noGetter
+import com.weicools.fluent.widget.annotation.NO_GETTER
+import com.weicools.fluent.widget.annotation.noGetter
 
 /**
  * @author weicools

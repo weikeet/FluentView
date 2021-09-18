@@ -1,6 +1,6 @@
 @file:Suppress("FunctionName", "unused")
 
-package com.weicools.fluentlayout.widget.params
+package com.weicools.fluent.widget.params
 
 import android.view.ViewGroup
 import android.widget.FrameLayout
@@ -8,8 +8,8 @@ import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.drawerlayout.widget.DrawerLayout
-import com.weicools.fluentlayout.widget.NO_GETTER
-import com.weicools.fluentlayout.widget.noGetter
+import com.weicools.fluent.widget.annotation.NO_GETTER
+import com.weicools.fluent.widget.annotation.noGetter
 
 /**
  * @author Weicools Create on 2021.03.27

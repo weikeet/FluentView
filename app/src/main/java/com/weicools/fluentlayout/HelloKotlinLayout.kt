@@ -8,7 +8,7 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.ViewCompat
-import com.weicools.fluentlayout.widget.extensions.dp
+import com.weicools.fluent.widget.extensions.dp
 
 /**
  * @author weicools

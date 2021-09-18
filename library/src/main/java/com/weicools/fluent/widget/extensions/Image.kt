@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.weicools.fluentlayout.widget.extensions
+package com.weicools.fluent.widget.extensions
 
 import android.content.res.ColorStateList
 import android.graphics.Bitmap
@@ -14,8 +14,8 @@ import androidx.annotation.DrawableRes
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.ContextCompat
 import androidx.core.widget.ImageViewCompat
-import com.weicools.fluentlayout.widget.NO_GETTER
-import com.weicools.fluentlayout.widget.noGetter
+import com.weicools.fluent.widget.annotation.NO_GETTER
+import com.weicools.fluent.widget.annotation.noGetter
 
 /**
  * @author weicools

@@ -4,20 +4,20 @@ import android.content.Context
 import android.util.AttributeSet
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.weicools.fluentlayout.R
-import com.weicools.fluentlayout.widget.dsl.imageView
-import com.weicools.fluentlayout.widget.dsl.materialButton
-import com.weicools.fluentlayout.widget.dsl.textView
-import com.weicools.fluentlayout.widget.dsl.view
-import com.weicools.fluentlayout.widget.extensions.background_colorResource
-import com.weicools.fluentlayout.widget.extensions.dp
-import com.weicools.fluentlayout.widget.extensions.image_resource
-import com.weicools.fluentlayout.widget.extensions.text_colorResource
-import com.weicools.fluentlayout.widget.extensions.text_resource
-import com.weicools.fluentlayout.widget.ids.createRefs
-import com.weicools.fluentlayout.widget.params.chainPacked
-import com.weicools.fluentlayout.widget.params.constraintParams
-import com.weicools.fluentlayout.widget.params.parentId
-import com.weicools.fluentlayout.widget.params.wrapContent
+import com.weicools.fluent.widget.dsl.imageView
+import com.weicools.fluent.widget.dsl.materialButton
+import com.weicools.fluent.widget.dsl.textView
+import com.weicools.fluent.widget.dsl.view
+import com.weicools.fluent.widget.extensions.background_colorResource
+import com.weicools.fluent.widget.extensions.dp
+import com.weicools.fluent.widget.extensions.image_resource
+import com.weicools.fluent.widget.extensions.text_colorResource
+import com.weicools.fluent.widget.extensions.text_resource
+import com.weicools.fluent.widget.ids.createRefs
+import com.weicools.fluent.widget.params.chainPacked
+import com.weicools.fluent.widget.params.constraintParams
+import com.weicools.fluent.widget.params.parentId
+import com.weicools.fluent.widget.params.wrapContent
 
 /**
  * @author weicools
