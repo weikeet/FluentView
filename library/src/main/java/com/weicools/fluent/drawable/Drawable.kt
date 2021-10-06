@@ -8,6 +8,7 @@ import android.graphics.drawable.RippleDrawable
 import android.graphics.drawable.ScaleDrawable
 import android.os.Build
 import android.view.Gravity
+import androidx.annotation.RequiresApi
 
 /**
  * @author Weicools
@@ -27,6 +28,9 @@ inline fun scaleDrawable(scale: Float, gravity: GravityInt = Gravity.CENTER, blo
     ScaleDrawable(block(), gravity, scale, scale).also { it.level = 1 }
 
 fun Drawable.copy(): Drawable = constantState!!.newDrawable().mutate()
+
+@RequiresApi(Build.VERSION_CODES.LOLLIPOP)
+fun rippleDrawable(color: ColorInt, content: Drawable?, mask: Drawable?): Drawable = RippleDrawable(ColorStateList.valueOf(color), content, mask)
 
 fun rippleCompat(color: ColorInt, content: Drawable, mask: Drawable?): Drawable =
     when {
