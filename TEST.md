@@ -96,7 +96,7 @@ preDrawAvgTime=457 preDrawTimeList=[451, 465, 453, 464, 457, 465, 453, 452, 456,
 ## 锁定 CPU 频率
 
 ```zsh
-$ cd /Users/weicools/Projects/Weicools/Android/Benchmark
+$ cd ~/Benchmark
 $ ./gradlew lockClocks
 
 > Task :lockClocks

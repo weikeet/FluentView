@@ -3,7 +3,7 @@
 Effective dynamic layout via kotlin dsl.
 
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/lecymeng/FluentLayout/blob/master/LICENSE)
-![maven-central](https://img.shields.io/maven-central/v/com.weicools/fluentlayout.svg)
+![maven-central](https://img.shields.io/maven-central/v/com.weicools/fluent-layout.svg)
 ![jetbrains-plugin](https://img.shields.io/jetbrains/plugin/v/9202-a8translate.svg)
 
 ## Getting started
@@ -13,7 +13,7 @@ In your `build.gradle`:
 ```
 allprojects {
     repositories {
-        mavenCentral
+        mavenCentral()
     }
 }
 ```
@@ -22,7 +22,7 @@ In your `module/build.gradle`:
 
 ```
 dependencies {
-  implementation 'com.weicools:fluentlayout:1.0.0'
+  implementation 'com.weicools:fluent-layout:1.1.0'
 }
 ```
 
@@ -58,10 +58,14 @@ val rootView = constraintLayout {
 
 ![Usage sample](https://blog-1251678165.cos.ap-chengdu.myqcloud.com/NWvJSz.png)
 
+## TODO
+
+- [ ] support preview like xml tools
+
 ## License
 
 ```
-Copyright (c) 2021-present. Weicools
+Copyright (c) 2021-present. Weiwei
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

@@ -1,5 +1,11 @@
 # Release Notes
 
+## 1.1.0 Jan, 13 2022
+
+- replace package name: weicools to weiwei
+- rename view extension filed
+- add AbsFluentLayout
+
 ## 1.0.2 Oct, 06 2021
 
 - add ripple drawable
