@@ -11,17 +11,17 @@ import android.util.StateSet
  */
 
 object ViewStates {
-    fun enabled() = intArrayOf(android.R.attr.state_enabled)
-    fun disabled() = intArrayOf(-android.R.attr.state_enabled)
+  fun enabled() = intArrayOf(android.R.attr.state_enabled)
+  fun disabled() = intArrayOf(-android.R.attr.state_enabled)
 
-    fun selected() = intArrayOf(android.R.attr.state_selected)
-    fun unselected() = intArrayOf(-android.R.attr.state_selected)
+  fun selected() = intArrayOf(android.R.attr.state_selected)
+  fun unselected() = intArrayOf(-android.R.attr.state_selected)
 
-    fun pressed() = intArrayOf(android.R.attr.state_pressed)
-    fun unpressed() = intArrayOf(-android.R.attr.state_pressed)
+  fun pressed() = intArrayOf(android.R.attr.state_pressed)
+  fun unpressed() = intArrayOf(-android.R.attr.state_pressed)
 
-    fun checked() = intArrayOf(android.R.attr.state_checked)
-    fun unchecked() = intArrayOf(-android.R.attr.state_checked)
+  fun checked() = intArrayOf(android.R.attr.state_checked)
+  fun unchecked() = intArrayOf(-android.R.attr.state_checked)
 }
 
 inline fun stateListDrawable(block: StateListDrawable.() -> Unit): StateListDrawable = StateListDrawable().also(block)
@@ -43,5 +43,5 @@ inline fun StateListDrawable.uncheckedState(block: () -> Drawable): Unit = state
 inline fun StateListDrawable.defaultState(block: () -> Drawable): Unit = state(StateSet.WILD_CARD, block)
 
 var StateListDrawable.exitFadeDuration: Milliseconds
-    @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
-    set(value) = setExitFadeDuration(value)
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
+  set(value) = setExitFadeDuration(value)
