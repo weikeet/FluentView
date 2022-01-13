@@ -22,7 +22,7 @@ In your `module/build.gradle`:
 
 ```
 dependencies {
-  implementation 'com.weicools:fluent-layout:1.1.0'
+  implementation 'com.weicools:fluent-layout:1.1.1'
 }
 ```
 

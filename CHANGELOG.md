@@ -1,5 +1,10 @@
 # Release Notes
 
+## 1.1.1 Jan, 13 2022
+
+- upgrade minSdk 21
+- support view start/end
+
 ## 1.1.0 Jan, 13 2022
 
 - replace package name: weicools to weiwei
