@@ -4,15 +4,18 @@ package com.weiwei.fluent.widget.extensions
 
 import android.content.res.ColorStateList
 import android.content.res.Resources
+import android.graphics.Typeface
 import android.graphics.drawable.Drawable
 import android.os.Build
 import android.view.View
 import androidx.annotation.ColorRes
 import androidx.annotation.DimenRes
 import androidx.annotation.DrawableRes
+import androidx.annotation.FontRes
 import androidx.annotation.StringRes
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
 import kotlin.math.roundToInt
 
 /**
@@ -66,5 +69,9 @@ inline fun View.dimenSize_of(@DimenRes dimenId: Int): Int =
 @Suppress("NOTHING_TO_INLINE")
 inline fun View.dimenOffset_of(@DimenRes dimenId: Int): Int =
   context.resources.getDimensionPixelOffset(dimenId)
+
+@Suppress("NOTHING_TO_INLINE")
+inline fun View.font_of(@FontRes fontId: Int): Typeface? =
+  ResourcesCompat.getFont(context, fontId)
 
 //endregion
