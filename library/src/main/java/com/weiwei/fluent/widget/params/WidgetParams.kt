@@ -63,6 +63,12 @@ inline var RelativeLayout.LayoutParams.align_Left: Int
     addRule(RelativeLayout.ALIGN_LEFT, value)
   }
 
+inline var RelativeLayout.LayoutParams.align_Start: Int
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
+  set(value) {
+    addRule(RelativeLayout.ALIGN_START, value)
+  }
+
 inline var RelativeLayout.LayoutParams.align_Top: Int
   @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
@@ -73,6 +79,12 @@ inline var RelativeLayout.LayoutParams.align_Right: Int
   @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     addRule(RelativeLayout.ALIGN_RIGHT, value)
+  }
+
+inline var RelativeLayout.LayoutParams.align_End: Int
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
+  set(value) {
+    addRule(RelativeLayout.ALIGN_END, value)
   }
 
 inline var RelativeLayout.LayoutParams.align_Bottom: Int
@@ -87,6 +99,12 @@ inline var RelativeLayout.LayoutParams.align_ParentLeft: Boolean
     if (value) addRule(RelativeLayout.ALIGN_PARENT_LEFT)
   }
 
+inline var RelativeLayout.LayoutParams.align_ParentStart: Boolean
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
+  set(value) {
+    if (value) addRule(RelativeLayout.ALIGN_PARENT_START)
+  }
+
 inline var RelativeLayout.LayoutParams.align_ParentTop: Boolean
   @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
@@ -97,6 +115,12 @@ inline var RelativeLayout.LayoutParams.align_ParentRight: Boolean
   @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     if (value) addRule(RelativeLayout.ALIGN_PARENT_RIGHT)
+  }
+
+inline var RelativeLayout.LayoutParams.align_ParentEnd: Boolean
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
+  set(value) {
+    if (value) addRule(RelativeLayout.ALIGN_PARENT_END)
   }
 
 inline var RelativeLayout.LayoutParams.align_ParentBottom: Boolean
@@ -129,9 +153,21 @@ inline var RelativeLayout.LayoutParams.to_LeftOf: Int
     addRule(RelativeLayout.LEFT_OF, value)
   }
 
+inline var RelativeLayout.LayoutParams.to_StartOf: Int
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
+  set(value) {
+    addRule(RelativeLayout.START_OF, value)
+  }
+
 inline var RelativeLayout.LayoutParams.to_RightOf: Int
   @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
   set(value) {
     addRule(RelativeLayout.RIGHT_OF, value)
+  }
+
+inline var RelativeLayout.LayoutParams.to_EndOf: Int
+  @Deprecated(NO_GETTER, level = DeprecationLevel.HIDDEN) get() = noGetter
+  set(value) {
+    addRule(RelativeLayout.END_OF, value)
   }
 //endregion
