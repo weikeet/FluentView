@@ -10,6 +10,7 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.ContextCompat
+import kotlin.math.roundToInt
 
 /**
  * @author weicools
@@ -17,7 +18,7 @@ import androidx.core.content.ContextCompat
  */
 
 //region displayMetrics
-val Int.dp get() = (this * Resources.getSystem().displayMetrics.density + 0.5f).toInt()
+val Int.dp get() = (this * Resources.getSystem().displayMetrics.density + 0.5f).roundToInt()
 
 val Float.dp get() = (this * Resources.getSystem().displayMetrics.density)
 
