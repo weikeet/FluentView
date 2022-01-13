@@ -1,4 +1,4 @@
-package com.weicools.fluent.widget.dsl
+package com.weicools.fluent.widget
 
 import android.content.Context
 import android.view.ViewGroup

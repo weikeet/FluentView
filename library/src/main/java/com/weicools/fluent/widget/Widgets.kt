@@ -1,6 +1,6 @@
 @file:Suppress("unused", "FunctionName")
 
-package com.weicools.fluent.widget.dsl
+package com.weicools.fluent.widget
 
 import android.content.Context
 import android.view.View

@@ -4,9 +4,9 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.util.AttributeSet
 import android.widget.FrameLayout
-import com.weicools.fluent.widget.dsl.constraintLayout
-import com.weicools.fluent.widget.dsl.imageView
-import com.weicools.fluent.widget.dsl.textView
+import com.weicools.fluent.widget.constraintLayout
+import com.weicools.fluent.widget.imageView
+import com.weicools.fluent.widget.textView
 import com.weicools.fluent.widget.extensions.dp
 import com.weicools.fluent.widget.extensions.image_resource
 import com.weicools.fluent.widget.ids.createRefs

@@ -6,10 +6,10 @@ import android.text.InputType
 import android.text.TextUtils
 import android.util.AttributeSet
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.weicools.fluent.widget.dsl.button
-import com.weicools.fluent.widget.dsl.editText
-import com.weicools.fluent.widget.dsl.imageView
-import com.weicools.fluent.widget.dsl.textView
+import com.weicools.fluent.widget.button
+import com.weicools.fluent.widget.editText
+import com.weicools.fluent.widget.imageView
+import com.weicools.fluent.widget.textView
 import com.weicools.fluent.widget.extensions.background_resource
 import com.weicools.fluent.widget.extensions.dp
 import com.weicools.fluent.widget.extensions.elevation_compat

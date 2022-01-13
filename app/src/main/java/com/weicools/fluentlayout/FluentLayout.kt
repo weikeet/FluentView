@@ -3,9 +3,9 @@ package com.weicools.fluentlayout
 import android.content.Context
 import android.util.AttributeSet
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.weicools.fluent.widget.dsl.constraintLayout
-import com.weicools.fluent.widget.dsl.imageView
-import com.weicools.fluent.widget.dsl.textView
+import com.weicools.fluent.widget.constraintLayout
+import com.weicools.fluent.widget.imageView
+import com.weicools.fluent.widget.textView
 import com.weicools.fluent.widget.extensions.dp
 import com.weicools.fluent.widget.extensions.image_resource
 import com.weicools.fluent.widget.params.center_VerticalOf
