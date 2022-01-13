@@ -1,5 +1,13 @@
 # Test data
 
+## diff
+
+replace on `com/weiwei/fluent/widget` xx.widget -> com.weiwei.fluent.widget
+
+change codeStyle and format
+
+copy abs path to merge tools
+
 ## Constraint XML
 
 ### Sample
@@ -92,7 +100,6 @@ inflateAvgTime=1403 inflateTimeList=[1236, 1520, 1348, 1485, 1387, 1592, 1291, 1
 preDrawAvgTime=457 preDrawTimeList=[451, 465, 453, 464, 457, 465, 453, 452, 456, 459, 452, 455, 460]
 ```
 
-
 ## 锁定 CPU 频率
 
 ```zsh
@@ -118,7 +125,6 @@ See dmesg for error reason.
 Failed to set property 'ctl.interface_restart' to 'android.hardware.power@1.0::IPower/default'.
 See dmesg for error reason.
 ```
-
 
 ## XiaoMi 6
 
@@ -214,56 +220,23 @@ inflateAvgTime=470 inflateTimeList=[579, 434, 450, 506, 471, 432, 480, 427, 451,
 preDrawAvgTime=165 preDrawTimeList=[183, 168, 160, 166, 161, 164, 168, 163, 159, 165, 164, 166, 164]
 ```
 
-
 ### app/release/sample_tra.apk
 
-284
-289
-304
-295
-298
-322
-315
-292
-287
-287
-292
-298
+284 289 304 295 298 322 315 292 287 287 292 298
 
 inflateAvgTime=75067 inflateTimeList=[84296, 73645, 73769, 73765, 73938, 73261, 74170, 80591, 73122, 73865, 73056, 75145, 73252]
 preDrawAvgTime=136 preDrawTimeList=[178, 128, 128, 130, 130, 127, 147, 160, 129, 128, 128, 134, 127]
 
 ### app/release/sample_xml.apk
 
-363
-370
-381
-372
-366
-385
-385
-386
-363
-363
-352
-363
+363 370 381 372 366 385 385 386 363 363 352 363
 
 inflateAvgTime=78984 inflateTimeList=[82736, 80149, 80837, 80055, 81988, 78426, 79917, 77457, 77865, 77363, 76580, 76892, 76534]
 preDrawAvgTime=152 preDrawTimeList=[162, 153, 151, 148, 150, 149, 167, 164, 147, 147, 146, 144, 148]
 
 ### app/release/sample_ktl.apk
 
-362
-367
-364
-369
-374
-375
-349
-380
-399
-347
-354
+362 367 364 369 374 375 349 380 399 347 354
 
 inflateAvgTime=494 inflateTimeList=[551, 479, 480, 489, 478, 519, 480, 485, 456, 516, 484, 519, 498]
 preDrawAvgTime=142 preDrawTimeList=[144, 141, 132, 134, 132, 155, 153, 151, 135, 154, 148, 138, 136]
