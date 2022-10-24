@@ -8,7 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.LayoutInflaterCompat
-import androidx.core.view.doOnPreDraw
 import com.weiwei.fluentlayout.performance.AppStartMonitor
 
 class MainActivity : AppCompatActivity() {
@@ -74,14 +73,29 @@ class MainActivity : AppCompatActivity() {
     val contentLayout = MainConstraintMultiLayout2(this)
     setContentView(contentLayout)
 
+    // val delegate = object : AsyncViewDelegate(this) {
+    //   override fun onCreateView(activity: AppCompatActivity): View {
+    //     return MainConstraintMultiLayout2(activity)
+    //   }
+    //
+    //   override fun onViewCreated(rootView: View) {
+    //     rootView.setBackgroundColor(Color.WHITE)
+    //   }
+    //
+    //   override fun onDestroy() {
+    //     // destroy
+    //   }
+    // }
+    // delegate.attach()
+
     val et = System.currentTimeMillis()
     Log.d(TAG, "MainViewCreated: et=$et, du=${et - st}")
 
     AppStartMonitor.recordTime("MainCreate", "MainViewCreated")
 
-    contentLayout.doOnPreDraw {
-      AppStartMonitor.recordTime("MainCreate", "MainPreDraw")
-    }
+    // contentLayout.doOnPreDraw {
+    //   AppStartMonitor.recordTime("MainCreate", "MainPreDraw")
+    // }
   }
 
   override fun onResume() {
