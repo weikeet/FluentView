@@ -1,29 +1,27 @@
 package com.weiwei.fluentlayout
 
 import android.content.Context
-import android.os.Build
 import android.text.InputType
 import android.text.TextUtils
 import android.util.AttributeSet
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.weiwei.fluent.widget.button
-import com.weiwei.fluent.widget.editText
-import com.weiwei.fluent.widget.imageView
-import com.weiwei.fluent.widget.textView
-import com.weiwei.fluent.widget.extensions.background_resource
-import com.weiwei.fluent.widget.extensions.dp
-import com.weiwei.fluent.widget.extensions.elevation_compat
-import com.weiwei.fluent.widget.extensions.image_resource
-import com.weiwei.fluent.widget.extensions.paddings
-import com.weiwei.fluent.widget.extensions.scaleCenterCrop
-import com.weiwei.fluent.widget.extensions.text_ems
-import com.weiwei.fluent.widget.extensions.text_resource
-import com.weiwei.fluent.widget.extensions.text_sizeDp
-import com.weiwei.fluent.widget.ids.createRefs
-import com.weiwei.fluent.widget.params.center_HorizontalOf
-import com.weiwei.fluent.widget.params.constraintParams
-import com.weiwei.fluent.widget.params.parentId
-import com.weiwei.fluent.widget.params.wrapContent
+import com.fluent.view.appcompat.button
+import com.fluent.view.appcompat.editText
+import com.fluent.view.appcompat.imageView
+import com.fluent.view.appcompat.textView
+import com.fluent.view.constraint.centerHorizontalOf
+import com.fluent.view.constraint.constraintParams
+import com.fluent.view.constraint.parentId
+import com.fluent.view.createRefs
+import com.fluent.view.ui.allPadding
+import com.fluent.view.ui.backgroundResource
+import com.fluent.view.ui.ems
+import com.fluent.view.ui.imageResource
+import com.fluent.view.ui.scaleCenterCrop
+import com.fluent.view.ui.textResource
+import com.fluent.view.ui.textSizeDp
+import com.fluent.view.ui.unit.dp
+import com.fluent.view.wrapContent
 
 class MainConstraintLayout2 : ConstraintLayout {
   constructor(context: Context) : super(context)
@@ -43,10 +41,10 @@ class MainConstraintLayout2 : ConstraintLayout {
         bottomMargin = 16.dp
         topToTop = parentId
         bottomToBottom = ivFavorite
-        center_HorizontalOf = parentId
+        centerHorizontalOf = parentId
         horizontalBias = 1f
       }
-      image_resource = R.drawable.singapore
+      imageResource = R.drawable.singapore
       scaleType = scaleCenterCrop
     }
 
@@ -59,9 +57,9 @@ class MainConstraintLayout2 : ConstraintLayout {
         rightToRight = parentId
         verticalBias = 0.19f
       }
-      paddings = 5.dp
-      image_resource = R.drawable.ic_star
-      background_resource = R.drawable.info_background
+      allPadding = 5.dp
+      imageResource = R.drawable.ic_star
+      backgroundResource = R.drawable.info_background
     }
 
     textView(tvTitle) {
@@ -71,18 +69,18 @@ class MainConstraintLayout2 : ConstraintLayout {
         leftToLeft = parentId
         topToBottom = ivHeader
       }
-      text_resource = R.string.singapore
-      text_sizeDp = 24f
+      textResource = R.string.singapore
+      textSizeDp = 24f
     }
 
     editText(etCameraType) {
       layoutParams = constraintParams(0, wrapContent) {
         topMargin = 8.dp
-        center_HorizontalOf = etSettings
+        centerHorizontalOf = etSettings
         topToBottom = tvTitle
       }
-      text_ems = 10
-      text_resource = R.string.camera_value
+      ems = 10
+      textResource = R.string.camera_value
       inputType = InputType.TYPE_TEXT_VARIATION_PERSON_NAME
     }
 
@@ -91,11 +89,9 @@ class MainConstraintLayout2 : ConstraintLayout {
         leftMargin = 16.dp
         leftToLeft = parentId
         baselineToBaseline = etCameraType
-        if (Build.VERSION.SDK_INT >= 21) {
-          labelFor = etCameraType
-        }
+        labelFor = etCameraType
       }
-      text_resource = R.string.camera
+      textResource = R.string.camera
     }
 
     textView(tvSettingLabel) {
@@ -103,11 +99,9 @@ class MainConstraintLayout2 : ConstraintLayout {
         leftMargin = 16.dp
         baselineToBaseline = etSettings
         leftToLeft = parentId
-        if (Build.VERSION.SDK_INT >= 21) {
-          labelFor = etSettings
-        }
+        labelFor = etSettings
       }
-      text_resource = R.string.settings
+      textResource = R.string.settings
     }
 
     editText(etSettings) {
@@ -118,8 +112,8 @@ class MainConstraintLayout2 : ConstraintLayout {
         rightToRight = tvDescription
         topToBottom = etCameraType
       }
-      text_ems = 10
-      text_resource = R.string.camera_settings
+      ems = 10
+      textResource = R.string.camera_settings
       inputType = InputType.TYPE_TEXT_VARIATION_PERSON_NAME
     }
 
@@ -130,7 +124,7 @@ class MainConstraintLayout2 : ConstraintLayout {
         bottomToBottom = parentId
         rightToRight = parentId
       }
-      text_resource = R.string.upload
+      textResource = R.string.upload
     }
 
     button(btnDiscard) {
@@ -139,8 +133,8 @@ class MainConstraintLayout2 : ConstraintLayout {
         baselineToBaseline = btnUpload
         rightToLeft = btnUpload
       }
-      text_resource = R.string.discard
-      elevation_compat = 0f
+      textResource = R.string.discard
+      elevation = 0f
     }
 
     textView(tvDescription) {
@@ -151,9 +145,9 @@ class MainConstraintLayout2 : ConstraintLayout {
         bottomMargin = 8.dp
         bottomToTop = btnDiscard
         topToBottom = etSettings
-        center_HorizontalOf = parentId
+        centerHorizontalOf = parentId
       }
-      text_resource = R.string.singapore_description
+      textResource = R.string.singapore_description
       textSize = 15f
       ellipsize = TextUtils.TruncateAt.END
       isVerticalFadingEdgeEnabled = true

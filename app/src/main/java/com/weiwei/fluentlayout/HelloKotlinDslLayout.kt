@@ -4,16 +4,16 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.util.AttributeSet
 import android.widget.FrameLayout
-import com.weiwei.fluent.widget.constraintLayout
-import com.weiwei.fluent.widget.imageView
-import com.weiwei.fluent.widget.textView
-import com.weiwei.fluent.widget.extensions.dp
-import com.weiwei.fluent.widget.extensions.image_resource
-import com.weiwei.fluent.widget.ids.createRefs
-import com.weiwei.fluent.widget.params.chainPacked
-import com.weiwei.fluent.widget.params.constraintParams
-import com.weiwei.fluent.widget.params.matchParent
-import com.weiwei.fluent.widget.params.parentId
+import com.fluent.view.appcompat.imageView
+import com.fluent.view.appcompat.textView
+import com.fluent.view.constraint.chainPacked
+import com.fluent.view.constraint.constraintLayout
+import com.fluent.view.constraint.constraintParams
+import com.fluent.view.constraint.parentId
+import com.fluent.view.createRefs
+import com.fluent.view.matchParent
+import com.fluent.view.ui.imageResource
+import com.fluent.view.ui.unit.dp
 
 /**
  * @author weiwei
@@ -38,7 +38,7 @@ class HelloKotlinDslLayout : FrameLayout {
         bottomToTop = textId
         verticalChainStyle = chainPacked
       }
-      image_resource = R.drawable.ic_android_24dp
+      imageResource = R.drawable.ic_android_24dp
     }
 
     textView(textId) {

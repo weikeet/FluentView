@@ -8,7 +8,8 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.ViewCompat
-import com.weiwei.fluent.widget.extensions.dp
+import com.fluent.view.ui.res.colorStateList
+import com.fluent.view.ui.unit.dp
 
 /**
  * @author weiwei
@@ -25,7 +26,7 @@ class HelloKotlinLayout : FrameLayout {
     val textId = ViewCompat.generateViewId()
 
     AppCompatImageView(context).apply {
-      id = iconId
+      backgroundTintList = colorStateList(R.color.primary_blue)
       layoutParams = ConstraintLayout.LayoutParams(40.dp, 40.dp).apply {
         leftToLeft = ConstraintLayout.LayoutParams.PARENT_ID
         topToTop = ConstraintLayout.LayoutParams.PARENT_ID

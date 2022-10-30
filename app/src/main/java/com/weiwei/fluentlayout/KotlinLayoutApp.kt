@@ -2,6 +2,9 @@ package com.weiwei.fluentlayout
 
 import android.app.Application
 import android.content.Context
+import android.os.Build
+import androidx.startup.AppInitializer
+import com.fluent.view.app.FluentViewInitializer
 import com.weiwei.fluentlayout.performance.AppStartMonitor
 
 /**
@@ -21,6 +24,13 @@ class KotlinLayoutApp : Application() {
 
   override fun onCreate() {
     super.onCreate()
+
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+      if (getProcessName().endsWith("remote")) {
+        AppInitializer.getInstance(this).initializeComponent(FluentViewInitializer::class.java)
+      }
+    }
+
     AppStartMonitor.recordTime("AppCreate")
   }
 }

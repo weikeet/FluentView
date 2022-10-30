@@ -3,21 +3,21 @@ package com.weiwei.fluentlayout.more
 import android.content.Context
 import android.util.AttributeSet
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.fluent.view.appcompat.imageView
+import com.fluent.view.appcompat.textView
+import com.fluent.view.constraint.chainPacked
+import com.fluent.view.constraint.constraintParams
+import com.fluent.view.constraint.parentId
+import com.fluent.view.createRefs
+import com.fluent.view.material.materialButton
+import com.fluent.view.ui.backgroundResource
+import com.fluent.view.ui.imageResource
+import com.fluent.view.ui.textColorResource
+import com.fluent.view.ui.textResource
+import com.fluent.view.ui.unit.dp
+import com.fluent.view.view
+import com.fluent.view.wrapContent
 import com.weiwei.fluentlayout.R
-import com.weiwei.fluent.widget.imageView
-import com.weiwei.fluent.widget.materialButton
-import com.weiwei.fluent.widget.textView
-import com.weiwei.fluent.widget.view
-import com.weiwei.fluent.widget.extensions.background_colorResource
-import com.weiwei.fluent.widget.extensions.dp
-import com.weiwei.fluent.widget.extensions.image_resource
-import com.weiwei.fluent.widget.extensions.text_colorResource
-import com.weiwei.fluent.widget.extensions.text_resource
-import com.weiwei.fluent.widget.ids.createRefs
-import com.weiwei.fluent.widget.params.chainPacked
-import com.weiwei.fluent.widget.params.constraintParams
-import com.weiwei.fluent.widget.params.parentId
-import com.weiwei.fluent.widget.params.wrapContent
 
 /**
  * @author weiwei
@@ -33,7 +33,7 @@ class MoreToolKtView : ConstraintLayout {
   }
 
   private fun initView() {
-    background_colorResource = R.color.white_primary
+    backgroundResource = R.color.white_primary
 
     val (icon, title, subtitle, action) = createRefs()
 
@@ -44,7 +44,7 @@ class MoreToolKtView : ConstraintLayout {
         topToTop = parentId
         bottomToBottom = parentId
       }
-      image_resource = R.drawable.ic_android_24dp
+      imageResource = R.drawable.ic_android_24dp
     }
 
     materialButton(action, R.style.MaterialTheme_MaterialButton) {
@@ -56,8 +56,8 @@ class MoreToolKtView : ConstraintLayout {
         matchConstraintPercentWidth = 0.2444f
       }
       textSize = 14f
-      text_colorResource = R.color.white_primary
-      text_resource = R.string.tool_action_button
+      textColorResource = R.color.white_primary
+      textResource = R.string.tool_action_button
     }
 
     textView(title) {
@@ -70,8 +70,8 @@ class MoreToolKtView : ConstraintLayout {
         bottomToTop = subtitle
         verticalChainStyle = chainPacked
       }
-      text_colorResource = R.color.black_87_transparent
-      text_resource = R.string.tool_title
+      textColorResource = R.color.black_87_transparent
+      textResource = R.string.tool_title
       textSize = 16f
     }
 
@@ -86,8 +86,8 @@ class MoreToolKtView : ConstraintLayout {
         bottomToBottom = parentId
         verticalChainStyle = chainPacked
       }
-      text_colorResource = R.color.black_54_transparent
-      text_resource = R.string.tool_subtitle
+      textColorResource = R.color.black_54_transparent
+      textResource = R.string.tool_subtitle
       textSize = 12f
     }
 
@@ -99,7 +99,7 @@ class MoreToolKtView : ConstraintLayout {
         rightToRight = parentId
         bottomToBottom = parentId
       }
-      background_colorResource = R.color.colorAccent
+      backgroundResource = R.color.colorAccent
     }
   }
 }

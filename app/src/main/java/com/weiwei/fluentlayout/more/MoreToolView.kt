@@ -3,8 +3,10 @@ package com.weiwei.fluentlayout.more
 import android.content.Context
 import android.util.AttributeSet
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.fluent.view.constraint.constraintVertical
+import com.fluent.view.constraint.guideline
+import com.fluent.view.ui.backgroundResource
 import com.weiwei.fluentlayout.R
-import com.weiwei.fluent.widget.extensions.background_colorResource
 
 /**
  * @author weiwei
@@ -20,7 +22,11 @@ class MoreToolView : ConstraintLayout {
   }
 
   private fun initView() {
-    background_colorResource = R.color.white_primary
+    guideline(0){
+      orientation = constraintVertical
+      guideBegin = 20
+    }
+    backgroundResource = R.color.white_primary
     inflate(context, R.layout.item_more_tools, this)
   }
 }

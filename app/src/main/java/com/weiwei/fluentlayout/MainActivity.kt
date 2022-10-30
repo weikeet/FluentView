@@ -1,6 +1,7 @@
 package com.weiwei.fluentlayout
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.AttributeSet
 import android.util.Log
@@ -8,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.LayoutInflaterCompat
+import com.fluent.view.WindowInsetsEdgeDelegate
 import com.weiwei.fluentlayout.performance.AppStartMonitor
 
 class MainActivity : AppCompatActivity() {
@@ -54,6 +56,8 @@ class MainActivity : AppCompatActivity() {
     installFactory2()
     super.onCreate(savedInstanceState)
 
+    WindowInsetsEdgeDelegate(this).start()
+
     AppStartMonitor.recordTime("MainCreate")
 
     val st = System.currentTimeMillis()
@@ -72,6 +76,10 @@ class MainActivity : AppCompatActivity() {
     // setContentView(contentLayout)
     val contentLayout = MainConstraintMultiLayout2(this)
     setContentView(contentLayout)
+
+    contentLayout.setOnClickListener {
+      startActivity(Intent(this, SecondActivity::class.java))
+    }
 
     // val delegate = object : AsyncViewDelegate(this) {
     //   override fun onCreateView(activity: AppCompatActivity): View {
