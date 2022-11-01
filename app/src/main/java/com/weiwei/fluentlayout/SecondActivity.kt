@@ -2,7 +2,7 @@ package com.weiwei.fluentlayout
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.fluent.view.ui.res.stringResource
+import com.weiwei.fluentview.ui.res.stringResource
 
 /**
  * @author weiwei

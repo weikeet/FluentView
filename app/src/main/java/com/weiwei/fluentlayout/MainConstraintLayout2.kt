@@ -5,23 +5,23 @@ import android.text.InputType
 import android.text.TextUtils
 import android.util.AttributeSet
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.fluent.view.appcompat.button
-import com.fluent.view.appcompat.editText
-import com.fluent.view.appcompat.imageView
-import com.fluent.view.appcompat.textView
-import com.fluent.view.constraint.centerHorizontalOf
-import com.fluent.view.constraint.constraintParams
-import com.fluent.view.constraint.parentId
-import com.fluent.view.createRefs
-import com.fluent.view.ui.allPadding
-import com.fluent.view.ui.backgroundResource
-import com.fluent.view.ui.ems
-import com.fluent.view.ui.imageResource
-import com.fluent.view.ui.scaleCenterCrop
-import com.fluent.view.ui.textResource
-import com.fluent.view.ui.textSizeDp
-import com.fluent.view.ui.unit.dp
-import com.fluent.view.wrapContent
+import com.weiwei.fluentview.view.appcompat.button
+import com.weiwei.fluentview.view.appcompat.editText
+import com.weiwei.fluentview.view.appcompat.imageView
+import com.weiwei.fluentview.view.appcompat.textView
+import com.weiwei.fluentview.view.constraint.centerHorizontalOf
+import com.weiwei.fluentview.view.constraint.constraintParams
+import com.weiwei.fluentview.view.constraint.parentId
+import com.weiwei.fluentview.view.createRefs
+import com.weiwei.fluentview.ui.allPadding
+import com.weiwei.fluentview.ui.backgroundResource
+import com.weiwei.fluentview.ui.ems
+import com.weiwei.fluentview.ui.imageResource
+import com.weiwei.fluentview.ui.scaleCenterCrop
+import com.weiwei.fluentview.ui.textResource
+import com.weiwei.fluentview.ui.textSizeDp
+import com.weiwei.fluentview.ui.unit.dp
+import com.weiwei.fluentview.view.wrapContent
 
 class MainConstraintLayout2 : ConstraintLayout {
   constructor(context: Context) : super(context)

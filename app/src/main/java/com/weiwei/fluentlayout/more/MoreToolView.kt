@@ -3,9 +3,9 @@ package com.weiwei.fluentlayout.more
 import android.content.Context
 import android.util.AttributeSet
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.fluent.view.constraint.constraintVertical
-import com.fluent.view.constraint.guideline
-import com.fluent.view.ui.backgroundResource
+import com.weiwei.fluentview.view.constraint.constraintVertical
+import com.weiwei.fluentview.view.constraint.guideline
+import com.weiwei.fluentview.ui.backgroundResource
 import com.weiwei.fluentlayout.R
 
 /**

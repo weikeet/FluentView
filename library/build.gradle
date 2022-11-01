@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-  namespace "com.fluent.view"
+  namespace "com.weiwei.fluentview.view"
   compileSdkVersion 33
 
   defaultConfig {

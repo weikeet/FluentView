@@ -1,5 +1,9 @@
 # Release Notes
 
+## 2.0.0 Nov, 01 2022
+
+- refactor package 
+
 ## 1.1.1 Jan, 13 2022
 
 - upgrade minSdk 21

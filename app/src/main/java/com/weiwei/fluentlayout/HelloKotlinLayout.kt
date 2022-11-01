@@ -8,8 +8,8 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.ViewCompat
-import com.fluent.view.ui.res.colorStateList
-import com.fluent.view.ui.unit.dp
+import com.weiwei.fluentview.ui.res.colorStateList
+import com.weiwei.fluentview.ui.unit.dp
 
 /**
  * @author weiwei

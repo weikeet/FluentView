@@ -9,7 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.LayoutInflaterCompat
-import com.fluent.view.WindowInsetsEdgeDelegate
+import com.weiwei.fluentview.view.WindowInsetsEdgeDelegate
 import com.weiwei.fluentlayout.performance.AppStartMonitor
 
 class MainActivity : AppCompatActivity() {

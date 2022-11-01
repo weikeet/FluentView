@@ -1,4 +1,4 @@
-package com.fluent.view.app
+package com.weiwei.fluentview.view.app
 
 import android.app.ActivityManager
 import android.app.AlarmManager

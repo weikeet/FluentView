@@ -1,6 +1,6 @@
 # FluentLayout
 
-Effective dynamic layout via kotlin dsl.
+Effective implementation of high performance dynamic layout for Android via kotlin dsl.
 
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/lecymeng/FluentLayout/blob/master/LICENSE)
 ![maven-central](https://img.shields.io/maven-central/v/com.weicools/fluent-layout.svg)
@@ -22,7 +22,7 @@ In your `module/build.gradle`:
 
 ```
 dependencies {
-  implementation 'com.weicools:fluent-layout:1.1.1'
+  implementation 'com.weicools:fluent-view:2.0.0'
 }
 ```
 
@@ -35,17 +35,17 @@ val rootView = constraintLayout {
   imageView(R.id.iconId) {
     layoutParams = constraintParams(40.dp, 40.dp) {
       leftToLeft = parentId
-      center_VerticalOf = parentId
+      centerVerticalOf = parentId
       leftMargin = 16.dp
     }
-    image_resource = R.mipmap.ic_launcher
+    imageResource = R.drawable.ic_arrow
   }
 
   textView(R.id.textId) {
     layoutParams = constraintParams(0, wrapContent) {
       leftToRight = R.id.iconId
       rightToRight = parentId
-      center_VerticalOf = parentId
+      centerVerticalOf = parentId
       leftMargin = 8.dp
       rightMargin = 16.dp
     }
@@ -53,6 +53,10 @@ val rootView = constraintLayout {
   }
 }
 ```
+
+> Note
+> The main process is automatically initialized context by default
+> Multiple processes need to be initialized manually: [FluentViewInitializer.initialize]
 
 ### Screenshots
 

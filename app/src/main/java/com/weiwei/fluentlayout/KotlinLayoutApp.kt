@@ -4,7 +4,7 @@ import android.app.Application
 import android.content.Context
 import android.os.Build
 import androidx.startup.AppInitializer
-import com.fluent.view.app.FluentViewInitializer
+import com.weiwei.fluentview.app.FluentViewInitializer
 import com.weiwei.fluentlayout.performance.AppStartMonitor
 
 /**

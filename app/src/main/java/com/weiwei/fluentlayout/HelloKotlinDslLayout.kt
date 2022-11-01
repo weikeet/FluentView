@@ -4,16 +4,16 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.util.AttributeSet
 import android.widget.FrameLayout
-import com.fluent.view.appcompat.imageView
-import com.fluent.view.appcompat.textView
-import com.fluent.view.constraint.chainPacked
-import com.fluent.view.constraint.constraintLayout
-import com.fluent.view.constraint.constraintParams
-import com.fluent.view.constraint.parentId
-import com.fluent.view.createRefs
-import com.fluent.view.matchParent
-import com.fluent.view.ui.imageResource
-import com.fluent.view.ui.unit.dp
+import com.weiwei.fluentview.view.appcompat.imageView
+import com.weiwei.fluentview.view.appcompat.textView
+import com.weiwei.fluentview.view.constraint.chainPacked
+import com.weiwei.fluentview.view.constraint.constraintLayout
+import com.weiwei.fluentview.view.constraint.constraintParams
+import com.weiwei.fluentview.view.constraint.parentId
+import com.weiwei.fluentview.view.createRefs
+import com.weiwei.fluentview.view.matchParent
+import com.weiwei.fluentview.ui.imageResource
+import com.weiwei.fluentview.ui.unit.dp
 
 /**
  * @author weiwei

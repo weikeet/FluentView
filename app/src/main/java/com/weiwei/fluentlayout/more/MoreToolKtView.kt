@@ -3,20 +3,20 @@ package com.weiwei.fluentlayout.more
 import android.content.Context
 import android.util.AttributeSet
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.fluent.view.appcompat.imageView
-import com.fluent.view.appcompat.textView
-import com.fluent.view.constraint.chainPacked
-import com.fluent.view.constraint.constraintParams
-import com.fluent.view.constraint.parentId
-import com.fluent.view.createRefs
-import com.fluent.view.material.materialButton
-import com.fluent.view.ui.backgroundResource
-import com.fluent.view.ui.imageResource
-import com.fluent.view.ui.textColorResource
-import com.fluent.view.ui.textResource
-import com.fluent.view.ui.unit.dp
-import com.fluent.view.view
-import com.fluent.view.wrapContent
+import com.weiwei.fluentview.view.appcompat.imageView
+import com.weiwei.fluentview.view.appcompat.textView
+import com.weiwei.fluentview.view.constraint.chainPacked
+import com.weiwei.fluentview.view.constraint.constraintParams
+import com.weiwei.fluentview.view.constraint.parentId
+import com.weiwei.fluentview.view.createRefs
+import com.weiwei.fluentview.view.material.materialButton
+import com.weiwei.fluentview.ui.backgroundResource
+import com.weiwei.fluentview.ui.imageResource
+import com.weiwei.fluentview.ui.textColorResource
+import com.weiwei.fluentview.ui.textResource
+import com.weiwei.fluentview.ui.unit.dp
+import com.weiwei.fluentview.view.view
+import com.weiwei.fluentview.view.wrapContent
 import com.weiwei.fluentlayout.R
 
 /**

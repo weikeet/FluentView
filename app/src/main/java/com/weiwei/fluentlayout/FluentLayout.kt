@@ -3,18 +3,18 @@ package com.weiwei.fluentlayout
 import android.content.Context
 import android.util.AttributeSet
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.fluent.view.appcompat.imageView
-import com.fluent.view.appcompat.textView
-import com.fluent.view.constraint.centerVerticalOf
-import com.fluent.view.constraint.constraintLayout
-import com.fluent.view.constraint.constraintParams
-import com.fluent.view.constraint.parentId
-import com.fluent.view.defaultParams
-import com.fluent.view.matchParent
-import com.fluent.view.ui.imageResource
-import com.fluent.view.ui.res.dimenOffsetResource
-import com.fluent.view.ui.unit.dp
-import com.fluent.view.wrapContent
+import com.weiwei.fluentview.view.appcompat.imageView
+import com.weiwei.fluentview.view.appcompat.textView
+import com.weiwei.fluentview.view.constraint.centerVerticalOf
+import com.weiwei.fluentview.view.constraint.constraintLayout
+import com.weiwei.fluentview.view.constraint.constraintParams
+import com.weiwei.fluentview.view.constraint.parentId
+import com.weiwei.fluentview.view.defaultParams
+import com.weiwei.fluentview.view.matchParent
+import com.weiwei.fluentview.ui.imageResource
+import com.weiwei.fluentview.ui.res.dimenOffsetResource
+import com.weiwei.fluentview.ui.unit.dp
+import com.weiwei.fluentview.view.wrapContent
 
 val a = dimenOffsetResource(R.dimen.fab_margin)
 
