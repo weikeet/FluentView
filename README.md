@@ -64,7 +64,11 @@ val rootView = constraintLayout {
 
 ## TODO
 
-- [ ] support preview like xml tools
+- [ ] Support preview like xml tools
+- [ ] Add style using document
+- [ ] Add references
+- [ ] Fix insets invalid
+- [ ] Fix Android 13 edge-to-edge adapt
 
 ## License
 
