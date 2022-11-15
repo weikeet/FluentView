@@ -12,16 +12,17 @@ internal lateinit var mainContext: Context
  * The main process is automatically initialized by default
  * Multiple processes need to be initialized manually: [FluentViewInitializer.initialize]
  */
-class FluentViewInitializer : Initializer<Unit> {
+class FluentViewInitializer : Initializer<FluentViewInitializer> {
   companion object {
     fun initialize(context: Context) {
       mainContext = context
     }
   }
 
-  override fun create(context: Context) {
+  override fun create(context: Context): FluentViewInitializer {
     mainContext = context
+    return this
   }
 
-  override fun dependencies(): MutableList<Class<out Initializer<*>>> = arrayListOf()
+  override fun dependencies() = emptyList<Nothing>()
 }
