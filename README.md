@@ -68,7 +68,6 @@ val rootView = constraintLayout {
 - [ ] Add style using document
 - [ ] Add references
 - [ ] Fix insets invalid
-- [ ] Fix Android 13 edge-to-edge adapt
 
 ## License
 
