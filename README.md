@@ -2,8 +2,8 @@
 
 Effective implementation of high performance dynamic layout for Android via kotlin dsl.
 
-[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/lecymeng/FluentLayout/blob/master/LICENSE)
-![maven-central](https://img.shields.io/maven-central/v/com.weicools/fluent-layout.svg)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/lecymeng/FluentView/blob/master/LICENSE)
+![maven-central](https://img.shields.io/maven-central/v/com.weicools/fluent-view.svg)
 ![jetbrains-plugin](https://img.shields.io/jetbrains/plugin/v/9202-a8translate.svg)
 
 ## Getting started
@@ -22,7 +22,7 @@ In your `module/build.gradle`:
 
 ```
 dependencies {
-  implementation 'com.weicools:fluent-view:2.0.0'
+  implementation 'com.weicools:fluent-view:2.0.1'
 }
 ```
 
