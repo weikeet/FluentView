@@ -2,8 +2,6 @@ package com.weiwei.fluentview.view.material
 
 import android.content.Context
 import android.view.ViewGroup
-import com.weiwei.fluentview.view.wrapContent
-import com.weiwei.fluentview.view.wrapContextIfNeeded
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.appbar.CollapsingToolbarLayout
 import com.google.android.material.appbar.MaterialToolbar
@@ -13,6 +11,8 @@ import com.google.android.material.button.MaterialButtonToggleGroup
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.textfield.TextInputLayout
+import com.weiwei.fluentview.view.wrapContent
+import com.weiwei.fluentview.view.wrapContextIfNeeded
 
 //region tabLayout
 inline fun ViewGroup.tabLayout(id: Int? = null, style: Int? = null, init: TabLayout.() -> Unit): TabLayout {

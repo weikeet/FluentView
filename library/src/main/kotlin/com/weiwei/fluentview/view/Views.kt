@@ -37,7 +37,6 @@ inline fun Context.view(id: Int? = null, style: Int? = null, init: View.() -> Un
 }
 //endregion
 
-//region theme & context
 const val NO_THEME = 0
 
 @Suppress("NOTHING_TO_INLINE")
@@ -51,9 +50,7 @@ inline fun <T : View> T.autoAddView(parent: ViewGroup, initView: T.() -> Unit): 
   initView()
   parent.addView(this)
 }
-//endregion
 
-//region view id
 const val NO_ID = View.NO_ID
 
 @Suppress("NOTHING_TO_INLINE")
@@ -97,4 +94,3 @@ class ViewIds {
   operator fun component35(): Int = ViewCompat.generateViewId()
   operator fun component36(): Int = ViewCompat.generateViewId()
 }
-//endregion

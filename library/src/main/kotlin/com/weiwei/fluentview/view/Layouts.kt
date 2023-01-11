@@ -35,6 +35,31 @@ inline fun Context.linearLayout(id: Int? = null, style: Int? = null, init: Linea
   if (id != null) widget.id = id
   return widget.apply(init)
 }
+
+inline fun ViewGroup.verticalLayout(id: Int? = null, style: Int? = null, init: LinearLayout.() -> Unit): LinearLayout {
+  val widget = LinearLayout(wrapContextIfNeeded(context, style))
+  if (id != null) widget.id = id
+  return widget.apply(init).also { addView(it) }
+}
+
+inline fun Context.verticalLayout(id: Int? = null, style: Int? = null, init: LinearLayout.() -> Unit): LinearLayout {
+  val widget = LinearLayout(wrapContextIfNeeded(this, style))
+  if (id != null) widget.id = id
+  return widget.apply(init)
+}
+
+inline fun ViewGroup.horizontalLayout(id: Int? = null, style: Int? = null, init: LinearLayout.() -> Unit): LinearLayout {
+  val widget = LinearLayout(wrapContextIfNeeded(context, style))
+  widget.orientation = LinearLayout.HORIZONTAL
+  if (id != null) widget.id = id
+  return widget.apply(init).also { addView(it) }
+}
+
+inline fun Context.horizontalLayout(id: Int? = null, style: Int? = null, init: LinearLayout.() -> Unit): LinearLayout {
+  val widget = LinearLayout(wrapContextIfNeeded(this, style))
+  if (id != null) widget.id = id
+  return widget.apply(init)
+}
 //endregion
 
 //region relativeLayout
