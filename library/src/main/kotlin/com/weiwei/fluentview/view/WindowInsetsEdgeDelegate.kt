@@ -49,7 +49,6 @@ class WindowInsetsEdgeDelegate(private val activity: Activity) {
     ViewCompat.setOnApplyWindowInsetsListener(window.decorView) { _: View?, windowInsets: WindowInsetsCompat ->
       val navigationBarsInsets = windowInsets.getInsets(WindowInsetsCompat.Type.navigationBars())
       // 44px/72px is the fixed height of the iOS-like navigation bar (Gesture navigation), in pixels!
-      // FIX 子类 onDestroyView 访问 binding 是 null, 适配 Android 13 导航栏
       val navigationBarsMaxHeight = if (Build.VERSION.SDK_INT < 33) {
         threshold.coerceAtLeast(44)
       } else {

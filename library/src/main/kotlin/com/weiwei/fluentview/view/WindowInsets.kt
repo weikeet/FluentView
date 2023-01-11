@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.content.ContextWrapper
 import android.graphics.Rect
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.view.Window
@@ -90,15 +91,6 @@ inline val WindowInsetsCompat.imeBottom: Int
 
 
 // -------------------------------------------------------------------------------------
-// getInsets top/bottom/left/right from WindowInsetsCompat
-// -------------------------------------------------------------------------------------
-fun getRootStatusBarTop(activity: Activity, default: Int = 0): Int =
-  ViewCompat.getRootWindowInsets(activity.window.decorView)?.getInsets(WindowInsetsCompat.Type.statusBars())?.top ?: default
-
-fun getRootNavigationBar(activity: Activity, default: Int = 0): Int =
-  ViewCompat.getRootWindowInsets(activity.window.decorView)?.getInsets(WindowInsetsCompat.Type.navigationBars())?.bottom ?: default
-
-// -------------------------------------------------------------------------------------
 // view extensions for WindowInsets
 // -------------------------------------------------------------------------------------
 
@@ -118,41 +110,63 @@ fun View.recordInitialMargin(): InitialMargin = (layoutParams as? ViewGroup.Marg
   }
   ?: InitialMargin(0, 0, 0, 0)
 
+private var cacheWindowInsets: WindowInsetsCompat? = null
 
-/**
- * @param requestApplyInsets: see [requestApplyInsetsWhenAttached] notes
- * @param block: callback WindowInsetsCompat
- */
-fun View.doOnApplyWindowInsets(
-  requestApplyInsets: Boolean = false, block: (windowInsets: WindowInsetsCompat) -> Unit
-) {
-  ViewCompat.setOnApplyWindowInsetsListener(this) { _, windowInsets ->
-    block(windowInsets)
-    windowInsets
+private fun doOnApplyWindowInsetsCallback(view: View, block: (windowInsets: WindowInsetsCompat) -> Unit) {
+  var insets: WindowInsetsCompat? = cacheWindowInsets
+  if (insets != null) {
+    Log.d("WindowInsetsDispatcher", "dispatch cache windowInsets=$insets")
+    block(insets)
   }
-  if (requestApplyInsets) {
-    requestApplyInsetsWhenAttached()
+
+  ViewCompat.setOnApplyWindowInsetsListener(view) { _, windowInsets ->
+    cacheWindowInsets = windowInsets
+    if (insets != windowInsets) {
+      Log.d("WindowInsetsDispatcher", "dispatch new windowInsets==$windowInsets")
+      insets = windowInsets
+      block(windowInsets)
+    }
+    windowInsets
   }
 }
 
 /**
- * @param requestApplyInsets: see [requestApplyInsetsWhenAttached] notes
- * @param block: callback WindowInsetsCompat, InitialPadding, InitialMargin
+ * @param block: callback [WindowInsetsCompat]
  */
-fun View.doOnApplyWindowInsets(
-  requestApplyInsets: Boolean = false, block: (windowInsets: WindowInsetsCompat, padding: InitialPadding, margin: InitialMargin) -> Unit
-) {
+fun View.doOnApplyWindowInsets(block: (windowInsets: WindowInsetsCompat) -> Unit) {
+  doOnApplyWindowInsetsCallback(this, block)
+}
+
+/**
+ * @param block: callback [WindowInsetsCompat]
+ */
+fun View.requestApplyWindowInsets(block: (windowInsets: WindowInsetsCompat) -> Unit) {
+  doOnApplyWindowInsetsCallback(this, block)
+  requestApplyInsetsWhenAttached()
+}
+
+/**
+ * @param block: callback ([WindowInsetsCompat], [InitialPadding], [InitialMargin])
+ */
+fun View.doOnApplyWindowInsets2(block: (windowInsets: WindowInsetsCompat, padding: InitialPadding, margin: InitialMargin) -> Unit) {
   val initialMargin = recordInitialMargin()
   val initialPadding = recordInitialPadding()
-  ViewCompat.setOnApplyWindowInsetsListener(this) { _, windowInsets ->
+  doOnApplyWindowInsetsCallback(this) { windowInsets ->
     block(windowInsets, initialPadding, initialMargin)
-    windowInsets
-  }
-  if (requestApplyInsets) {
-    requestApplyInsetsWhenAttached()
   }
 }
 
+/**
+ * @param block: callback ([WindowInsetsCompat], [InitialPadding], [InitialMargin])
+ */
+fun View.requestApplyWindowInsets2(block: (windowInsets: WindowInsetsCompat, padding: InitialPadding, margin: InitialMargin) -> Unit) {
+  val initialMargin = recordInitialMargin()
+  val initialPadding = recordInitialPadding()
+  doOnApplyWindowInsetsCallback(this) { windowInsets ->
+    block(windowInsets, initialPadding, initialMargin)
+  }
+  requestApplyInsetsWhenAttached()
+}
 
 /**
  * It is best always call this method when setting OnApplyWindowInsetsListener,
