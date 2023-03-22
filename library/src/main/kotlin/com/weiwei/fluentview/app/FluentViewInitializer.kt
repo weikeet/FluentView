@@ -14,6 +14,9 @@ internal lateinit var mainContext: Context
  */
 class FluentViewInitializer : Initializer<FluentViewInitializer> {
   companion object {
+    /**
+     * Manual initialization in Application#onCreate
+     */
     fun initialize(context: Context) {
       mainContext = context
     }
