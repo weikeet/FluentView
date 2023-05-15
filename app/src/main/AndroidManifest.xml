@@ -3,7 +3,7 @@
     package="com.weiwei.fluentlayout">
 
     <application
-        android:name=".KotlinLayoutApp"
+        android:name=".app.UiApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -20,8 +20,5 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".SecondActivity"
-            android:process=":remote" />
     </application>
 </manifest>

@@ -3,20 +3,20 @@ package com.weiwei.fluentlayout.more
 import android.content.Context
 import android.util.AttributeSet
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.weiwei.fluentview.view.appcompat.imageView
-import com.weiwei.fluentview.view.appcompat.textView
-import com.weiwei.fluentview.view.constraint.chainPacked
-import com.weiwei.fluentview.view.constraint.constraintParams
-import com.weiwei.fluentview.view.constraint.parentId
-import com.weiwei.fluentview.view.createRefs
-import com.weiwei.fluentview.view.material.materialButton
-import com.weiwei.fluentview.ui.backgroundResource
-import com.weiwei.fluentview.ui.imageResource
-import com.weiwei.fluentview.ui.textColorResource
-import com.weiwei.fluentview.ui.textResource
-import com.weiwei.fluentview.ui.unit.dp
-import com.weiwei.fluentview.view.view
-import com.weiwei.fluentview.view.wrapContent
+import com.weikeet.ui.unit.dp
+import com.weikeet.ui.view.appcompat.imageView
+import com.weikeet.ui.view.appcompat.textView
+import com.weikeet.ui.view.constraint.chainPacked
+import com.weikeet.ui.view.constraint.constraintParams
+import com.weikeet.ui.view.constraint.parentId
+import com.weikeet.ui.view.createRefs
+import com.weikeet.ui.view.material.materialButton
+import com.weikeet.ui.view.view
+import com.weikeet.ui.view.wrapContent
+import com.weikeet.ui.widget.backgroundResource
+import com.weikeet.ui.widget.imageResource
+import com.weikeet.ui.widget.textColorResource
+import com.weikeet.ui.widget.textResource
 import com.weiwei.fluentlayout.R
 
 /**

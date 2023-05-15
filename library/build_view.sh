@@ -22,7 +22,7 @@ inline fun Context.$fun_name(id: Int? = null, style: Int? = null, init: $view_na
 }
 
 function build_compat_view() {
-    echo "package com.weiwei.fluentview.view.appcompat
+    echo "package com.weikeet.ui.view.appcompat
 
 import android.content.Context
 import android.view.ViewGroup
@@ -35,7 +35,7 @@ import androidx.appcompat.widget.AppCompatRadioButton
 import androidx.appcompat.widget.AppCompatSeekBar
 import androidx.appcompat.widget.AppCompatSpinner
 import androidx.appcompat.widget.AppCompatTextView
-import com.weiwei.fluentview.view.wrapContextIfNeeded"
+import com.weikeet.ui.view.wrapContextIfNeeded"
 
     build_view textView AppCompatTextView
     build_view imageView AppCompatImageView

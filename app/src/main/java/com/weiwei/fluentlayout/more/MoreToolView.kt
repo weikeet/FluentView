@@ -3,9 +3,9 @@ package com.weiwei.fluentlayout.more
 import android.content.Context
 import android.util.AttributeSet
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.weiwei.fluentview.view.constraint.constraintVertical
-import com.weiwei.fluentview.view.constraint.guideline
-import com.weiwei.fluentview.ui.backgroundResource
+import com.weikeet.ui.view.constraint.constraintVertical
+import com.weikeet.ui.view.constraint.guideline
+import com.weikeet.ui.widget.backgroundResource
 import com.weiwei.fluentlayout.R
 
 /**
@@ -22,7 +22,7 @@ class MoreToolView : ConstraintLayout {
   }
 
   private fun initView() {
-    guideline(0){
+    guideline(0) {
       orientation = constraintVertical
       guideBegin = 20
     }

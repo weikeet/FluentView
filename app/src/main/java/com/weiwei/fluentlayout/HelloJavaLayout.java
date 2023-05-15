@@ -14,7 +14,7 @@ import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.view.ViewCompat;
-import com.weiwei.fluentview.ui.unit.SystemUnitKt;
+import com.weikeet.ui.unit.ResourcesUnitKt;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -51,7 +51,7 @@ public class HelloJavaLayout extends FrameLayout {
     ImageView iconView = new AppCompatImageView(context);
     iconView.setId(iconId);
     iconView.setImageResource(R.drawable.ic_android_24dp);
-    ConstraintLayout.LayoutParams iconParams = new ConstraintLayout.LayoutParams(SystemUnitKt.getDp(40), SystemUnitKt.getDp(40));
+    ConstraintLayout.LayoutParams iconParams = new ConstraintLayout.LayoutParams(ResourcesUnitKt.getDp(40), ResourcesUnitKt.getDp(40));
     iconParams.leftToLeft = ConstraintLayout.LayoutParams.PARENT_ID;
     iconParams.topToTop = ConstraintLayout.LayoutParams.PARENT_ID;
     iconParams.rightToRight = ConstraintLayout.LayoutParams.PARENT_ID;
@@ -63,7 +63,7 @@ public class HelloJavaLayout extends FrameLayout {
     textView.setId(textId);
     textView.setText("Hello Android");
     ConstraintLayout.LayoutParams textParams = new ConstraintLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-    textParams.topMargin = SystemUnitKt.getDp(8);
+    textParams.topMargin = ResourcesUnitKt.getDp(8);
     textParams.leftToLeft = ConstraintLayout.LayoutParams.PARENT_ID;
     textParams.topToBottom = iconId;
     textParams.rightToRight = ConstraintLayout.LayoutParams.PARENT_ID;

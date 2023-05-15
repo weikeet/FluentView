@@ -3,17 +3,17 @@ package com.weiwei.fluentlayout
 import android.content.Context
 import android.util.AttributeSet
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.weiwei.fluentview.ui.imageResource
-import com.weiwei.fluentview.ui.unit.dp
-import com.weiwei.fluentview.view.appcompat.imageView
-import com.weiwei.fluentview.view.appcompat.textView
-import com.weiwei.fluentview.view.constraint.centerVerticalOf
-import com.weiwei.fluentview.view.constraint.constraintLayout
-import com.weiwei.fluentview.view.constraint.constraintParams
-import com.weiwei.fluentview.view.constraint.parentId
-import com.weiwei.fluentview.view.defaultParams
-import com.weiwei.fluentview.view.matchParent
-import com.weiwei.fluentview.view.wrapContent
+import com.weikeet.ui.unit.dp
+import com.weikeet.ui.view.appcompat.imageView
+import com.weikeet.ui.view.appcompat.textView
+import com.weikeet.ui.view.constraint.centerVerticalOf
+import com.weikeet.ui.view.constraint.constraintLayout
+import com.weikeet.ui.view.constraint.constraintParams
+import com.weikeet.ui.view.constraint.parentId
+import com.weikeet.ui.view.defaultParams
+import com.weikeet.ui.view.matchParent
+import com.weikeet.ui.view.wrapContent
+import com.weikeet.ui.widget.imageResource
 
 /**
  * @author weiwei

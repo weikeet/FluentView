@@ -1,6 +1,5 @@
 package com.weiwei.fluentlayout.async
 
-import android.content.Context
 import android.os.Handler
 import android.os.HandlerThread
 import android.view.View

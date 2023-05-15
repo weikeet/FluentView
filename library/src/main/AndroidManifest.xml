@@ -9,7 +9,7 @@
             android:exported="false"
             tools:node="merge">
             <meta-data
-                android:name="com.weiwei.fluentview.app.FluentViewInitializer"
+                android:name="com.weikeet.ui.app.FluentUiInitializer"
                 android:value="androidx.startup" />
         </provider>
     </application>
